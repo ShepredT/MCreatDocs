@@ -1,0 +1,3798 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>事件 - 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=微软雅黑:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"微软雅黑";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="知识库" class="md-header__button md-logo" aria-label="知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              事件
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="知识库" class="md-nav__button md-logo" aria-label="知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#at-time" class="md-nav__link">
+    At Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-aoe-cloud-effect" class="md-nav__link">
+    On AoE Cloud Effect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-arm-swing" class="md-nav__link">
+    On Arm Swing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-armor-change" class="md-nav__link">
+    On Armor Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-bed-enter" class="md-nav__link">
+    On Bed Enter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-bed-leave" class="md-nav__link">
+    On Bed Leave
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-block-damage" class="md-nav__link">
+    On Block Damage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-block-fertilize" class="md-nav__link">
+    On Block Fertilize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-block-growth" class="md-nav__link">
+    On Block Growth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-book-edit" class="md-nav__link">
+    On Book Edit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-book-sign" class="md-nav__link">
+    On Book Sign
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-breakmine" class="md-nav__link">
+    On Break/Mine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-bucket-empty" class="md-nav__link">
+    On Bucket Empty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-bucket-fill" class="md-nav__link">
+    On Bucket fill
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-burn" class="md-nav__link">
+    On Burn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-can-build-check" class="md-nav__link">
+    On Can Build Check
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-chat" class="md-nav__link">
+    On Chat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-chunk-generate" class="md-nav__link">
+    On Chunk Generate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-chunk-load" class="md-nav__link">
+    On Chunk Load
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-chunk-unload" class="md-nav__link">
+    On Chunk Unload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-click" class="md-nav__link">
+    On Click
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-combust" class="md-nav__link">
+    On Combust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-command" class="md-nav__link">
+    On Command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-connect" class="md-nav__link">
+    On Connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-consume" class="md-nav__link">
+    On Consume
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-craft" class="md-nav__link">
+    On Craft
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-creeper-power" class="md-nav__link">
+    On Creeper Power
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-damage" class="md-nav__link">
+    On Damage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-death" class="md-nav__link">
+    On Death
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-dispense" class="md-nav__link">
+    On Dispense
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-drop" class="md-nav__link">
+    On Drop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-enchant" class="md-nav__link">
+    On Enchant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-enchant-prepare" class="md-nav__link">
+    On Enchant Prepare
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-endermansheepsilverfishfalling-block" class="md-nav__link">
+    On Enderman/Sheep/Silverfish/Falling Block
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-entity-dismount" class="md-nav__link">
+    On Entity Dismount
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-entity-mount" class="md-nav__link">
+    On Entity Mount
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-entity-portal" class="md-nav__link">
+    On Entity Portal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-experience-spawn" class="md-nav__link">
+    On Experience Spawn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-explode" class="md-nav__link">
+    On Explode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-explosion-prime" class="md-nav__link">
+    On Explosion Prime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-fade" class="md-nav__link">
+    On Fade
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-firework-explode" class="md-nav__link">
+    On Firework Explode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-first-join" class="md-nav__link">
+    On First Join
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-fishing" class="md-nav__link">
+    On Fishing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-flight-toggle" class="md-nav__link">
+    On Flight Toggle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-flow" class="md-nav__link">
+    On Flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-form" class="md-nav__link">
+    On Form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-fuel-burn" class="md-nav__link">
+    On Fuel Burn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-gamemode-change" class="md-nav__link">
+    On Gamemode Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-gliding-state-change" class="md-nav__link">
+    On Gliding State Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-grow" class="md-nav__link">
+    On Grow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-hand-item-swap" class="md-nav__link">
+    On Hand Item Swap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-heal" class="md-nav__link">
+    On Heal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-horse-jump" class="md-nav__link">
+    On Horse Jump
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-hunger-meter-change" class="md-nav__link">
+    On Hunger Meter Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-ignition" class="md-nav__link">
+    On Ignition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-inventory-click" class="md-nav__link">
+    On Inventory Click
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-inventory-close" class="md-nav__link">
+    On Inventory Close
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-inventory-open" class="md-nav__link">
+    On Inventory Open
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-inventory-pickup" class="md-nav__link">
+    On Inventory Pickup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-item-break" class="md-nav__link">
+    On Item Break
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-item-damage" class="md-nav__link">
+    On Item Damage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-item-despawn" class="md-nav__link">
+    On Item Despawn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-item-mend" class="md-nav__link">
+    On Item Mend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-item-merge" class="md-nav__link">
+    On Item Merge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-item-spawn" class="md-nav__link">
+    On Item Spawn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-join" class="md-nav__link">
+    On Join
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-jump" class="md-nav__link">
+    On Jump
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-kick" class="md-nav__link">
+    On Kick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-language-change" class="md-nav__link">
+    On Language Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-leaves-decay" class="md-nav__link">
+    On Leaves Decay
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-level-change" class="md-nav__link">
+    On Level Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-lightning-strike" class="md-nav__link">
+    On Lightning Strike
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-move" class="md-nav__link">
+    On Move
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-move-on" class="md-nav__link">
+    On Move On
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-physics" class="md-nav__link">
+    On Physics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-pick-up" class="md-nav__link">
+    On Pick Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-pig-zap" class="md-nav__link">
+    On Pig Zap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-piston-extend" class="md-nav__link">
+    On Piston Extend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-piston-retract" class="md-nav__link">
+    On Piston Retract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-place" class="md-nav__link">
+    On Place
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-player-world-change" class="md-nav__link">
+    On Player World Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-portal" class="md-nav__link">
+    On Portal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-portal-create" class="md-nav__link">
+    On Portal Create
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-portal-enter" class="md-nav__link">
+    On Portal Enter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-prepare-craft" class="md-nav__link">
+    On Prepare Craft
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-pressure-plate-trip" class="md-nav__link">
+    On Pressure Plate / Trip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-projectile-collide" class="md-nav__link">
+    On Projectile Collide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-projectile-hit" class="md-nav__link">
+    On Projectile Hit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-quit" class="md-nav__link">
+    On Quit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-redstone" class="md-nav__link">
+    On Redstone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-region-enter-leave" class="md-nav__link">
+    On Region Enter / Leave
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-resource-pack-request-response" class="md-nav__link">
+    On Resource Pack Request Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-respawn" class="md-nav__link">
+    On Respawn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-resurrct-attempt" class="md-nav__link">
+    On Resurrct Attempt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-riptide" class="md-nav__link">
+    On Riptide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-script-load-unload" class="md-nav__link">
+    On Script Load / Unload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-server-list-ping" class="md-nav__link">
+    On Server List Ping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-server-start-stop" class="md-nav__link">
+    On Server Start / Stop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-sheep-regrow-wool" class="md-nav__link">
+    On Sheep Regrow Wool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-shoot" class="md-nav__link">
+    On Shoot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-sign-change" class="md-nav__link">
+    On Sign Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-slime-split" class="md-nav__link">
+    On Slime Split
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-smelt" class="md-nav__link">
+    On Smelt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-sneak-toggle" class="md-nav__link">
+    On Sneak Toggle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-spawn" class="md-nav__link">
+    On Spawn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-spawn-change" class="md-nav__link">
+    On Spawn Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-sponge-absorb" class="md-nav__link">
+    On Sponge Absorb
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-spread" class="md-nav__link">
+    On Spread
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-sprint-toggle" class="md-nav__link">
+    On Sprint Toggle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-swim-toggle" class="md-nav__link">
+    On Swim Toggle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-tame" class="md-nav__link">
+    On Tame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-target" class="md-nav__link">
+    On Target
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-teleport" class="md-nav__link">
+    On Teleport
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-throwing-of-an-egg" class="md-nav__link">
+    On Throwing of an Egg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-tool-change" class="md-nav__link">
+    On Tool Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-vehicle-create" class="md-nav__link">
+    On Vehicle Create
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-vehicle-damage" class="md-nav__link">
+    On Vehicle Damage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-vehicle-destroy" class="md-nav__link">
+    On Vehicle Destroy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-vehicle-enter" class="md-nav__link">
+    On Vehicle Enter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-vehicle-exit" class="md-nav__link">
+    On Vehicle Exit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-weather-change" class="md-nav__link">
+    On Weather Change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-world-init" class="md-nav__link">
+    On World Init
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-world-load" class="md-nav__link">
+    On World Load
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-world-save" class="md-nav__link">
+    On World Save
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-world-unload" class="md-nav__link">
+    On World Unload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-zombie-break-door" class="md-nav__link">
+    On Zombie Break Door
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#periodical" class="md-nav__link">
+    Periodical
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#periodical_1" class="md-nav__link">
+    Periodical
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="_1">事件</h1>
+<p><a href="../Skript/">返回目录</a></p>
+<h2 id="at-time">At Time</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>at %<a href="https://docs.skriptlang.org/classes.html#time"><strong>time</strong></a>% [in %<a href="https://docs.skriptlang.org/classes.html#world">worlds</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.3.4</td>
+</tr>
+</tbody>
+</table>
+<p>在特定时间(<a href="https://docs.skriptlang.org/classes.html#time">游戏时间</a>)调用</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">at 18:00</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">at 7am in &quot;world&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-aoe-cloud-effect">On AoE Cloud Effect</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (area|AoE) [cloud] <strong>effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev21</td>
+</tr>
+</tbody>
+</table>
+<p>Called when area effect cloud applies its potion effect. This happens every 5 ticks by default.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on area cloud effect</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-arm-swing">On Arm Swing</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] arm swing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5.1</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家角色做出有关于手臂的相关动作时触发</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on arm swing</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;You swung your arm!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-armor-change">On Armor Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] armor change[d]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家盔甲改动的时候调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on armor change</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;You equipped %event-item%!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-bed-enter">On Bed Enter</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] bed enter[ing]<br />[on] [player] enter[ing] [a] bed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Since:</strong></td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家使用床睡觉的时候触发</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on bed enter</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;该触发条件：当玩家在夜晚时使用床睡觉时触发。白天使用床，并不会触发脚本。&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-bed-leave">On Bed Leave</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>bed</strong> <strong>leav</strong>(e|ing)<br />[on] [player] <strong>leav</strong>(e|ing) [a] <strong>bed</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>起床的时候调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on bed leave</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;当玩家起床时调用&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-block-damage">On Block Damage</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] block damag(ing|e)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家破坏方块时调用。通常可以使用 leftclick 事件</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on block damaging</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 判定破坏方块的类型是否为 log (原木) - 当然可以是其他方块</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if block is log</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">send &quot;你正在破坏原木方块&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-block-fertilize">On Block Fertilize</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] fertilize</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p>施肥时调</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on block fertilize</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;&amp;b施肥时调用</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nl">&amp;r施肥范围</span><span class="l l-Scalar l-Scalar-Plain">(&amp;e%size of fertilized blocks%&amp;r格方块受到影响).&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-block-growth">On Block Growth</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (plant|crop|block) <strong>grow</strong>[(th|ing)] [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-修复-V10</td>
+</tr>
+</tbody>
+</table>
+<p>当作物生长时调用.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on crop growth</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-book-edit">On Book Edit</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>book</strong> (edit|change|write)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev31</td>
+</tr>
+</tbody>
+</table>
+<p>当编辑一本书的时候调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on book edit</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-book-sign"><strong>On Book Sign</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] book sign[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev31</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家署名一本书调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on book sign</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-breakmine">On Break/Mine</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] (break[ing]|min(e|ing)) [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a>/<a href="https://docs.skriptlang.org/classes.html#blockdata"><strong>block</strong> <strong>datas</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0 (break), <em>unknown</em> (mine), 2.6 (BlockData support)</td>
+</tr>
+</tbody>
+</table>
+<p>当方块被玩家摧毁时调用。如果使用 'Mine' , 只有破坏方块掉落事件才会调用。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on mine</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on break of stone</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on mine of any ore</span><span class="p">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on break of chest[facing=north]</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on break of potatoes[age=7]</span><span class="p p-Indicator">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-bucket-empty">On Bucket Empty</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] bucket empty[ing]<br />[on] [player] empty[ing] [a] bucket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当清空水桶时调用. 可以使用 <a href="https://docs.skriptlang.org/events.html#place">place event</a> 来判定是水或者岩浆.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on bucket empty</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-bucket-fill">On Bucket fill</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] bucket fill[ing]<br />[on] [player] fill[ing] [a] bucket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家的桶中有液体时调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on player filling a bucket</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-burn">On Burn</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] burn[ing] [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype">item types</a>/<a href="https://docs.skriptlang.org/classes.html#blockdata">block datas</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0, 2.6 (BlockData support)</td>
+</tr>
+</tbody>
+</table>
+<p>当方块被烧毁时调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on burn</span><span class="p">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on burn of wood, fences, or chests</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on burn of oak_log[axis=y]</span><span class="p p-Indicator">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-can-build-check">On Can Build Check</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] can build check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0 (basic), 2.0 ([un]cancellable)</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家持有方块或可放置物品时右键点击放置方块时调用. 可通过取消事件(cancel)来阻止放置方块,也可以取消.</p>
+<p>注意: 要放置方块的 <a href="https://docs.skriptlang.org/expressions.html#ExprDurability">data</a> 是无法使用的.只有 <a href="https://docs.skriptlang.org/expressions.html#ExprIdOf">ID</a> 是有效可用的.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on block can build check</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-chat">On Chat</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] chat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.4.1</td>
+</tr>
+</tbody>
+</table>
+<p>每当玩家发送消息时调用. 使用 <a href="https://docs.skriptlang.org/expressions.html#ExprChatFormat">聊天格式化</a> 修改消息格式t, 使用 <a href="https://docs.skriptlang.org/expressions.html#ExprChatRecipients">聊天对象</a> 编辑收/发消息的聊天对象.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on chat</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">if player has permission &quot;owner&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">set chat format to &quot;&lt;red&gt;[player]&lt;light gray&gt;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;light red&gt;[message]&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">else if player has permission &quot;admin&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">set chat format to &quot;&lt;light red&gt;[player]&lt;light gray&gt;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;orange&gt;[message]&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">else</span><span class="p">:</span><span class="w"> </span><span class="c1">#default message format</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">set chat format to &quot;&lt;orange&gt;[player]&lt;light gray&gt;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;white&gt;[message]&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-chunk-generate">On Chunk Generate</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>chunk</strong> (generat|populat)(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当生成新区块时调用.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on chunk generate</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-chunk-load">On Chunk Load</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] chunk load[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当区块加载时调用。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on chunk load</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-chunk-unload">On Chunk Unload</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] chunk unload[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当取消区块加载时调用。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on chunk unload</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-click">On Click</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [(right|left)] [( |-)]] [mouse[( |-)]]click[ing] [on %<a href="https://docs.skriptlang.org/classes.html#entitydata">entity type</a>/<a href="https://docs.skriptlang.org/classes.html#itemtype">item type</a>%] [(with|using|holding) %<a href="https://docs.skriptlang.org/classes.html#itemtype">item type</a>%]<br />[on] [(right|left) [( |-)]] [mouse[( |-)]]click[ing] (with|using|holding) %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>type</strong></a><strong>%</strong> on %<a href="https://docs.skriptlang.org/classes.html#entitydata"><strong>entity</strong> <strong>type</strong></a>/<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>type</strong></a><strong>%</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家点击：方块、实体、空气时调用，无论玩家是否有手持物品。</p>
+<p>注意：空手右键空气事件无法调用。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on click</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on rightclick holding a fishing rod</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on leftclick on a stone or obsidian</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on rightclick on a creeper</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on click with a sword</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-combust">On Combust</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] combust[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当实体着火时调用。</p>
+<p>例如：岩浆、火、火球、阳光(特指僵尸、骷髅)</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on combust</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-command">On Command</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] command [%<a href="https://docs.skriptlang.org/classes.html#string">text</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家输入命令时调用。</p>
+<p>命令可以是任意命令不一定要是Skript的命令。</p>
+<p><a href="https://docs.skriptlang.org/conditions.html#CondIsSkriptCommand">查看关于Skript命令</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on command</span><span class="p">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on command &quot;/stop&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on command &quot;pm Njol &quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-connect">On Connect</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] connect[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家连接服务器时调用。</p>
+<p>与 <a href="https://docs.skriptlang.org/events.html#join">on join</a> 不同，该事件是指玩家在连接过程中时调用。</p>
+<p>on join 是玩家加入了服务器后才会被调用的。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on connect</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">player doesn&#39;t have permission &quot;VIP&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">number of players is greater than 15</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">kick the player due to &quot;The last 5 slots are reserved for VIP players.&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-consume">On Consume</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] ((eat|drink)[ing]|consum(e|ing)) [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家吃/喝/完时调用。</p>
+<p>例如：牛奶、苹果、面包、药水、肉...</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on consume</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-craft">On Craft</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] craft[ing] [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype">item types</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td><em>unknown</em> (before 2.1)</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家合成(制作)物品时调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on craft</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-creeper-power">On Creeper Power</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] creeper power</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当苦力怕被闪电击中后变成闪电苦力怕时调用。</p>
+<p>当然可以被取消该事件</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on creeper power</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-damage">On Damage</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>damag</strong>(e|ing) [of %<a href="https://docs.skriptlang.org/classes.html#entitydata">entity type</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当一个实体受到另一个实体的伤害时调用。</p>
+<p>包含：岩浆、火焰、窒息、衰落、等</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on damage</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on damage of a player</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-death">On Death</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] death [of %<a href="https://docs.skriptlang.org/classes.html#entitydata">entity types</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>当生物（包含玩家）死亡时调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on death</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on death of player</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on death of a wither or ender dragon</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;A %entity% has been slain in %world%!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-dispense">On Dispense</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>dispens</strong>(e|ing) [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td><em>unknown</em> (before 2.1)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a dispenser dispenses an item.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on dispense of iron block</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;that&#39;d be 19.99 please!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-drop">On Drop</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] drop[ing] [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype">item types</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td><em>unknown</em> (before 2.1)</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家从他们的物品栏背包中丢弃物品时调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on drop</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-enchant">On Enchant</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [item] enchant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家成功附魔物品时调用. <a href="https://docs.skriptlang.org/expressions.html#ExprEnchantEventsEnchantItem">查看附魔内容</a></p>
+<div class="highlight"><pre><span></span><code><span class="nt">on enchant</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if the clicked button is enchantment option 1</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">set the applied enchantments to sharpness 10 and unbreaking 10</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-enchant-prepare">On Enchant Prepare</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [item] enchant prepare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p>当玩家将物品放入附魔台时调用。 <a href="https://docs.skriptlang.org/expressions.html#ExprEnchantEventsEnchantItem">附魔内容参考</a></p>
+<div class="highlight"><pre><span></span><code><span class="nt">on enchant prepare</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">set enchant offer 1 to sharpness 1</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">set the cost of enchant offer 1 to 10 levels</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-endermansheepsilverfishfalling-block">On Enderman/Sheep/Silverfish/Falling Block</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] enderman place<br />[on] enderman pickup<br />[on] sheep eat[on] silverfish enter<br />[<strong>on</strong>] silverfish <strong>exit</strong><br />[on] falling block land[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td><em>unknown</em>, 2.5.2 (falling block)</td>
+</tr>
+</tbody>
+</table>
+<p>当方块状态被改变时调用。</p>
+<p>末影人搬运方块或放置方块时、羊吃草地时、蠹虫钻入或钻出方块时、方块坠落落地形成方块状态时（沙子、沙砾）</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on sheep eat</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">kill entity</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;A sheep stole some grass!&quot;</span><span class="w"></span>
+<span class="nt">on falling block land</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if event-entity is a falling dirt</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-entity-dismount">On Entity Dismount</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] dismount[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev13b</td>
+</tr>
+</tbody>
+</table>
+<p>当实体从马上下来时调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on dismount</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">kill event-entity</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-entity-mount">On Entity Mount</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] mount[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev13b</td>
+</tr>
+</tbody>
+</table>
+<p>当实体乘骑时调用</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on mount</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-entity-portal">On Entity Portal</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] entity portal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5.3</td>
+</tr>
+</tbody>
+</table>
+<p>当实体通过传送门时调用. 可以<a href="https://docs.skriptlang.org/effects.html#EffCancelEvent">取消事件</a>阻止实体传送。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on entity portal</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;A %type of event-entity% has entered a portal!</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-experience-spawn">On Experience Spawn</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [e]xp[erience] [orb] spawn[on] spawn of [a[n]] [e]xp[erience] [orb]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called whenever experience is about to spawn. This is a helper event for easily being able to stop xp from spawning, as all you can currently do is cancel the event. Please note that it's impossible to detect xp orbs spawned by plugins (including Skript) with Bukkit, thus make sure that you have no such plugins if you don't want any xp orbs to spawn. (Many plugins that only <em>change</em> the experience dropped by blocks or entities will be detected without problems though)</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on xp spawn</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">world is &quot;minigame_world&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-explode">On Explode</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>explo</strong>(d(e|ing)|sion)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an entity (a primed TNT or a creeper) explodes.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on explosion</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-explosion-prime">On Explosion Prime</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] explosion prime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an explosive is primed, i.e. an entity will explode shortly. Creepers can abort the explosion if the player gets too far away, while TNT will explode for sure after a short time.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on explosion prime</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-fade">On Fade</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] <strong>fad</strong>(e|ing) [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a>/<a href="https://docs.skriptlang.org/classes.html#blockdata"><strong>block</strong> <strong>datas</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0, 2.6 (BlockData support)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a block 'fades away', e.g. ice or snow melts.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on fade of snow or ice</span><span class="p">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on fade of snow[layers=2]</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-firework-explode">On Firework Explode</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [a] <strong>firework</strong> <strong>explo</strong>(d(e|ing)|sion) [colo[u]<strong>red</strong> %<a href="https://docs.skriptlang.org/classes.html#color"><strong>colors</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.4</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a firework explodes.</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">on firework explode</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on firework exploding colored red, light green and black</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on firework explosion coloured light green</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;A firework colored %colors% was exploded at %location%!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-first-join">On First Join</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] first (<strong>join</strong>|login)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.3.7</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player joins the server for the first time.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on first join</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;Welcome %player% to the server!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-fishing">On Fishing</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] fish[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player fishes something. This is not of much use yet.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on fish</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-flight-toggle">On Flight Toggle</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] <strong>flight</strong> <strong>toggl</strong>(e|ing)[on] [player] <strong>toggl</strong>(e|ing) <strong>flight</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev36</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a players stops/starts flying.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on flight toggle</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">if {game::%player%::playing} exists</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-flow">On Flow</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] flow[ing][on] block mov(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a blocks flows or teleports to another block. This not only applies to water and lava, but teleporting dragon eggs as well.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on block flow</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if event-block is water</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;Build more dams! It&#39;s starting to get wet in here&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-form">On Form</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] <strong>form</strong>[ing] [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype">item types</a>/<a href="https://docs.skriptlang.org/classes.html#blockdata">block datas</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0, 2.6 (BlockData support)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a block is created, but not by a player, e.g. snow forms due to snowfall, water freezes in cold biomes. This isn't called when block spreads (mushroom growth, water physics etc.), as it has its own event (see <a href="https://docs.skriptlang.org/events.html#spread">spread event</a>).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on form of snow</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on form of a mushroom</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-fuel-burn">On Fuel Burn</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] fuel burn[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a furnace burns an item from its <a href="https://docs.skriptlang.org/expressions.html#ExprFurnaceSlot">fuel slot</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on fuel burning</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-gamemode-change">On Gamemode Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] game[ ]mode change [to %<a href="https://docs.skriptlang.org/classes.html#gamemode">gamemode</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player's <a href="https://docs.skriptlang.org/classes.html#gamemode">gamemode</a> changes.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on gamemode change</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on gamemode change to adventure</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-gliding-state-change">On Gliding State Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (gliding state change|toggl(e|ing) gliding)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev21</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an entity toggles glider on or off, or when server toggles gliding state of an entity forcibly.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on toggling gliding</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel the event</span><span class="w"> </span><span class="c1"># bad idea, but you CAN do it!</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-grow">On Grow</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] grow [of (%<a href="https://docs.skriptlang.org/classes.html#structuretype">tree type</a>%|%<a href="https://docs.skriptlang.org/classes.html#itemtype">item type</a>%)]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0 (2.2-dev20 for plants)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a tree, giant mushroom or plant grows to next stage.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on grow</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on grow of a tree</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on grow of a huge jungle tree</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-hand-item-swap">On Hand Item Swap</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] swap[ping of] [(hand|held)] item[s]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.3</td>
+</tr>
+</tbody>
+</table>
+<p>Called whenever a player swaps the items in their main- and offhand slots. Works also when one or both of the slots are empty. The event is called before the items are actually swapped, so when you use the player's tool or player's offtool expressions, they will return the values before the swap - this enables you to cancel the event before anything happens.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on swap hand items</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">event-player&#39;s tool is a diamond sword</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-heal">On Heal</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] heal[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an entity is healed, e.g. by eating (players), being fed (pets), or by the effect of a potion of healing (overworld mobs) or harm (nether mobs).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on heal</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-horse-jump">On Horse Jump</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] horse jump</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5.1</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a horse jumps.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on horse jump</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">push event-entity upwards at speed 2</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-hunger-meter-change">On Hunger Meter Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (food|hunger) (level|met(er|re)|bar) <strong>chang</strong>(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.4.4</td>
+</tr>
+</tbody>
+</table>
+<p>Called when the hunger bar of a player changes, i.e. either increases by eating or decreases over time.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on food bar change</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-ignition">On Ignition</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] <strong>ignit</strong>(e|ion)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a block starts burning, i.e. a fire block is placed next to it and this block is flammable. The <a href="https://docs.skriptlang.org/events.html#burn">burn event</a> will be called when the block is about do be destroyed by the fire.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on block ignite</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if event-block is a ladder</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-inventory-click">On Inventory Click</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] <strong>inventory</strong>(-| )<strong>click</strong>[ing] [[at] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-Fixes-V10</td>
+</tr>
+</tbody>
+</table>
+<p>Called when clicking on inventory slot.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on inventory click</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if event-item is stone</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">give player 1 stone</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">remove 20$ from player&#39;s balance</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-inventory-close">On Inventory Close</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>inventory</strong> <strong>clos</strong>(ing|e[d])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev21</td>
+</tr>
+</tbody>
+</table>
+<p>Called when player's currently viewed inventory is closed.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on inventory close</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">if player&#39;s location is {location}</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">send &quot;You exited the shop!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-inventory-open">On Inventory Open</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] inventory open[ed]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev21</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an inventory is opened for player.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on inventory open</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">close player&#39;s inventory</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-inventory-pickup">On Inventory Pickup</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] inventory pick[ ]up</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5.1</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an inventory (a hopper, a hopper minecart, etc.) picks up an item</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on inventory pickup</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-item-break">On Item Break</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] tool break[ing][on] [player] break[ing] [(a|the)] tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.1.1</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player breaks their tool because its damage reached the maximum value. This event cannot be cancelled.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on tool break</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-item-damage">On Item Damage</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>item</strong> <strong>damag</strong>(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an item is damaged. Most tools are damaged by using them; armor is damaged when the wearer takes damage.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on item damage</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-item-despawn">On Item Despawn</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (item[ ][stack]|[item] %<a href="https://docs.skriptlang.org/classes.html#itemtype">item types</a>%) <strong>despawn</strong>[ing][on] [item[ ][stack]] despawn[ing] [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype">item types</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev35</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an item is about to be despawned from the world, usually 5 minutes after it was dropped.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on item despawn of diamond</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;Not my precious!&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-item-mend">On Item Mend</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] item mend[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5.1</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player has an item repaired via the Mending enchantment.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on item mend</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">chance of 50%</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cancel the event</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">send &quot;Oops! Mending failed!&quot; to player</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-item-merge">On Item Merge</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (item[ ][stack]|[item] %<a href="https://docs.skriptlang.org/classes.html#itemtype">item types</a>%) <strong>merg</strong>(e|ing)[on] <strong>item</strong>[ ][stack] <strong>merg</strong>(e|ing) [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev35</td>
+</tr>
+</tbody>
+</table>
+<p>Called when dropped items merge into a single stack. event-entity will be the entity which is trying to merge, and future event-entity will be the entity which is being merged into.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on item merge of gold blocks</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-item-spawn">On Item Spawn</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] item spawn[ing] [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype">item types</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td><em>unknown</em> (before 2.1)</td>
+</tr>
+</tbody>
+</table>
+<p>Called whenever an item stack is spawned in a world, e.g. as drop of a block or mob, a player throwing items out of their inventory, or a dispenser dispensing an item (not shooting it).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on item spawn of iron sword</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;Someone dropped an iron sword!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-join">On Join</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] (login|logging in|join[ing])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when the player joins the server. The player is already in a world when this event is called, so if you want to prevent players from joining you should prefer <a href="https://docs.skriptlang.org/events.html#connect">on connect</a> over this event.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on join</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">message &quot;Welcome on our awesome server!&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;%player% just joined the server!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-jump">On Jump</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] jump[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.3</td>
+</tr>
+</tbody>
+</table>
+<p>Called whenever a player jumps. This event requires PaperSpigot.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on jump</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">event-player does not have permission &quot;jump&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-kick">On Kick</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] (kick|being kicked)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player is kicked from the server. You can change the <a href="https://docs.skriptlang.org/expressions.html#ExprMessage">kick message</a> or <a href="https://docs.skriptlang.org/effects.html#EffCancelEvent">cancel the event</a> entirely.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on kick</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-language-change">On Language Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] (language|locale) <strong>chang</strong>(e|ing)[on] [player] <strong>chang</strong>(e|ing) (language|locale)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.3</td>
+</tr>
+</tbody>
+</table>
+<p>Called after a player changed their language in the game settings. You can use the <a href="https://docs.skriptlang.org/expressions.html#ExprLanguage">language</a> expression to get the current language of the player. This event requires Minecraft 1.12+.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on language change</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">if player&#39;s language starts with &quot;en&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">send &quot;Hello!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-leaves-decay">On Leaves Decay</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] leaves decay[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a leaf block decays due to not being connected to a tree.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on leaves decay</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-level-change">On Level Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] <strong>level</strong> (change|up|down)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0, 2.4 (level up/down)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player's <a href="https://docs.skriptlang.org/expressions.html#ExprLevel">level</a> changes, e.g. by gathering experience or by enchanting something.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on level change</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-lightning-strike">On Lightning Strike</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] lightning [strike]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when lightning strikes.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on lightning</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">spawn a zombie at location of event-entity</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-move">On Move</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] %<a href="https://docs.skriptlang.org/classes.html#entitydata"><strong>entity</strong> <strong>type</strong></a><strong>%</strong> (move|walk|step)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.6</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player or entity moves. NOTE: Move event will only be called when the entity/player moves position, not orientation (ie: looking around). NOTE: These events can be performance heavy as they are called quite often. If you use these events, and later remove them, a server restart is recommended to clear registered events from Skript.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on player move</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">if player does not have permission &quot;player.can.move&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+<span class="nt">on skeleton move</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">if event-entity is not in world &quot;world&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">kill event-entity</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-move-on">On Move On</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (step|walk)[ing] (on|over) %<em><a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a></em><em>%</em>*</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player moves onto a certain type of block. Please note that using this event can cause lag if there are many players online.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on walking on dirt or grass</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on stepping on stone</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-physics">On Physics</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] physics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.4.6</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a physics check is done on a block. By cancelling this event you can prevent some things from happening, e.g. sand falling, dirt turning into grass, torches dropping if their supporting block is destroyed, etc.Please note that using this event might cause quite some lag since it gets called extremely often.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># prevents sand from falling</span><span class="w"></span>
+<span class="nt">on block physics</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">block is sand</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-pick-up">On Pick Up</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [(player|entity)] (pick[ ]up|picking up) [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td><em>unknown</em> (before 2.1), 2.5 (entity)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player/entity picks up an item. Please note that the item is still on the ground when this event is called.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on pick up</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on entity pickup of wheat</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-pig-zap">On Pig Zap</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] pig[ ]zap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a pig is stroke by lightning and transformed into a zombie pigman. Cancel the event to prevent the transformation.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on pig zap</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-piston-extend">On Piston Extend</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] piston extend[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a piston is about to extend.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on piston extend</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;A piston is extending!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-piston-retract">On Piston Retract</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] piston retract[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a piston is about to retract.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on piston retract</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;A piston is retracting!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-place">On Place</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [block] (plac(e|ing)|build[ing]) [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a>/<a href="https://docs.skriptlang.org/classes.html#blockdata"><strong>block</strong> <strong>datas</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0, 2.6 (BlockData support)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player places a block.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on place</span><span class="p">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on place of a furnace, workbench or chest</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">on break of chest[type=right] or chest[type=left]</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-player-world-change">On Player World Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] <strong>world</strong> <strong>chang</strong>(ing|e[d])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev28</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player enters a world. Does not work with other entities!</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on player world change</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">world is &quot;city&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;Welcome to the City!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-portal">On Portal</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] portal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player uses a nether or end portal. <a href="https://docs.skriptlang.org/effects.html#EffCancelEvent">Cancel the event</a> to prevent the player from teleporting.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on player portal</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-portal-create">On Portal Create</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>portal</strong> <strong>creat</strong>(e|ion)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0, 2.5.3 (event-entity support)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a portal is created, either by a player or mob lighting an obsidian frame on fire, or by a nether portal creating its teleportation target in the nether/overworld. In Minecraft 1.14+, you can use <a href="https://docs.skriptlang.org/expressions.html#ExprEntity">the player</a> in this event. Please note that there may not always be a player (or other entity) in this event.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on portal create</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-portal-enter">On Portal Enter</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] portal enter[ing][on] entering [a] portal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an entity enters a nether portal or an end portal. Please note that this event will be fired many times for a nether portal.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on portal enter</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-prepare-craft">On Prepare Craft</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] (preparing|beginning) <strong>craft</strong>[ing] [[of] %<a href="https://docs.skriptlang.org/classes.html#itemtype"><strong>item</strong> <strong>types</strong></a><strong>%</strong>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-Fixes-V10</td>
+</tr>
+</tbody>
+</table>
+<p>Called just before displaying crafting result to player. Note that setting the result item might or might not work due to Bukkit bugs.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on preparing craft of torch</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-pressure-plate-trip">On Pressure Plate / Trip</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [step[ping] on] [a] [pressure] plate[<strong>on</strong>] (trip|[<strong>step</strong>[ping] <strong>on</strong>] [a] tripwire)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0 (pressure plate), 1.4.4 (tripwire)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a <em>player</em> steps on a pressure plate or tripwire respectively.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on step on pressure plate</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-projectile-collide">On Projectile Collide</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] projectile collide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a projectile collides with an entity.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on projectile collide</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">teleport shooter of event-projectile to event-entity</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-projectile-hit">On Projectile Hit</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] projectile hit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a projectile hits an entity or a block. Use the <a href="https://docs.skriptlang.org/events.html#damage">damage event</a> with a <a href="https://docs.skriptlang.org/conditions.html#CondIsSet">check</a> for a <a href="https://docs.skriptlang.org/expressions.html#ExprEntity">projectile</a> to be able to use the <a href="https://docs.skriptlang.org/expressions.html#ExprAttacked">entity that got hit</a> in the case when the projectile hit a living entity. A damage event will even be fired if the damage is 0, e.g. when throwing snowballs at non-nether mobs.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on projectile hit</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">event-projectile is arrow</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">delete event-projectile</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-quit">On Quit</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (quit[ting]|disconnect[ing]|log[ ]<strong>out</strong>|logging <strong>out</strong>|leav(e|ing))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0 (simple disconnection)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player leaves the server.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on quit</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on disconnect</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-redstone">On Redstone</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] redstone [current] [chang(e|ing)]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when the redstone current of a block changes. This event is of not much use yet.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on redstone change</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;someone is using redstone&quot; to console</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-region-enter-leave">On Region Enter / Leave</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (enter[ing]|leav(e|ing)|exit[ing]) [of] ([a] region|[[the] region] %<a href="https://docs.skriptlang.org/classes.html#region">regions</a>%)[on] <strong>region</strong> (enter[ing]|leav(e|ing)|exit[ing])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.1</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player enters or leaves a <a href="https://docs.skriptlang.org/classes.html#region">region</a>. This event requires a supported regions plugin to be installed.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on region exit</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">message &quot;Leaving %region%.&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-resource-pack-request-response">On Resource Pack Request Response</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] resource pack [request] response[on] resource <strong>pack</strong> [request] %<a href="https://docs.skriptlang.org/classes.html#resourcepackstate">resource <strong>pack</strong> states</a>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.4</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player takes action on a resource pack request sent via the <a href="https://docs.skriptlang.org/effects.html#EffSendResourcePack">send resource pack</a> effect. The <a href="https://docs.skriptlang.org/conditions.html#CondResourcePack">resource pack</a> condition can be used to check the resource pack state.</p>
+<p>This event will be triggered once when the player accepts or declines the resource pack request, and once when the resource pack is successfully installed or failed to download.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on resource pack request response</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if the resource pack was declined or failed to download</span><span class="p">:</span><span class="w"></span>
+
+<span class="nt">on resource pack deny</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">kick the player due to &quot;You have to install the resource pack to play in this server!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-respawn">On Respawn</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] respawn[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player respawns. You should prefer this event over the <a href="https://docs.skriptlang.org/events.html#death">death event</a> as the player is technically alive when this event is called.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on respawn</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-resurrct-attempt">On Resurrct Attempt</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [entity] resurrect[ion] [attempt]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev28</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an entity dies, always. If they are not holding a totem, this is cancelled - you can, however, uncancel it.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on resurrect attempt</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">entity is player</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">entity has permission &quot;admin.undying&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">uncancel the event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-riptide">On Riptide</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [use of] riptide [enchant[ment]]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p>Called when the player activates the riptide enchantment, using their trident to propel them through the air. Note: the riptide action is performed client side, so manipulating the player in this event may have undesired effects.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on riptide</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;You are riptiding!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-script-load-unload">On Script Load / Unload</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [(async)] [script] (load|init|enable)[on] [(async)] [script] (unload|stop|disable)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called directly after the trigger is loaded, or directly before the whole script is unloaded. The keyword 'async' indicates the trigger can be ran asynchronously,</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on load</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">set {running::%script%} to true</span><span class="w"></span>
+<span class="nt">on unload</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">set {running::%script%} to false</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-server-list-ping">On Server List Ping</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] server [list] ping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.3</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a server list ping is coming in, generally when a Minecraft client pings the server to show its information in the server list. The <a href="https://docs.skriptlang.org/expressions.html#ExprIP">IP</a> expression can be used to get the IP adress of the pinger. This event can be cancelled on PaperSpigot 1.12.2+ only and this means the player will see the server as offline (but still can join).</p>
+<p>Also you can use <a href="https://docs.skriptlang.org/expressions.html#ExprMOTD">MOTD</a>, <a href="https://docs.skriptlang.org/expressions.html#ExprMaxPlayers">Max Players</a>, <a href="https://docs.skriptlang.org/expressions.html#ExprOnlinePlayersCount">Online Players Count</a>, <a href="https://docs.skriptlang.org/expressions.html#ExprProtocolVersion">Protocol Version</a>, <a href="https://docs.skriptlang.org/expressions.html#ExprVersionString">Version String</a>, <a href="https://docs.skriptlang.org/expressions.html#ExprHoverList">Hover List</a> and <a href="https://docs.skriptlang.org/expressions.html#ExprServerIcon">Server Icon</a> expressions, and <a href="https://docs.skriptlang.org/effects.html#EffPlayerInfoVisibility">Player Info Visibility</a> and <a href="https://docs.skriptlang.org/effects.html#EffHidePlayerFromServerList">Hide Player from Server List</a> effects to modify the server list.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on server list ping</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">set the motd to &quot;Welcome %{player-by-IP::%ip%}%! Join now!&quot; if {player-by-IP::%ip%} is set, else &quot;Join now!&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">set the fake max players count to (online players count + 1)</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">set the shown icon to a random server icon out of {server-icons::*}</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-server-start-stop">On Server Start / Stop</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] (server|skript) (start|load|enable)[on] (server|skript) (stop|unload|disable)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when the server starts or stops (actually, when Skript starts or stops, so a /reload will trigger these events as well).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on skript start</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on server stop</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-sheep-regrow-wool">On Sheep Regrow Wool</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] sheep [re]grow[ing] wool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev21</td>
+</tr>
+</tbody>
+</table>
+<p>Called when sheep regrows its sheared wool back.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on sheep grow wool</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-shoot">On Shoot</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [projectile] shoot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called whenever a <a href="https://docs.skriptlang.org/classes.html#projectile">projectile</a> is shot. Use the <a href="https://docs.skriptlang.org/expressions.html#ExprShooter">shooter expression</a> to get who shot the projectile.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on shoot</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if projectile is an arrow</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">send &quot;you shot an arrow!&quot; to shooter</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-sign-change">On Sign Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>sign</strong> (chang[e]|edit)[ing][on] [player] (chang[e]|edit)[ing] [a] <strong>sign</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>As signs are placed empty, this event is called when a player is done editing a sign.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on sign change</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">line 2 is empty</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">set line 1 to &quot;&lt;red&gt;%line 1%&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-slime-split">On Slime Split</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] slime split[ting]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev26</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a slime splits. Usually this happens when a big slime dies.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on slime split</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-smelt">On Smelt</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [ore] smelt[ing][on] smelt[ing] of ore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a furnace smelts an item in its <a href="https://docs.skriptlang.org/expressions.html#ExprFurnaceSlot">ore slot</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on smelt</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-sneak-toggle">On Sneak Toggle</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] <strong>toggl</strong>(e|ing) <strong>sneak</strong>[on] [player] <strong>sneak</strong> <strong>toggl</strong>(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player starts or stops sneaking. Use <a href="https://docs.skriptlang.org/conditions.html#CondIsSneaking">is sneaking</a> to get whether the player was sneaking before the event was called.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># make players that stop sneaking jump</span><span class="w"></span>
+<span class="nt">on sneak toggle</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">player is sneaking</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">push the player upwards at speed 0.5</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-spawn">On Spawn</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] spawn[ing] [of %<a href="https://docs.skriptlang.org/classes.html#entitydata">entity types</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0, 2.5.1 (non-living entities)</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an entity spawns (excluding players).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on spawn of a zombie</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on spawn of an ender dragon</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;A dragon has been sighted in %world%!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-spawn-change">On Spawn Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [world] spawn change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when the spawn point of a world changes.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on spawn change</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;someone changed the spawn!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-sponge-absorb">On Sponge Absorb</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] sponge absorb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a sponge absorbs blocks.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on sponge absorb</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">loop absorbed blocks</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;%loop-block% was absorbed by a sponge&quot;!</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-spread">On Spread</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] spread[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a new block <a href="https://docs.skriptlang.org/events.html#form">forms</a> as a result of a block that can spread, e.g. water or mushrooms.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on spread</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-sprint-toggle">On Sprint Toggle</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] <strong>toggl</strong>(e|ing) <strong>sprint</strong><br />[on] [player] <strong>sprint</strong> <strong>toggl</strong>(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player starts or stops sprinting. Use <a href="https://docs.skriptlang.org/conditions.html#CondIsSprinting">is sprinting</a> to get whether the player was sprinting before the event was called.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on sprint toggle</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">player is not sprinting</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;Run!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-swim-toggle">On Swim Toggle</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [entity] <strong>toggl</strong>(e|ing) <strong>swim</strong><br />[on] [entity] <strong>swim</strong> <strong>toggl</strong>(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.3</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an entity swims or stops swimming.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on swim toggle</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">event-entity does not have permission &quot;swim&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-tame">On Tame</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [entity] <strong>tam</strong>(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player tames a wolf or ocelot. Can be cancelled to prevent the entity from being tamed.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on tame</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-target">On Target</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [entity] target[on] [entity] un[-]target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a mob starts/stops following/attacking another entity, usually a player.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on entity target</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">target is a player</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-teleport">On Teleport</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] [player] teleport[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called whenever a player is teleported, either by a nether/end portal or other means (e.g. by plugins).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on teleport</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-throwing-of-an-egg">On Throwing of an Egg</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] throw[ing] [of] [an] egg<br />[on] [player] egg <strong>throw</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a player throws an egg. You can just use the <a href="https://docs.skriptlang.org/events.html#shoot">shoot event</a> in most cases, as this event is intended to support changing the hatched mob and its chance to hatch, but Skript does not yet support that.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on throw of an egg</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-tool-change">On Tool Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[<strong>on</strong>] [player['s]] (tool|item held|held item) chang(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called whenever a player changes their held item by selecting a different slot (e.g. the keys 1-9 or the mouse wheel), <em>not</em> by dropping or replacing the item in the current slot.</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">on player&#39;s held item change</span><span class="p p-Indicator">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-vehicle-create">On Vehicle Create</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] vehicle create[on] <strong>creat</strong>(e|ing|ion of) [a] <strong>vehicle</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a new vehicle is created, e.g. when a player places a boat or minecart.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on vehicle create</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-vehicle-damage">On Vehicle Damage</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] vehicle damage[on] <strong>damag</strong>(e|ing) [a] <strong>vehicle</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a vehicle gets damage. Too much damage will <a href="https://docs.skriptlang.org/events.html#vehicle_destroy">destroy</a> the vehicle.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on vehicle damage</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-vehicle-destroy">On Vehicle Destroy</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] vehicle destroy[on] <strong>destr</strong>(oy[ing]|uction of) [a] <strong>vehicle</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a vehicle is destroyed. Any <a href="https://docs.skriptlang.org/expressions.html#ExprPassenger">passenger</a> will be ejected and the vehicle might drop some item(s).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on vehicle destroy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-vehicle-enter">On Vehicle Enter</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] vehicle enter[on] enter[ing] [a] vehicle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an <a href="https://docs.skriptlang.org/classes.html#entity">entity</a> enters a vehicle, either deliberately (players) or by falling into them (mobs).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on vehicle enter</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">entity is a player</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-vehicle-exit">On Vehicle Exit</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[<strong>on</strong>] vehicle <strong>exit</strong>[on] exit[ing] [a] vehicle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when an entity exits a vehicle.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on vehicle exit</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if event-entity is a spider</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">kill event-entity</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-weather-change">On Weather Change</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] weather change [to %<a href="https://docs.skriptlang.org/classes.html#weathertype">weather types</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a world's weather changes.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on weather change</span><span class="p">:</span><span class="w"></span>
+<span class="nt">on weather change to sunny</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-world-init">On World Init</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] world <strong>init</strong>[ialization]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a world is initialised. As all default worlds are initialised before any scripts are loaded, this event is only called for newly created worlds. World management plugins might change the behaviour of this event though.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on world init</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-world-load">On World Load</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] world load[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a world is loaded. As with the world init event, this event will not be called for the server's default world(s).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on world load</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;World is loading...&quot; to console</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-world-save">On World Save</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] <strong>world</strong> <strong>sav</strong>(e|ing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a world is saved to disk. Usually all worlds are saved simultaneously, but world management plugins could change this.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on world saving</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;World has been saved!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-world-unload">On World Unload</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] world unload[ing]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a world is unloaded. This event might never be called if you don't have a world management plugin.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on world unload</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="on-zombie-break-door">On Zombie Break Door</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>[on] zombie break[ing] [a] [wood[en]] door</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Called when a zombie is done breaking a wooden door. Can be cancelled to prevent the zombie from breaking the door.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on zombie breaking a wood door</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="periodical">Periodical</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>every %<a href="https://docs.skriptlang.org/classes.html#timespan"><strong>time</strong> <strong>span</strong></a>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>An event that is called periodically.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">every 2 seconds</span><span class="p">:</span><span class="w"></span>
+<span class="nt">every minecraft hour</span><span class="p">:</span><span class="w"></span>
+<span class="nt">every tick</span><span class="p">:</span><span class="w"> </span><span class="c1"># can cause lag depending on the code inside the event</span><span class="w"></span>
+<span class="nt">every minecraft days</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="periodical_1">Periodical</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>every %<a href="https://docs.skriptlang.org/classes.html#timespan"><strong>time</strong> <strong>span</strong></a>% in [world[s]] %<a href="https://docs.skriptlang.org/classes.html#world">worlds</a>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>An event that is called periodically.</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">every 2 seconds in &quot;world&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">every minecraft hour in &quot;flatworld&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">every tick in &quot;world&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="c1"># can cause lag depending on the code inside the event</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">every minecraft days in &quot;plots&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+</code></pre></div>
+<hr />
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+    
+  </body>
+</html>
