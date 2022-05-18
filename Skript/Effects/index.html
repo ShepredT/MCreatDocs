@@ -1,0 +1,534 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Effects - MCreat Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=微软雅黑:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"微软雅黑";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#effects" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="MCreat Docs" class="md-header__button md-logo" aria-label="MCreat Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MCreat Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Effects
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MCreat Docs" class="md-nav__button md-logo" aria-label="MCreat Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MCreat Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#action-bar" class="md-nav__link">
+    Action Bar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ban" class="md-nav__link">
+    Ban
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-block" class="md-nav__link">
+    Break Block
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast" class="md-nav__link">
+    Broadcast
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancel-command-cooldown" class="md-nav__link">
+    Cancel Command Cooldown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancel-drops" class="md-nav__link">
+    Cancel Drops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancel-event" class="md-nav__link">
+    Cancel Event
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-setaddremovedeletereset" class="md-nav__link">
+    Change: Set/Add/Remove/Delete/Reset
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="effects">Effects</h1>
+<h2 id="action-bar">Action Bar</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>send [the] action bar [<strong>with</strong> <strong>text</strong>] %<a href="https://docs.skriptlang.org/classes.html#string"><strong>text</strong></a>% <strong>to</strong> %<a href="https://docs.skriptlang.org/classes.html#player">players</a>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.3</td>
+</tr>
+</tbody>
+</table>
+<p>Sends an action bar message to the given player(s).</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">send action bar &quot;Hello player!&quot; to player</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="ban">Ban</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>ban %<a href="https://docs.skriptlang.org/classes.html#string">texts</a>/<a href="https://docs.skriptlang.org/classes.html#offlineplayer">offline players</a>% [(<strong>by</strong> reason <strong>of</strong>|because [<strong>of</strong>]|<strong>on</strong> account <strong>of</strong>|due <strong>to</strong>) %<a href="https://docs.skriptlang.org/classes.html#string"><strong>text</strong></a>%] [<strong>for</strong> %<a href="https://docs.skriptlang.org/classes.html#timespan">time span</a>%]<strong>unban</strong> %<a href="https://docs.skriptlang.org/classes.html#string">texts</a>/<a href="https://docs.skriptlang.org/classes.html#offlineplayer">offline players</a>%ban %<a href="https://docs.skriptlang.org/classes.html#player">players</a>% <strong>by</strong> IP [(<strong>by</strong> reason <strong>of</strong>|because [<strong>of</strong>]|<strong>on</strong> account <strong>of</strong>|due <strong>to</strong>) %<a href="https://docs.skriptlang.org/classes.html#string"><strong>text</strong></a>%] [<strong>for</strong> %<a href="https://docs.skriptlang.org/classes.html#timespan">time span</a>%]unban %<a href="https://docs.skriptlang.org/classes.html#player">players</a>% <strong>by</strong> IPIP(-| )ban %<a href="https://docs.skriptlang.org/classes.html#player">players</a>% [(<strong>by</strong> reason <strong>of</strong>|because [<strong>of</strong>]|<strong>on</strong> account <strong>of</strong>|due <strong>to</strong>) %<a href="https://docs.skriptlang.org/classes.html#string"><strong>text</strong></a>%] <a href="IP(-| )unban|un[-]IP[-]ban"><strong>for</strong> %<a href="https://docs.skriptlang.org/classes.html#timespan">time span</a>%</a> %<a href="https://docs.skriptlang.org/classes.html#player">players</a>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.4, 2.1.1 (ban reason), 2.5 (timespan)</td>
+</tr>
+</tbody>
+</table>
+<p>Bans or unbans a player or an IP address. If a reason is given, it will be shown to the player when they try to join the server while banned. A length of ban may also be given to apply a temporary ban. If it is absent for any reason, a permanent ban will be used instead. We recommend that you test your scripts so that no accidental permanent bans are applied.</p>
+<p>Note that banning people does not kick them from the server. Consider using the <a href="https://docs.skriptlang.org/effects.html#EffKick">kick effect</a> after applying a ban.</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">unban player</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">ban &quot;127.0.0.1&quot;</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">IP-ban the player because &quot;he is an idiot&quot;</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">ban player due to &quot;inappropriate language&quot; for 2 days</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="break-block">Break Block</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th><strong>break</strong> %<a href="https://docs.skriptlang.org/classes.html#block">blocks</a>% [naturally] [using %<a href="https://docs.skriptlang.org/classes.html#itemtype">item type</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.4</td>
+</tr>
+</tbody>
+</table>
+<p>Breaks the block and spawns items as if a player had mined it</p>
+<p>You can add a tool, which will spawn items based on how that tool would break the block (ie: When using a hand to break stone, it drops nothing, whereas with a pickaxe it drops cobblestone)</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on right click</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">break clicked block naturally</span><span class="w"></span>
+<span class="nt">loop blocks in radius 10 around player</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">break loop-block using player&#39;s tool</span><span class="w"></span>
+<span class="nt">loop blocks in radius 10 around player</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">break loop-block naturally using diamond pickaxe</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="broadcast">Broadcast</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>broadcast %<a href="https://docs.skriptlang.org/classes.html#object">objects</a>% [(to|<strong>in</strong>) %<a href="https://docs.skriptlang.org/classes.html#world">worlds</a>%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0, 2.6 (broadcasting objects), 2.6.1 (using advanced formatting)</td>
+</tr>
+</tbody>
+</table>
+<p>Broadcasts a message to the server.</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;Welcome %player% to the server!&quot;</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">broadcast &quot;Woah! It&#39;s a message!&quot;</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="cancel-command-cooldown">Cancel Command Cooldown</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>(cancel|ignore) [the] [current] [command] cooldown<strong>un</strong>(cancel|ignore) [the] [current] [command] <strong>cooldown</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.2-dev34</td>
+</tr>
+</tbody>
+</table>
+<p>Only usable in commands. Makes it so the current command usage isn't counted towards the cooldown.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">command /nick &lt;text&gt;</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">executable by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">players</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cooldown</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10 seconds</span><span class="w"></span>
+<span class="w">    </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">if length of arg-1 is more than 16</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="c1"># Makes it so that invalid arguments don&#39;t make you wait for the cooldown again</span><span class="w"></span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">cancel the cooldown</span><span class="w"></span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">send &quot;Your nickname may be at most 16 characters.&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">stop</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">set the player&#39;s display name to arg-1</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="cancel-drops">Cancel Drops</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>(cancel|clear|delete) [the] drops <a href="cancel|clear|delete">of (items|[e]xp[erience][s])</a> [the] (item|[e]xp[erience]) drops</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>Usable in events:</td>
+<td><a href="https://docs.skriptlang.org/events.html#death">death</a>, <a href="https://docs.skriptlang.org/events.html#break_/_mine">break / mine</a></td>
+</tr>
+<tr>
+<td>Requirements:</td>
+<td>1.12.2 or newer (cancelling item drops of blocks)</td>
+</tr>
+</tbody>
+</table>
+<p>Cancels drops of items or experiences in a death or block break event. Please note that this doesn't keep items or experiences of a dead player. If you want to do that, use the <a href="https://docs.skriptlang.org/effects.html#EffKeepInventory">Keep Inventory / Experience</a> effect.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on death of a zombie</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">if name of the entity is &quot;&amp;cSpecial&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cancel drops of items</span><span class="w"></span>
+
+<span class="nt">on break of a coal ore</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel the experience drops</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="cancel-event">Cancel Event</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>cancel [the] <strong>event</strong>uncancel [the] <strong>event</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Cancels the event (e.g. prevent blocks from being placed, or damage being taken).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on damage</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">victim is a player</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">victim has the permission &quot;skript.god&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel the event</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="change-setaddremovedeletereset">Change: Set/Add/Remove/Delete/Reset</h2>
+<table>
+<thead>
+<tr>
+<th>Patterns:</th>
+<th>(add|give) %<a href="https://docs.skriptlang.org/classes.html#object">objects</a>% to %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%increase %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>% by %<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%give %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>% %<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%set %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>% to %<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%remove (all|every) %<a href="https://docs.skriptlang.org/classes.html#object">objects</a>% from %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%(<strong>remove</strong>|subtract) %<a href="https://docs.skriptlang.org/classes.html#object">objects</a>% <strong>from</strong> %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%reduce %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>% by %<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%(<strong>delete</strong>|clear) %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%<strong>reset</strong> %~<a href="https://docs.skriptlang.org/classes.html#object">objects</a>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Since:</td>
+<td>1.0 (set, add, remove, delete), 2.0 (remove all)</td>
+</tr>
+</tbody>
+</table>
+<p>A very general effect that can change many <a href="https://docs.skriptlang.org/expressions">expressions</a>. Many expressions can only be set and/or deleted, while some can have things added to or removed from them.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># set:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">Set the player&#39;s display name to &quot;&lt;red&gt;%name of player%&quot;</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">set the block above the victim to lava</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># add</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">add 2 to the player&#39;s health</span><span class="w"> </span><span class="c1"># preferably use &#39;heal&#39; for this</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">add argument to {blacklist::*}</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">give a diamond pickaxe of efficiency 5 to the player</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">increase the data value of the clicked block by 1</span><span class="w"></span>
+<span class="c1"># remove:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">remove 2 pickaxes from the victim</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">subtract 2.5 from {points::%uuid of player%}</span><span class="w"></span>
+<span class="c1"># remove all:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">remove every iron tool from the player</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">remove all minecarts from {entitylist::*}</span><span class="w"></span>
+<span class="c1"># delete:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">delete the block below the player</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">clear drops</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">delete {variable}</span><span class="w"></span>
+<span class="c1"># reset:</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">reset walk speed of player</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">reset chunk at the targeted block</span><span class="w"></span>
+</code></pre></div>
+<hr />
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+    
+  </body>
+</html>
