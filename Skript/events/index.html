@@ -1313,10 +1313,14 @@
 </tr>
 </tbody>
 </table>
-<p>当玩家盔甲改动的时候调用</p>
+<p>当玩家更换盔甲时调用</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on armor change</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;You equipped %event-item%!&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;You equipped %event-item%!&quot;</span><span class="w"></span>
 </code></pre></div>
+<div class="admonition missing">
+<p class="admonition-title">Missing</p>
+<p>经测试无效果</p>
+</div>
 <hr />
 <h2 id="on-bed-enter">On Bed Enter</h2>
 <table>
@@ -1416,7 +1420,8 @@
 </tbody>
 </table>
 <p>当作物生长时调用.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">on crop growth</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">on crop growing</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;plant=植物|crop=作物|block=方块|grow拥有两种模式 -&gt; growth 或 gorwing&quot;</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <h2 id="on-book-edit">On Book Edit</h2>
@@ -1436,6 +1441,7 @@
 </table>
 <p>当编辑一本书的时候调用</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on book edit</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;编辑书并点击完成时调用，如果未改动书中内容并点击完成是不调用的&quot;</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <h2 id="on-book-sign"><strong>On Book Sign</strong></h2>
@@ -1455,6 +1461,7 @@
 </table>
 <p>当玩家署名一本书调用</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on book sign</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;已署名一本书调用(On Book Sign)&quot;</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <h2 id="on-breakmine">On Break/Mine</h2>
@@ -1473,11 +1480,28 @@
 </tbody>
 </table>
 <p>当方块被玩家摧毁时调用。如果使用 'Mine' , 只有破坏方块掉落事件才会调用。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">on mine</span><span class="p">:</span><span class="w"></span>
-<span class="nt">on break of stone</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">#---------------------------------------------#</span><span class="w"></span>
+<span class="c1"># 第一种形式：未指定方块类型</span><span class="w"></span>
+<span class="c1"># 特性一：当挖掘等级不符合则不调用，挖掘等级高于自身的方块时也不掉落</span><span class="w"></span>
+<span class="c1"># 特性二：破坏完成之后调用。有一个先后顺序</span><span class="w"></span>
+<span class="nt">on mine</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;[on mine] 被调用&quot;</span><span class="w"></span>
+<span class="c1">#---------------------------------------------#</span><span class="w"></span>
+<span class="c1"># 第二种形式：指定方块类型</span><span class="w"></span>
 <span class="nt">on mine of any ore</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;[on mine of any ore] 被调用&quot;</span><span class="w"></span>
+<span class="c1">#---------------------------------------------#</span><span class="w"></span>
+<span class="c1"># 破坏 指定物品时才掉落 这里案例用的是 stone</span><span class="w"></span>
+<span class="nt">on break of stone</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;我破坏了 %item%&quot;</span><span class="w"></span>
+<span class="c1">#---------------------------------------------#</span><span class="w"></span>
+<span class="c1"># 该定义了破坏箱子时,需要指定朝向</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">on break of chest[facing=north]</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;箱子被破坏&quot;</span><span class="w"></span>
+<span class="c1">#---------------------------------------------#</span><span class="w"></span>
+<span class="c1"># 该定义了破坏作物方块时，可指定作物的成熟度</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">on break of potatoes[age=7]</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;作物被破坏&quot;</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <h2 id="on-bucket-empty">On Bucket Empty</h2>
@@ -1495,8 +1519,9 @@
 </tr>
 </tbody>
 </table>
-<p>当清空水桶时调用. 可以使用 <a href="https://docs.skriptlang.org/events.html#place">place event</a> 来判定是水或者岩浆.</p>
+<p>当清空水桶时调用. 可以使用 <a href="#On Place">放置事件</a> 来判定是水或者岩浆.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on bucket empty</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;&amp;a案例：&amp;7[&amp;bOn Bucket Empty&amp;7] &amp;a成功调用！&quot;</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <h2 id="on-bucket-fill">On Bucket fill</h2>
@@ -1516,6 +1541,7 @@
 </table>
 <p>当玩家的桶中有液体时调用</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on player filling a bucket</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;&amp;a案例：&amp;7[&amp;bOn Bucket fill&amp;7] &amp;a成功调用！&quot;</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <h2 id="on-burn">On Burn</h2>
@@ -1534,8 +1560,14 @@
 </tbody>
 </table>
 <p>当方块被烧毁时调用</p>
-<div class="highlight"><pre><span></span><code><span class="nt">on burn</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 方块被点燃时并不会调用，而是方块被烧毁之后才调用！</span><span class="w"></span>
+<span class="c1"># 注意顺序问题</span><span class="w"></span>
+<span class="nt">on burn</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;&amp;a案例：&amp;7[&amp;bOn Burn&amp;7] &amp;a成功调用！&quot;</span><span class="w"></span>
+<span class="c1"># 可以指定多个物品类型 wood = 木头 ， fences = 栅栏 ， chests = 箱子</span><span class="w"></span>
+<span class="c1"># 测试无效</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">on burn of wood, fences, or chests</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;&amp;a案例：&amp;7[&amp;bOn Burn&amp;7] &amp;a成功调用！&quot;</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">on burn of oak_log[axis=y]</span><span class="p p-Indicator">:</span><span class="w"></span>
 </code></pre></div>
 <hr />
@@ -1850,9 +1882,9 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a dispenser dispenses an item.</p>
+<p>当发射器发射容器内物品时调用</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on dispense of iron block</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">send &quot;that&#39;d be 19.99 please!&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;&amp;7[&amp;bOn Dispense&amp;7] &amp;a被调用&quot;</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <h2 id="on-drop">On Drop</h2>
@@ -1870,8 +1902,9 @@
 </tr>
 </tbody>
 </table>
-<p>当玩家从他们的物品栏背包中丢弃物品时调用</p>
+<p>当玩家从他们的物品背包栏中丢弃物品时调用</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on drop</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;&amp;7[&amp;bOn Drop&amp;7] &amp;a被调用&quot;</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <h2 id="on-enchant">On Enchant</h2>
@@ -2016,7 +2049,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called whenever experience is about to spawn. This is a helper event for easily being able to stop xp from spawning, as all you can currently do is cancel the event. Please note that it's impossible to detect xp orbs spawned by plugins (including Skript) with Bukkit, thus make sure that you have no such plugins if you don't want any xp orbs to spawn. (Many plugins that only <em>change</em> the experience dropped by blocks or entities will be detected without problems though)</p>
+<p>当经验即将生成时调用.可以通过该事件取消经验生成. Please note that it's impossible to detect xp orbs spawned by plugins (including Skript) with Bukkit, thus make sure that you have no such plugins if you don't want any xp orbs to spawn. (Many plugins that only <em>change</em> the experience dropped by blocks or entities will be detected without problems though)</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on xp spawn</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">world is &quot;minigame_world&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
@@ -2037,7 +2070,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when an entity (a primed TNT or a creeper) explodes.</p>
+<p>当爆炸事件发生时调用(包含了TNT爆炸或苦力怕的爆炸).</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on explosion</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
 <hr />
@@ -2056,7 +2089,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when an explosive is primed, i.e. an entity will explode shortly. Creepers can abort the explosion if the player gets too far away, while TNT will explode for sure after a short time.</p>
+<p>当TNT被点燃或苦力怕距离很近即将爆炸时调用。苦力怕则可以远离它而中止该事件被调用。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on explosion prime</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
 <hr />
@@ -2075,7 +2108,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a block 'fades away', e.g. ice or snow melts.</p>
+<p>当方块即将消失时调用（雪或冰）</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on fade of snow or ice</span><span class="p">:</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">on fade of snow[layers=2]</span><span class="w"></span>
 </code></pre></div>
@@ -2095,7 +2128,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a firework explodes.</p>
+<p>当发射烟花并爆炸时调用.</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">on firework explode</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">on firework exploding colored red, light green and black</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">on firework explosion coloured light green</span><span class="p p-Indicator">:</span><span class="w"></span>
@@ -2117,7 +2150,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a player joins the server for the first time.</p>
+<p>当玩家首次登录时调用。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on first join</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;Welcome %player% to the server!&quot;</span><span class="w"></span>
 </code></pre></div>
@@ -2137,7 +2170,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a player fishes something. This is not of much use yet.</p>
+<p>当玩家钓鱼时调用，然而并没有什么大的用处。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on fish</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
 <hr />
@@ -2156,7 +2189,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a players stops/starts flying.</p>
+<p>当玩家开始或停止飞行时调用。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on flight toggle</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">if {game::%player%::playing} exists</span><span class="p p-Indicator">:</span><span class="w"></span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
@@ -2177,7 +2210,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a blocks flows or teleports to another block. This not only applies to water and lava, but teleporting dragon eggs as well.</p>
+<p>当水或岩浆（龙蛋）流动（传送）到其他方块时调用。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on block flow</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">if event-block is water</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">broadcast &quot;Build more dams! It&#39;s starting to get wet in here&quot;</span><span class="w"></span>
@@ -2198,7 +2231,8 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a block is created, but not by a player, e.g. snow forms due to snowfall, water freezes in cold biomes. This isn't called when block spreads (mushroom growth, water physics etc.), as it has its own event (see <a href="https://docs.skriptlang.org/events.html#spread">spread event</a>).</p>
+<p>当非玩家创建方块时调用</p>
+<p>例如：下雪而被雪覆盖的情况以及水结成冰又或则方块的扩散。该事件并非传播事件(参见 <a href="#On Spread">传播事件</a>).</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on form of snow</span><span class="p">:</span><span class="w"></span>
 <span class="nt">on form of a mushroom</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
@@ -2218,7 +2252,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a furnace burns an item from its <a href="https://docs.skriptlang.org/expressions.html#ExprFurnaceSlot">fuel slot</a>.</p>
+<p>当熔炉使用 <a href="https://docs.skriptlang.org/expressions.html#ExprFurnaceSlot">燃料槽</a> 中的物品时调用</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on fuel burning</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
 <hr />
@@ -2237,7 +2271,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a player's <a href="https://docs.skriptlang.org/classes.html#gamemode">gamemode</a> changes.</p>
+<p>当玩家修改其 <a href="https://docs.skriptlang.org/classes.html#gamemode">游戏模式</a> 时调用。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on gamemode change</span><span class="p">:</span><span class="w"></span>
 <span class="nt">on gamemode change to adventure</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
@@ -2257,7 +2291,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when an entity toggles glider on or off, or when server toggles gliding state of an entity forcibly.</p>
+<p>当实体开启或关闭鞘翅滑翔时调用,或服务器强行切换实体的滑翔状态时调用.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on toggling gliding</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel the event</span><span class="w"> </span><span class="c1"># bad idea, but you CAN do it!</span><span class="w"></span>
 </code></pre></div>
@@ -2277,7 +2311,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when a tree, giant mushroom or plant grows to next stage.</p>
+<p>当 [树|蘑菇|植物] 长到下一个阶段时调用.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on grow</span><span class="p">:</span><span class="w"></span>
 <span class="nt">on grow of a tree</span><span class="p">:</span><span class="w"></span>
 <span class="nt">on grow of a huge jungle tree</span><span class="p">:</span><span class="w"></span>
@@ -2298,7 +2332,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called whenever a player swaps the items in their main- and offhand slots. Works also when one or both of the slots are empty. The event is called before the items are actually swapped, so when you use the player's tool or player's offtool expressions, they will return the values before the swap - this enables you to cancel the event before anything happens.</p>
+<p>当玩家使用快捷键切换主副手槽内的物品时调用. 当然主副手的槽可以是空同样能调用. 该事件是在切换之前调用的, 这使你可以取消该事件的发生.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on swap hand items</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">event-player&#39;s tool is a diamond sword</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cancel event</span><span class="w"></span>
@@ -2319,7 +2353,7 @@
 </tr>
 </tbody>
 </table>
-<p>Called when an entity is healed, e.g. by eating (players), being fed (pets), or by the effect of a potion of healing (overworld mobs) or harm (nether mobs).</p>
+<p>当实体被治愈时调用。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">on heal</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
 <hr />
