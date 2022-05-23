@@ -1,0 +1,8995 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>机制 - MCraft Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=微软雅黑:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"微软雅黑";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="MCraft Docs" class="md-header__button md-logo" aria-label="MCraft Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MCraft Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              机制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MCraft Docs" class="md-nav__button md-logo" aria-label="MCraft Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    MCraft Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          文档目录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="文档目录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          文档目录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Crazy Crates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Crazy Crates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Crazy Crates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CrazyCrates/CrazyCrates/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CrazyCrates/commands-and-permissions/" class="md-nav__link">
+        命令与权限
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CrazyCrates/placeholders/" class="md-nav__link">
+        占位符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CrazyCrates/in-game-editor-information/" class="md-nav__link">
+        添加奖品
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CrazyCrates/config/" class="md-nav__link">
+        配置文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CrazyCrates/custom-crates/" class="md-nav__link">
+        自定义抽奖
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          ConditionalEvents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ConditionalEvents" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          ConditionalEvents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConditionalEvents/ConditionalEvents/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConditionalEvents/description/" class="md-nav__link">
+        描述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConditionalEvents/start/" class="md-nav__link">
+        如何开始
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConditionalEvents/config/" class="md-nav__link">
+        配置教程
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Skript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Skript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Skript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Skript/Skript/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Skript/events/" class="md-nav__link">
+        事件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Skript/conditions/" class="md-nav__link">
+        条件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Skript/effects/" class="md-nav__link">
+        效果
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Minecraft
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minecraft" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Minecraft
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Minecraft/Minecraft/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Mythicmobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mythicmobs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Mythicmobs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MythicMobs/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_2">
+          自定义技能
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="自定义技能" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          自定义技能
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          机制
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        机制
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addtag" class="md-nav__link">
+    AddTag(标记)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrow-volley" class="md-nav__link">
+    Arrow volley (箭雨)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basedamage" class="md-nav__link">
+    BaseDamage(基础伤害)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    Command(命令)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consume" class="md-nav__link">
+    Consume(献祭)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damage" class="md-nav__link">
+    Damage(伤害)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doppleganger" class="md-nav__link">
+    Doppleganger(伪装)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explosion" class="md-nav__link">
+    Explosion(爆炸)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-pull" class="md-nav__link">
+    Force Pull（传送）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glowbuff" class="md-nav__link">
+    Glow（高光BUFF）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heal" class="md-nav__link">
+    Heal(治疗固定值)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#healpercent" class="md-nav__link">
+    HealPercent(治疗百分比)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignite" class="md-nav__link">
+    Ignite(点燃)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-meassgejson" class="md-nav__link">
+    Json Meassge(Json消息)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leap" class="md-nav__link">
+    Leap（飞跃）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lightning" class="md-nav__link">
+    Lightning(落雷)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message" class="md-nav__link">
+    Message(消息)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifyscore" class="md-nav__link">
+    ModifyScore(修改玩家记分板分数)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifytargetscore" class="md-nav__link">
+    ModifyTargetScore(修改目标记分板分数)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mounttarget" class="md-nav__link">
+    MountTarget(乘骑)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#percent-damage" class="md-nav__link">
+    Percent Damage（伤害的百分比）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potion" class="md-nav__link">
+    Potion(药水)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prison" class="md-nav__link">
+    Prison（禁锢）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull" class="md-nav__link">
+    Pull（吸怪）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rally" class="md-nav__link">
+    Rally（嘲讽）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-message" class="md-nav__link">
+    Random Message（随机消息）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    Remove（移除）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removetag" class="md-nav__link">
+    RemoveTag（移除标记）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actionmessagetitle" class="md-nav__link">
+    ActionMessage（Title消息）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setscore" class="md-nav__link">
+    SetScore(设置玩家分数)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settargetscore" class="md-nav__link">
+    SetTargetScore（ 设置目标分数 ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setstance" class="md-nav__link">
+    SetStance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shoot-fireball" class="md-nav__link">
+    Shoot Fireball（发射火球）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shoot-potion" class="md-nav__link">
+    Shoot Potion（投掷火球）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shoot-skull" class="md-nav__link">
+    Shoot Skull(投掷头颅)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    Signal（信号）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spring" class="md-nav__link">
+    Spring（制造水流）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summon" class="md-nav__link">
+    Summon (生成实体)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teleport" class="md-nav__link">
+    Teleport(传送目标)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teleportto" class="md-nav__link">
+    TeleportTo（传送至坐标）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threat" class="md-nav__link">
+    Threat(设置仇恨列表度)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throw" class="md-nav__link">
+    Throw(将目标抛掷出去)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#velocity" class="md-nav__link">
+    Velocity（ 更改目标的速度）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disguise" class="md-nav__link">
+    Disguise（伪装）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dismount" class="md-nav__link">
+    Dismount（下马）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejectpassenger" class="md-nav__link">
+    EjectPassenger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equip" class="md-nav__link">
+    Equip(装备)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#globalcooldowncdr" class="md-nav__link">
+    GlobalCooldown(全局CDR)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jump" class="md-nav__link">
+    Jump(跳)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifyglobalscore" class="md-nav__link">
+    ModifyGlobalScore（ 更改全局分数 ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifymobscore" class="md-nav__link">
+    ModifyMobScore（修改生物的分数）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount" class="md-nav__link">
+    Mount（坐骑）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remount" class="md-nav__link">
+    Remount(重新乘骑)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setglobalscore" class="md-nav__link">
+    SetGlobalScore(设置全局分数)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setmobscore" class="md-nav__link">
+    SetMobScore（ 设置生物分数 ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setlevel" class="md-nav__link">
+    SetLevel(设置生物等级)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suicide" class="md-nav__link">
+    Suicide（自杀）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weather" class="md-nav__link">
+    Weather(天气)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancelevent" class="md-nav__link">
+    CancelEvent(取消事件)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delay" class="md-nav__link">
+    Delay(延迟)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missile" class="md-nav__link">
+    Missile（ 发射一个导弹 ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orbital" class="md-nav__link">
+    Orbital( 创建一个围绕目标环绕的飞行物 )
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projectile" class="md-nav__link">
+    Projectile（自定义导弹）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot" class="md-nav__link">
+    Shoot(发射)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill" class="md-nav__link">
+    Skill(技能)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudoskill" class="md-nav__link">
+    SudoSkill(目标执行技能)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomskilll" class="md-nav__link">
+    RandomSkilll（随机技能）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totem" class="md-nav__link">
+    Totem( 在一个坐标创建固定的图腾 )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-spawnermm" class="md-nav__link">
+    Activate Spawner（激活MM刷怪点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-button" class="md-nav__link">
+    Push Button（按下按钮）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-lever" class="md-nav__link">
+    Toggle Lever （拉杆）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockmask" class="md-nav__link">
+    BlockMask（临时头颅）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtag_1" class="md-nav__link">
+    AddTag(标记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-volley_1" class="md-nav__link">
+    Arrow volley (箭雨)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basedamage_1" class="md-nav__link">
+    BaseDamage(基础伤害)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_1" class="md-nav__link">
+    Command(命令)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consume_1" class="md-nav__link">
+    Consume(献祭)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#damage_1" class="md-nav__link">
+    Damage(伤害)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doppleganger_1" class="md-nav__link">
+    Doppleganger(伪装)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explosion_1" class="md-nav__link">
+    Explosion(爆炸)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-pull_1" class="md-nav__link">
+    Force Pull（传送）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glowbuff_1" class="md-nav__link">
+    Glow（高光BUFF）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heal_1" class="md-nav__link">
+    Heal(治疗固定值)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#healpercent_1" class="md-nav__link">
+    HealPercent(治疗百分比)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignite_1" class="md-nav__link">
+    Ignite(点燃)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-meassgejson_1" class="md-nav__link">
+    Json Meassge(Json消息)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leap_1" class="md-nav__link">
+    Leap（飞跃）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightning_1" class="md-nav__link">
+    Lightning(落雷)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message_1" class="md-nav__link">
+    Message(消息)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifyscore_1" class="md-nav__link">
+    ModifyScore(修改玩家记分板分数)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifytargetscore_1" class="md-nav__link">
+    ModifyTargetScore(修改目标记分板分数)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounttarget_1" class="md-nav__link">
+    MountTarget(乘骑)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#percent-damage_1" class="md-nav__link">
+    Percent Damage（伤害的百分比）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potion_1" class="md-nav__link">
+    Potion(药水)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prison_1" class="md-nav__link">
+    Prison（禁锢）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull_1" class="md-nav__link">
+    Pull（吸怪）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rally_1" class="md-nav__link">
+    Rally（嘲讽）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-message_1" class="md-nav__link">
+    Random Message（随机消息）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove_1" class="md-nav__link">
+    Remove（移除）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removetag_1" class="md-nav__link">
+    RemoveTag（移除标记）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actionmessagetitle_1" class="md-nav__link">
+    ActionMessage（Title消息）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setscore_1" class="md-nav__link">
+    SetScore(设置玩家分数)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settargetscore_1" class="md-nav__link">
+    SetTargetScore（ 设置目标分数 ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setstance_1" class="md-nav__link">
+    SetStance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot-fireball_1" class="md-nav__link">
+    Shoot Fireball（发射火球）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot-potion_1" class="md-nav__link">
+    Shoot Potion（投掷火球）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot-skull_1" class="md-nav__link">
+    Shoot Skull(投掷头颅)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal_1" class="md-nav__link">
+    Signal（信号）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spring_1" class="md-nav__link">
+    Spring（制造水流）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summon_1" class="md-nav__link">
+    Summon (生成实体)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleport_1" class="md-nav__link">
+    Teleport(传送目标)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleportto_1" class="md-nav__link">
+    TeleportTo（传送至坐标）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threat_1" class="md-nav__link">
+    Threat(设置仇恨列表度)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throw_1" class="md-nav__link">
+    Throw(将目标抛掷出去)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity_1" class="md-nav__link">
+    Velocity（ 更改目标的速度）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disguise_1" class="md-nav__link">
+    Disguise（伪装）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dismount_1" class="md-nav__link">
+    Dismount（下马）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejectpassenger_1" class="md-nav__link">
+    EjectPassenger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equip_1" class="md-nav__link">
+    Equip(装备)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalcooldowncdr_1" class="md-nav__link">
+    GlobalCooldown(全局CDR)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump_1" class="md-nav__link">
+    Jump(跳)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifyglobalscore_1" class="md-nav__link">
+    ModifyGlobalScore（ 更改全局分数 ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifymobscore_1" class="md-nav__link">
+    ModifyMobScore（修改生物的分数）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount_1" class="md-nav__link">
+    Mount（坐骑）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remount_1" class="md-nav__link">
+    Remount(重新乘骑)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setglobalscore_1" class="md-nav__link">
+    SetGlobalScore(设置全局分数)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmobscore_1" class="md-nav__link">
+    SetMobScore（ 设置生物分数 ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlevel_1" class="md-nav__link">
+    SetLevel(设置生物等级)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suicide_1" class="md-nav__link">
+    Suicide（自杀）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather_1" class="md-nav__link">
+    Weather(天气)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelevent_1" class="md-nav__link">
+    CancelEvent(取消事件)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delay_1" class="md-nav__link">
+    Delay(延迟)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missile_1" class="md-nav__link">
+    Missile（ 发射一个导弹 ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orbital_1" class="md-nav__link">
+    Orbital( 创建一个围绕目标环绕的飞行物 )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes_1" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projectile_1" class="md-nav__link">
+    Projectile（自定义导弹）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot_1" class="md-nav__link">
+    Shoot(发射)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill_1" class="md-nav__link">
+    Skill(技能)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudoskill_1" class="md-nav__link">
+    SudoSkill(目标执行技能)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomskilll_1" class="md-nav__link">
+    RandomSkilll（随机技能）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totem_1" class="md-nav__link">
+    Totem( 在一个坐标创建固定的图腾 )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-spawnermm_1" class="md-nav__link">
+    Activate Spawner（激活MM刷怪点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-button_1" class="md-nav__link">
+    Push Button（按下按钮）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-lever_1" class="md-nav__link">
+    Toggle Lever （拉杆）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockmask_1" class="md-nav__link">
+    BlockMask（临时头颅）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../targeter/" class="md-nav__link">
+        目标选择器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trigger/" class="md-nav__link">
+        触发器
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addtag" class="md-nav__link">
+    AddTag(标记)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrow-volley" class="md-nav__link">
+    Arrow volley (箭雨)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basedamage" class="md-nav__link">
+    BaseDamage(基础伤害)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    Command(命令)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consume" class="md-nav__link">
+    Consume(献祭)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damage" class="md-nav__link">
+    Damage(伤害)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doppleganger" class="md-nav__link">
+    Doppleganger(伪装)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explosion" class="md-nav__link">
+    Explosion(爆炸)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-pull" class="md-nav__link">
+    Force Pull（传送）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glowbuff" class="md-nav__link">
+    Glow（高光BUFF）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heal" class="md-nav__link">
+    Heal(治疗固定值)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#healpercent" class="md-nav__link">
+    HealPercent(治疗百分比)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignite" class="md-nav__link">
+    Ignite(点燃)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-meassgejson" class="md-nav__link">
+    Json Meassge(Json消息)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leap" class="md-nav__link">
+    Leap（飞跃）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lightning" class="md-nav__link">
+    Lightning(落雷)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message" class="md-nav__link">
+    Message(消息)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifyscore" class="md-nav__link">
+    ModifyScore(修改玩家记分板分数)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifytargetscore" class="md-nav__link">
+    ModifyTargetScore(修改目标记分板分数)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mounttarget" class="md-nav__link">
+    MountTarget(乘骑)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#percent-damage" class="md-nav__link">
+    Percent Damage（伤害的百分比）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potion" class="md-nav__link">
+    Potion(药水)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prison" class="md-nav__link">
+    Prison（禁锢）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull" class="md-nav__link">
+    Pull（吸怪）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rally" class="md-nav__link">
+    Rally（嘲讽）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-message" class="md-nav__link">
+    Random Message（随机消息）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    Remove（移除）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removetag" class="md-nav__link">
+    RemoveTag（移除标记）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actionmessagetitle" class="md-nav__link">
+    ActionMessage（Title消息）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setscore" class="md-nav__link">
+    SetScore(设置玩家分数)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settargetscore" class="md-nav__link">
+    SetTargetScore（ 设置目标分数 ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setstance" class="md-nav__link">
+    SetStance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shoot-fireball" class="md-nav__link">
+    Shoot Fireball（发射火球）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shoot-potion" class="md-nav__link">
+    Shoot Potion（投掷火球）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shoot-skull" class="md-nav__link">
+    Shoot Skull(投掷头颅)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    Signal（信号）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spring" class="md-nav__link">
+    Spring（制造水流）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summon" class="md-nav__link">
+    Summon (生成实体)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teleport" class="md-nav__link">
+    Teleport(传送目标)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teleportto" class="md-nav__link">
+    TeleportTo（传送至坐标）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threat" class="md-nav__link">
+    Threat(设置仇恨列表度)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throw" class="md-nav__link">
+    Throw(将目标抛掷出去)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#velocity" class="md-nav__link">
+    Velocity（ 更改目标的速度）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disguise" class="md-nav__link">
+    Disguise（伪装）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dismount" class="md-nav__link">
+    Dismount（下马）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejectpassenger" class="md-nav__link">
+    EjectPassenger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equip" class="md-nav__link">
+    Equip(装备)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#globalcooldowncdr" class="md-nav__link">
+    GlobalCooldown(全局CDR)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jump" class="md-nav__link">
+    Jump(跳)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifyglobalscore" class="md-nav__link">
+    ModifyGlobalScore（ 更改全局分数 ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifymobscore" class="md-nav__link">
+    ModifyMobScore（修改生物的分数）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount" class="md-nav__link">
+    Mount（坐骑）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remount" class="md-nav__link">
+    Remount(重新乘骑)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setglobalscore" class="md-nav__link">
+    SetGlobalScore(设置全局分数)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setmobscore" class="md-nav__link">
+    SetMobScore（ 设置生物分数 ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setlevel" class="md-nav__link">
+    SetLevel(设置生物等级)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suicide" class="md-nav__link">
+    Suicide（自杀）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weather" class="md-nav__link">
+    Weather(天气)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancelevent" class="md-nav__link">
+    CancelEvent(取消事件)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delay" class="md-nav__link">
+    Delay(延迟)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missile" class="md-nav__link">
+    Missile（ 发射一个导弹 ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orbital" class="md-nav__link">
+    Orbital( 创建一个围绕目标环绕的飞行物 )
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projectile" class="md-nav__link">
+    Projectile（自定义导弹）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot" class="md-nav__link">
+    Shoot(发射)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill" class="md-nav__link">
+    Skill(技能)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudoskill" class="md-nav__link">
+    SudoSkill(目标执行技能)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomskilll" class="md-nav__link">
+    RandomSkilll（随机技能）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totem" class="md-nav__link">
+    Totem( 在一个坐标创建固定的图腾 )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-spawnermm" class="md-nav__link">
+    Activate Spawner（激活MM刷怪点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-button" class="md-nav__link">
+    Push Button（按下按钮）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-lever" class="md-nav__link">
+    Toggle Lever （拉杆）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockmask" class="md-nav__link">
+    BlockMask（临时头颅）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtag_1" class="md-nav__link">
+    AddTag(标记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-volley_1" class="md-nav__link">
+    Arrow volley (箭雨)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basedamage_1" class="md-nav__link">
+    BaseDamage(基础伤害)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_1" class="md-nav__link">
+    Command(命令)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consume_1" class="md-nav__link">
+    Consume(献祭)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#damage_1" class="md-nav__link">
+    Damage(伤害)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doppleganger_1" class="md-nav__link">
+    Doppleganger(伪装)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explosion_1" class="md-nav__link">
+    Explosion(爆炸)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-pull_1" class="md-nav__link">
+    Force Pull（传送）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glowbuff_1" class="md-nav__link">
+    Glow（高光BUFF）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heal_1" class="md-nav__link">
+    Heal(治疗固定值)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#healpercent_1" class="md-nav__link">
+    HealPercent(治疗百分比)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignite_1" class="md-nav__link">
+    Ignite(点燃)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-meassgejson_1" class="md-nav__link">
+    Json Meassge(Json消息)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leap_1" class="md-nav__link">
+    Leap（飞跃）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightning_1" class="md-nav__link">
+    Lightning(落雷)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message_1" class="md-nav__link">
+    Message(消息)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifyscore_1" class="md-nav__link">
+    ModifyScore(修改玩家记分板分数)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifytargetscore_1" class="md-nav__link">
+    ModifyTargetScore(修改目标记分板分数)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounttarget_1" class="md-nav__link">
+    MountTarget(乘骑)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#percent-damage_1" class="md-nav__link">
+    Percent Damage（伤害的百分比）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potion_1" class="md-nav__link">
+    Potion(药水)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prison_1" class="md-nav__link">
+    Prison（禁锢）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull_1" class="md-nav__link">
+    Pull（吸怪）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rally_1" class="md-nav__link">
+    Rally（嘲讽）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-message_1" class="md-nav__link">
+    Random Message（随机消息）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove_1" class="md-nav__link">
+    Remove（移除）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removetag_1" class="md-nav__link">
+    RemoveTag（移除标记）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actionmessagetitle_1" class="md-nav__link">
+    ActionMessage（Title消息）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setscore_1" class="md-nav__link">
+    SetScore(设置玩家分数)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settargetscore_1" class="md-nav__link">
+    SetTargetScore（ 设置目标分数 ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setstance_1" class="md-nav__link">
+    SetStance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot-fireball_1" class="md-nav__link">
+    Shoot Fireball（发射火球）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot-potion_1" class="md-nav__link">
+    Shoot Potion（投掷火球）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot-skull_1" class="md-nav__link">
+    Shoot Skull(投掷头颅)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal_1" class="md-nav__link">
+    Signal（信号）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spring_1" class="md-nav__link">
+    Spring（制造水流）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summon_1" class="md-nav__link">
+    Summon (生成实体)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleport_1" class="md-nav__link">
+    Teleport(传送目标)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleportto_1" class="md-nav__link">
+    TeleportTo（传送至坐标）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threat_1" class="md-nav__link">
+    Threat(设置仇恨列表度)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throw_1" class="md-nav__link">
+    Throw(将目标抛掷出去)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity_1" class="md-nav__link">
+    Velocity（ 更改目标的速度）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disguise_1" class="md-nav__link">
+    Disguise（伪装）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dismount_1" class="md-nav__link">
+    Dismount（下马）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejectpassenger_1" class="md-nav__link">
+    EjectPassenger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equip_1" class="md-nav__link">
+    Equip(装备)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalcooldowncdr_1" class="md-nav__link">
+    GlobalCooldown(全局CDR)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump_1" class="md-nav__link">
+    Jump(跳)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifyglobalscore_1" class="md-nav__link">
+    ModifyGlobalScore（ 更改全局分数 ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifymobscore_1" class="md-nav__link">
+    ModifyMobScore（修改生物的分数）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount_1" class="md-nav__link">
+    Mount（坐骑）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remount_1" class="md-nav__link">
+    Remount(重新乘骑)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setglobalscore_1" class="md-nav__link">
+    SetGlobalScore(设置全局分数)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmobscore_1" class="md-nav__link">
+    SetMobScore（ 设置生物分数 ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlevel_1" class="md-nav__link">
+    SetLevel(设置生物等级)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suicide_1" class="md-nav__link">
+    Suicide（自杀）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather_1" class="md-nav__link">
+    Weather(天气)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelevent_1" class="md-nav__link">
+    CancelEvent(取消事件)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delay_1" class="md-nav__link">
+    Delay(延迟)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missile_1" class="md-nav__link">
+    Missile（ 发射一个导弹 ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orbital_1" class="md-nav__link">
+    Orbital( 创建一个围绕目标环绕的飞行物 )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes_1" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projectile_1" class="md-nav__link">
+    Projectile（自定义导弹）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoot_1" class="md-nav__link">
+    Shoot(发射)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill_1" class="md-nav__link">
+    Skill(技能)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudoskill_1" class="md-nav__link">
+    SudoSkill(目标执行技能)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomskilll_1" class="md-nav__link">
+    RandomSkilll（随机技能）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totem_1" class="md-nav__link">
+    Totem( 在一个坐标创建固定的图腾 )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-spawnermm_1" class="md-nav__link">
+    Activate Spawner（激活MM刷怪点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-button_1" class="md-nav__link">
+    Push Button（按下按钮）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-lever_1" class="md-nav__link">
+    Toggle Lever （拉杆）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockmask_1" class="md-nav__link">
+    BlockMask（临时头颅）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="_1">机制机制</h1>
+<p><a href="../skill/">返回目录</a></p>
+<hr />
+<h3 id="addtag">AddTag(标记)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">tag</td>
+<td align="left">t</td>
+<td align="left">标签的字符串</td>
+<td align="left">默认</td>
+</tr>
+</tbody>
+</table>
+<p>例子:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">示例</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">Skill</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">-addtag {t=test} @self</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>该技能 会将 标签给予 施法者身上运行</p>
+</blockquote>
+<p>例子:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">示例</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">TagTest</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">Conditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hastag{t=Test}</span><span class="w"></span>
+<span class="w w-Error"> </span><span class="nt">Skills</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">suicide @self</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>拥有 标签 执行 自杀</p>
+</blockquote>
+<h3 id="arrow-volley">Arrow volley (箭雨)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数量</td>
+<td>a</td>
+<td>发射箭的数量</td>
+<td>20</td>
+</tr>
+<tr>
+<td>布局</td>
+<td>s</td>
+<td>箭与箭之间的距离</td>
+<td>45</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>箭在运动过程中的速度</td>
+<td>20</td>
+</tr>
+<tr>
+<td>火焰附加</td>
+<td>f</td>
+<td>当实体被击中时,火焰持续的时间</td>
+<td>0/tick</td>
+</tr>
+<tr>
+<td>箭的消失时间</td>
+<td>rd</td>
+<td>当被发射出的箭，击中地面或实体存在多久</td>
+<td>200/tick</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">示例</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="nt">Skills</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arrowvolley{a=20;s=25;v=10;f=50;rd=200} @Target</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>发射了 20支 箭 , 箭与箭之间的间隔 25 , 箭在运动过程的速度为 10 , 击中实体后产生的火焰附加伤害持续 2.5s ,最后将在 10s 后移除 箭.</p>
+</blockquote>
+<h3 id="basedamage">BaseDamage(基础伤害)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>倍数</td>
+<td>m</td>
+<td>造成伤害的百分比</td>
+<td>1</td>
+</tr>
+<tr>
+<td>真实伤害</td>
+<td>ia</td>
+<td>无视护甲值</td>
+<td>true/flase</td>
+</tr>
+<tr>
+<td>击退</td>
+<td>pkb,pk</td>
+<td>是否开启击退</td>
+<td>true/flase</td>
+</tr>
+<tr>
+<td>伤害免疫</td>
+<td>pi</td>
+<td>是否无视该伤害</td>
+<td>true/false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  AMob:
+    Type: HUSK
+    Damage: 10
+  Skills:
+  - basedamage{m=1.5} @target ~onDamaged
+</code></pre></div>
+<blockquote>
+<p>当受到攻击时,对其目标造成 其原始伤害的 150% (也就是15点伤害)</p>
+</blockquote>
+<h3 id="command">Command(命令)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命令</td>
+<td>C</td>
+<td>要执行的命令</td>
+<td></td>
+</tr>
+<tr>
+<td>作为施法者</td>
+<td>ac</td>
+<td>如果为true，则从施法者作为执行命令者</td>
+<td>false</td>
+</tr>
+<tr>
+<td>作为OP</td>
+<td>op</td>
+<td>将已OP权限进行执行命令</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Skills:
+- command{c=&quot;give &lt;target.name&gt; gold_bar 20&quot;} @trigger ~onInteract
+- command{c=&quot;minecraft:tp &lt;target.name&gt; &lt;mob.uuid&gt;&quot;} @self ~onDamaged
+- command{c=&quot;minecraft:summon Zombie ~ ~ ~ &lt;&amp;lc&gt;NoAI:true,CustomName:&lt;&amp;dq&gt;Summoned Zombie&lt;&amp;dq&gt;&lt;&amp;rc&gt;&quot;}
+- command{c=&quot;minecraft:summon Zombie ~ ~ ~ {NoAI:true,CustomName:&lt;&amp;dq&gt;Summoned Zombie&lt;&amp;dq&gt;}&quot;}
+</code></pre></div>
+<h3 id="consume">Consume(献祭)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>伤害</td>
+<td>d,damage</td>
+<td>造成伤害的数值</td>
+<td>none</td>
+</tr>
+<tr>
+<td>愈合</td>
+<td>h</td>
+<td>每只生物造成攻击的治疗数值</td>
+<td>none</td>
+</tr>
+<tr>
+<td>击退</td>
+<td>pkb,pk</td>
+<td>是否击退生物</td>
+<td>false</td>
+</tr>
+<tr>
+<td>免疫</td>
+<td>pi</td>
+<td>免疫该伤害</td>
+<td>false</td>
+</tr>
+<tr>
+<td>无视护甲</td>
+<td>i,ia</td>
+<td>字面意思</td>
+<td>flase</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - consume{d=1000;h=20} @MobsInRadius{type=ZOMBIE;r=20}
+</code></pre></div>
+<blockquote>
+<p>献祭附近 僵尸 , 每一只被献祭的僵尸 将回复 20 HP</p>
+</blockquote>
+<h3 id="damage">Damage(伤害)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值</td>
+<td>a</td>
+<td>造成伤害的数值</td>
+<td>1</td>
+</tr>
+<tr>
+<td>真实伤害</td>
+<td>ia</td>
+<td>是否无视其护甲值，造成真实伤害</td>
+<td>false</td>
+</tr>
+<tr>
+<td>击退</td>
+<td>pkb,pk</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>免疫</td>
+<td>pi</td>
+<td></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - damage{amount=20;ignoreArmor=true} @target ~onTimer:20
+</code></pre></div>
+<blockquote>
+<p>触发该技能时，每 1s 造成 固定伤害 20点伤害 给予 目标</p>
+</blockquote>
+<h3 id="doppleganger">Doppleganger(伪装)</h3>
+<div class="highlight"><pre><span></span><code>Ditto:
+  Type: SKELETON
+  Skills:
+  - doppleganger @NearestPlayer ~onSpawn
+</code></pre></div>
+<h3 id="explosion">Explosion(爆炸)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>力量</td>
+<td>y</td>
+<td>爆炸产生的伤害</td>
+<td>0.013</td>
+</tr>
+<tr>
+<td>破坏方块</td>
+<td>d</td>
+<td>(true/flase)是否破坏方块</td>
+<td>false</td>
+</tr>
+<tr>
+<td>着火</td>
+<td>f,ft</td>
+<td>是否生成火焰</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ExplosiveBlast:
+  Skills:
+  - explosion{yield=4} @target
+</code></pre></div>
+<h3 id="force-pull">Force Pull（传送）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传送</td>
+<td>s</td>
+<td>将玩家传送至 X 范围内</td>
+<td>0</td>
+</tr>
+<tr>
+<td>vspread</td>
+<td>vs</td>
+<td></td>
+<td>spread</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ForceGrip:
+  Skills:
+  - forcepull{spread=5} @EntitiesInRadius{r=30}
+</code></pre></div>
+<blockquote>
+<p>将 半径 30 各内 的玩家 传送至 Boss 5 格范围内的随机位置.</p>
+</blockquote>
+<h3 id="glowbuff">Glow（高光BUFF）</h3>
+<blockquote>
+<p>需要GLOW插件</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">颜色</td>
+<td align="left">c</td>
+<td align="left">实体发光的颜色</td>
+<td align="left">white(白色)</td>
+</tr>
+<tr>
+<td align="left">持续时间</td>
+<td align="left">d</td>
+<td align="left">效果持续时间</td>
+<td align="left">100/tick</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - effect:glow{color=RED;duration=1000}
+</code></pre></div>
+<blockquote>
+<p>给予目标 发光效果 发出 红色高光, 持续 50s</p>
+</blockquote>
+<h3 id="heal">Heal(治疗固定值)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">数值</td>
+<td align="left">a</td>
+<td align="left">治疗的数值</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">额外治疗数值</td>
+<td align="left">oh</td>
+<td align="left">已达到满生命数值时，是否超出的部分作为护盾来使用</td>
+<td align="left">false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - heal{amount=20} @self ~onDamaged 0.2
+</code></pre></div>
+<blockquote>
+<p>当生命值受损时,提供20HP的生命恢复.(20%的几率)</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - heal{amount=20;overheal=true} @self ~onDamaged 0.2
+</code></pre></div>
+<blockquote>
+<p>当开启 overheal 时，即使该生物或玩家生命值 满 也会给予 20HP. 这20HP将会作为 护盾来使用</p>
+<p>将设 最大生命 20/20 HP ， 超出部分展示 40/20 HP</p>
+</blockquote>
+<h3 id="healpercent">HealPercent(治疗百分比)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">倍数</td>
+<td align="left">m</td>
+<td align="left"></td>
+<td align="left">0.1</td>
+</tr>
+<tr>
+<td align="left">额外治疗数值</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - healpercent{m=0.2} @self ~onAttack
+</code></pre></div>
+<blockquote>
+<p>1 是 100% 而 0.2 就是 20%</p>
+</blockquote>
+<h3 id="ignite">Ignite(点燃)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">时间</td>
+<td align="left">t,d,duration</td>
+<td align="left">持续的时间</td>
+<td align="left">60/tick</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - ignite{ticks=100} @trigger ~onAttack
+</code></pre></div>
+<h3 id="json-meassgejson">Json Meassge(Json消息)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">消息</td>
+<td align="left">m</td>
+<td align="left">发送的json.必须用“”括起来</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code> Skills:
+  - jsonmessage{m=&quot;[{&#39;text&#39;:&#39;&amp;aHey, i am a JSON message!&#39;}]&quot;} @trigger ~onInteract
+  - jsonmessage{m=&quot;[{&#39;text&#39;:&#39;Hey, i am a red JSON message!&#39;,&#39;color&#39;:&#39;red&#39;}]&quot;} @trigger ~onInteract
+</code></pre></div>
+<blockquote>
+<p>悬停事件</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>Skills:
+  - jsonmessage{m=&quot;[{&#39;text&#39;:&#39;&amp;7With me, you can create hover events&#39;,&#39;hoverEvent&#39;:{&#39;action&#39;:&#39;show_text&#39;,&#39;value&#39;:{&#39;text&#39;:&#39;&amp;aI am a hover event :)&#39;}}}]&quot;} @trigger ~onInteract
+</code></pre></div>
+<blockquote>
+<p>点击事件</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - jsonmessage{m=&quot;[{&#39;text&#39;:&#39;&amp;7&amp;nAlso click events! :)&#39;,&#39;clickEvent&#39;:{&#39;action&#39;:&#39;run_command&#39;,&#39;value&#39;:&#39;/mm signal &lt;mob.uuid&gt; &lt;signal&gt;&#39;}}]&quot;} @trigger ~onInteract
+</code></pre></div>
+<h3 id="leap">Leap（飞跃）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>跳跃运动过程中的速度</td>
+<td>100</td>
+</tr>
+<tr>
+<td>noise</td>
+<td></td>
+<td>Added variance to where the mob will land</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>CrushingLeap:
+  Cooldown: 10
+  Skills:
+  - leap{velocity=200} @target
+  - delay 20
+  - jump{velocity=-100}
+  - effect:explosion @self
+  - damage{amount=20} @EntitiesInRadius{r=5}
+</code></pre></div>
+<blockquote>
+<p>该技能 会使 怪物 以 200 速度 跳向目标，撞击目标产生爆炸</p>
+</blockquote>
+<h3 id="lightning">Lightning(落雷)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">伤害</td>
+<td align="left">d</td>
+<td align="left">造成的伤害数值</td>
+<td align="left">0.01337</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>StaticSheep:
+  Type: SHEEP
+  Skills:
+  - lightning @EntitiesInRadius{r=10} ~onTimer:100
+</code></pre></div>
+<blockquote>
+<p>召唤落雷 到指定目标</p>
+</blockquote>
+<h3 id="message">Message(消息)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息</td>
+<td>msg,m</td>
+<td>要发送的消息 “”是必须的</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code> Skills:
+  - message{m=&quot;&lt;mob.name&gt;&amp;f&lt;&amp;co&gt; Hahaha! You will all die!&quot;} @PlayersInRadius{r=30}
+</code></pre></div>
+<h3 id="modifyscore">ModifyScore(修改玩家记分板分数)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标</td>
+<td>ob</td>
+<td>指定修改目标的记分板，如果该目标不存在。则自动创建</td>
+<td></td>
+</tr>
+<tr>
+<td>操作</td>
+<td>a</td>
+<td>要执行的操作</td>
+<td>add</td>
+</tr>
+<tr>
+<td>数值</td>
+<td>v</td>
+<td>用于执行操作的数值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>名称，条目</td>
+<td>n，e</td>
+<td>玩家的名称</td>
+<td>dummy</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - modifyscore{o=TestScore;e=Bob;a=add;v=1} ~onInteract 
+</code></pre></div>
+<blockquote>
+<p>将目标 当中的 Bob 的玩家分数 +1 。即使该玩家不存在于服务器当中,也会自动创建.</p>
+</blockquote>
+<h3 id="modifytargetscore">ModifyTargetScore(修改目标记分板分数)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标</td>
+<td>ob</td>
+<td>指定修改目标的记分板,如果该目标不存在.则自动创建</td>
+<td></td>
+</tr>
+<tr>
+<td>操作</td>
+<td>a</td>
+<td>要执行的操作</td>
+<td>ADD</td>
+</tr>
+<tr>
+<td>数值</td>
+<td>v</td>
+<td>用于执行操作的数值</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - modifytargetscore{objective=damagescore;action=add;value=1} @trigger ~onDamaged
+</code></pre></div>
+<h3 id="mounttarget">MountTarget(乘骑)</h3>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - mounttarget @trigger ~onDamaged
+</code></pre></div>
+<blockquote>
+<p>骑目标 ，让目标在你的胯下</p>
+</blockquote>
+<h3 id="percent-damage">Percent Damage（伤害的百分比）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percent</td>
+<td>p</td>
+<td>百分比</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>current</td>
+<td>c,ch</td>
+<td>根据当前生命值或最大生命进行计算</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - percentDamage{percent=0.5}
+</code></pre></div>
+<blockquote>
+<p>使目标受到最大生命值的一半（50％）伤害。</p>
+</blockquote>
+<h3 id="potion">Potion(药水)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>应用的药水类型</td>
+<td></td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>d</td>
+<td>以tick计算时间</td>
+<td>100</td>
+</tr>
+<tr>
+<td>等级</td>
+<td>l</td>
+<td>药水的等级, 0级 是最低等级</td>
+<td>1</td>
+</tr>
+<tr>
+<td>force</td>
+<td></td>
+<td>是否覆盖当前药水效果 (4.0+)</td>
+<td>false</td>
+</tr>
+<tr>
+<td>粒子效果</td>
+<td>particles or p</td>
+<td>是否不显示粒子效果状态 (4.6+)</td>
+<td>true</td>
+</tr>
+<tr>
+<td>图标</td>
+<td>icon or i</td>
+<td>是否不显示药水图标. (4.6+)</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Cripple:
+  Skills:
+  - potion{type=SLOW;duration=200;level=4}
+  - damage{amount=10}
+</code></pre></div>
+<blockquote>
+<p>降低目标的移动速度 10s 并造成 10 点伤害</p>
+</blockquote>
+<h3 id="prison">Prison（禁锢）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>材料</td>
+<td>m</td>
+<td>生成方块的材料</td>
+<td>ICE</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>d</td>
+<td>目标周围生成的方块 持续时间</td>
+<td>100/tick</td>
+</tr>
+<tr>
+<td>是否可以破坏</td>
+<td>b</td>
+<td>(true/false) 生成的方块是否可以被破坏</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>IronPrison:
+  Skills:
+  - prison{material=IRON_BLOCK;duration=200;breakable=true} @target
+</code></pre></div>
+<blockquote>
+<p>在目标周围生成方块 以此困住目标. 持续时间 10s 生成方块类型 铁块</p>
+</blockquote>
+<h3 id="pull">Pull（吸怪）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>将目标拉向施法者时的运动速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>toOrigin</td>
+<td>to</td>
+<td>无论目标是否被拉至施法者，都生效</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>DeathGrip:
+  Skills:
+  - pull{velocity=10} @target
+  - pull{v=6;to=true} @PIR{r=10}
+</code></pre></div>
+<h3 id="rally">Rally（嘲讽）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>type, t</td>
+<td>目标的类型,可以是MM当中的怪物也可以是原版未设置的怪物</td>
+<td>NONE</td>
+</tr>
+<tr>
+<td>半径</td>
+<td>r</td>
+<td>影响的半径（以方块为单位）</td>
+<td>10</td>
+</tr>
+<tr>
+<td>半径</td>
+<td>vr</td>
+<td>垂直半径</td>
+<td>radius</td>
+</tr>
+<tr>
+<td>半径</td>
+<td>hr</td>
+<td>水平半径</td>
+<td>radius</td>
+</tr>
+<tr>
+<td>覆盖目标</td>
+<td>ot</td>
+<td>(true/false)是否影响已有的目标生物</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>CallForHelp:
+  Skills:
+  - message{m=&quot;&lt;mob.name&gt;&lt;&amp;co&gt; Guards! Help me!&quot;} @PlayersInRadius{r=30}
+  - rally{types=Guard,Knight;radius=30;ot=false} @Trigger
+</code></pre></div>
+<blockquote>
+<p>将 附近 30格 内的 实体 "Knight"或者"Guard"类型的生物.发送消息</p>
+</blockquote>
+<h3 id="random-message">Random Message（随机消息）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息</td>
+<td>m</td>
+<td>要发送的多条消息内容.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - randommessage{
+      m=
+      &quot;消息内容 1&quot;,
+      &quot;消息内容 2&quot;,
+      &quot;消息内容 3&quot;;
+      } @PIR{r=20} ~onInteract
+Skills:
+- randommessage{m=&quot;one test&quot;,&quot;not a test&quot;,&quot;test&quot;;} @PIR{r=20} ~onInteract
+</code></pre></div>
+<h3 id="remove">Remove（移除）</h3>
+<blockquote>
+<p>从已有的实体中移除目标实体 （当然对玩家不起作用）</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - remove{delay=200} @self ~onSpawn
+  Skills:
+  - remove @self ~onInteract
+</code></pre></div>
+<blockquote>
+<p>右键点击 直接生成</p>
+</blockquote>
+<h3 id="removetag">RemoveTag（移除标记）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tag</td>
+<td>t</td>
+<td>标记的字符串</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actionmessagetitle">ActionMessage（Title消息）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息</td>
+<td>m</td>
+<td>要发送的消息</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Skills:
+- actionmessage{m=&quot;&lt;mob.name&gt;&amp;f is casting a spell!&quot;} @PlayersInRadius{r=30}
+- actionmessage{m=&quot;&amp;lHello! &amp;cI&#39;m &amp;athe &amp;9&amp;lactionmessage-bar&amp;r! &amp;e:)&quot;} @trigger ~onInteract
+</code></pre></div>
+<h3 id="setscore">SetScore(设置玩家分数)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标</td>
+<td>obj,o</td>
+<td>指定目标记分板,如果不存在.自动创建</td>
+<td></td>
+</tr>
+<tr>
+<td>数值</td>
+<td>v</td>
+<td>The value to perform the operation with</td>
+<td></td>
+</tr>
+<tr>
+<td>name, entry</td>
+<td>n, e</td>
+<td>The name of the fake player</td>
+<td>dummy</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - setscore{o=TestScore;e=Bob;v=1} ~onInteract 
+</code></pre></div>
+<h3 id="settargetscore">SetTargetScore（ 设置目标分数 ）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>obj, o</td>
+<td>指定目标记分板,如果不存在.自动创建</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>v</td>
+<td>The value to perform the operation with</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - settargetscore
+      {
+      objective=damagescore;
+      value=1
+      } @trigger ~onDamaged
+</code></pre></div>
+<h3 id="setstance">SetStance</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stance</td>
+<td>s</td>
+<td>stance的字符串名称</td>
+<td>默认</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>StanceChangeSkill
+  Skills:
+  - setstance{stance=bowphase} @self
+</code></pre></div>
+<blockquote>
+<p>This skill would change the caster's phase to “bowphase”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>AnotherSkill:
+  Conditions:
+  - stance bowphase
+ Skills:
+  - ...some bow skills
+</code></pre></div>
+<blockquote>
+<p>This skill would only be usable when the caster had the stance “bowphase”</p>
+</blockquote>
+<h3 id="shoot-fireball">Shoot Fireball（发射火球）</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Aliases</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>力量</td>
+<td>y</td>
+<td>火球爆炸后的力量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>运动过程的速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>燃烧</td>
+<td>i</td>
+<td>(true/false)爆炸后是否产生 火焰</td>
+<td>false</td>
+</tr>
+<tr>
+<td>fireTicks</td>
+<td>ft</td>
+<td>产生的火焰持续的时间/tick</td>
+<td>0</td>
+</tr>
+<tr>
+<td>火球型号</td>
+<td>small,sml</td>
+<td>大号火球还是小号火球</td>
+<td>false</td>
+</tr>
+<tr>
+<td>声音</td>
+<td>ps</td>
+<td>Whether or not to play the fireball launching sound when it is created</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>FireballBarrage:
+  Skills:
+  - shootfireball{y=1;v=4} @target
+  - delay 10
+  - shootfireball{y=1;v=4} @target
+  - delay 10
+  - shootfireball{y=1;v=4} @target
+</code></pre></div>
+<blockquote>
+<p>快速发射三个 火球</p>
+</blockquote>
+<h3 id="shoot-potion">Shoot Potion（投掷火球）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>药水类型</td>
+<td>None</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>d</td>
+<td>效果的持续时间</td>
+<td>100/tick</td>
+</tr>
+<tr>
+<td>等级</td>
+<td>l</td>
+<td>药水等级,0为最低级</td>
+<td>1</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>投掷药水过程的运动速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>粒子效果</td>
+<td>particles or p</td>
+<td>是否不显示粒子效果(true/false)</td>
+<td>true</td>
+</tr>
+<tr>
+<td>图标</td>
+<td>icon or i</td>
+<td>是否不显示图标(true/false)</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ThrownCripplingPotion:
+  Skills:
+  - shootpotion{type=SLOW;duration=200;level=4;velocity=5} @target
+</code></pre></div>
+<h3 id="shoot-skull">Shoot Skull(投掷头颅)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yield</td>
+<td>y</td>
+<td>产生爆炸的力量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>声音</td>
+<td>ps</td>
+<td>发射的时候是否有音效</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>SkullBarrage:
+  Skills:
+  - shootskull{y=1;v=4} @target
+  - delay 10
+  - shootskull{y=1;v=4} @target
+  - delay 10
+  - shootskull{y=1;v=4} @target
+</code></pre></div>
+<blockquote>
+<p>发射三个头颅</p>
+</blockquote>
+<h3 id="signal">Signal（信号）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信号</td>
+<td>s</td>
+<td>发送的信号</td>
+<td>ping</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Master:
+  Type: zombie
+  Skills:
+  - summon{m=Minion} @self ~onSpawn
+  - signal{s=ATTACK} @MobsInRadius{r=10;t=Minion} ~onDamaged
+Minion:
+  Type: baby_zombie
+  Skills:
+  - skill{s=ShootAttacker} @NearestPlayer ~onSignal:ATTACK
+ShootAttacker:
+  Skills:
+  - shoot{t=arrow}
+</code></pre></div>
+<blockquote>
+<p>Boss 受到伤害时,发送周围半径的 随从Mob 信号.让随从Mob 使用技能</p>
+</blockquote>
+<h3 id="spring">Spring（制造水流）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>显示</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>类型水“water” 或 岩浆 “lava”</td>
+<td>water</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>d</td>
+<td>tick计算</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Flood:
+  Skills:
+  - spring{d=100} @target
+</code></pre></div>
+<h3 id="summon">Summon (生成实体)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>要生成的 实体类型支持MM自身的Mob</td>
+<td>SKELETON</td>
+</tr>
+<tr>
+<td>数量</td>
+<td>a</td>
+<td>生成数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>半径</td>
+<td>r</td>
+<td>生成目标的半径</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Y半径</td>
+<td>yr</td>
+<td>Overrides the Y component of radius.</td>
+<td>radius</td>
+</tr>
+<tr>
+<td>yRadiusUpOnly</td>
+<td>yu</td>
+<td>(true/false)生成实体是否以Y轴扩散</td>
+<td>false</td>
+</tr>
+<tr>
+<td>onSurface</td>
+<td>os</td>
+<td>(true/false)是否在实体方块上生成</td>
+<td>true</td>
+</tr>
+<tr>
+<td>copyThreatTable</td>
+<td>ctt</td>
+<td>被生成的实体是否继承仇恨列表</td>
+<td>false</td>
+</tr>
+<tr>
+<td>inheritThreatTable</td>
+<td>itt</td>
+<td>被生成的实体是否共享仇恨列表</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>RaiseSkeletons:
+  Skills:
+  - summon{type=WITHER_SKELETON;amount=5;radius=4} @PIR{r=20}
+</code></pre></div>
+<blockquote>
+<p>在目标玩家周围生成 5 个 "WITHER_SKELETON" 实体</p>
+</blockquote>
+<h3 id="teleport">Teleport(传送目标)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spreadh</td>
+<td>sh</td>
+<td>XZ水平的范围</td>
+<td>0</td>
+</tr>
+<tr>
+<td>spreadv</td>
+<td>sv</td>
+<td>垂直范围</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Warp:
+  Skills:
+  - teleport{spreadh=5;spreadv=0} @target
+</code></pre></div>
+<h3 id="teleportto">TeleportTo（传送至坐标）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>位置,坐标</td>
+<td>loc, l, c</td>
+<td>传送目标的坐标</td>
+<td></td>
+</tr>
+<tr>
+<td>世界</td>
+<td>w</td>
+<td>目标的世界,如果指定了 位置.则这项是可选项</td>
+<td></td>
+</tr>
+<tr>
+<td>yaw</td>
+<td>y</td>
+<td>朝向</td>
+<td>0</td>
+</tr>
+<tr>
+<td>pitch</td>
+<td>p</td>
+<td>The pitch that the affected entities should assume</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Skills:
+- teleportto{location=190,64,200} @PIR{r=50}
+</code></pre></div>
+<blockquote>
+<p>选择半径为 50 的目标 到指定坐标</p>
+</blockquote>
+<h3 id="threat">Threat(设置仇恨列表度)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值</td>
+<td>a</td>
+<td>给予目标仇恨数值</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Fixate:
+  Skills:
+  - threat{amount=10000} @NearestPlayer ~onSpawn
+</code></pre></div>
+<h3 id="throw">Throw(将目标抛掷出去)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>velocity</td>
+<td>v</td>
+<td>抛掷实体的水平速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>velocityY</td>
+<td>vy</td>
+<td>抛掷实体的垂直速度</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  GroundSlam:
+    Skills:
+    - effect:explosion @Self
+    - damage{amount=10} @PlayersInRadius{r=5}
+    - throw{velocity=15;velocityY=5} @PlayersInRadius{r=5}
+</code></pre></div>
+<blockquote>
+<p>Mob释放了爆炸效果 并对 范围 5 格内的玩家造成 10 点伤害 . 以及将 玩家抛掷回来</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SuperShockslam:
+  Skills:
+  - throw{velocity=5;velocityY=5} @PIR{r=10}
+  - damage{a=50;i=false} @PIR{r=10}
+  - effect:particles{p=hugeexplode;a=5;vs=0.5;hs=0.5;s=0;y=1} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=0.5} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=1;repeat=7;repeatInterval=2} @Self
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=1} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=3} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=5} @Self
+  - delay 2 
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=7} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=9} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=11} @Self
+</code></pre></div>
+<h3 id="velocity">Velocity（ 更改目标的速度）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模式</td>
+<td>m</td>
+<td>要执行的操作.可以设置 + - * /</td>
+<td>SET</td>
+</tr>
+<tr>
+<td>速度X</td>
+<td>vx, x</td>
+<td>X轴的速度,可以是负数</td>
+<td>1</td>
+</tr>
+<tr>
+<td>速度Y</td>
+<td>vy, y</td>
+<td>Y轴的速度,可以是负数</td>
+<td>1</td>
+</tr>
+<tr>
+<td>速度Z</td>
+<td>vz, z</td>
+<td>Z轴的速度,可以是负数</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>internal_mobname:
+  Type: Zombie
+  Skills:
+  - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+</code></pre></div>
+<hr />
+<blockquote>
+<p>以上 目标机制</p>
+</blockquote>
+<hr />
+<h3 id="disguise">Disguise（伪装）</h3>
+<blockquote>
+<p>需要伪装插件支持</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>伪装</td>
+<td>d, type</td>
+<td>要伪装的类型</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - disguise{d=SHEEP}
+  Skills:
+  - disguise{type=player;player=&amp;7Jeb;skin=Notch}
+</code></pre></div>
+<h3 id="dismount">Dismount（下马）</h3>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - dismount ~onDamaged
+</code></pre></div>
+<blockquote>
+<p>如果生物在骑乘，停止骑乘</p>
+</blockquote>
+<h3 id="ejectpassenger">EjectPassenger</h3>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - ejectpassenger ~onDamaged
+</code></pre></div>
+<blockquote>
+<p>将骑在身上的生物弹出</p>
+</blockquote>
+<h3 id="equip">Equip(装备)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>item</td>
+<td>i</td>
+<td>需要装备的物品</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>EquipDiamondSword:
+  Skills:
+  - equip{item=diamond_sword:0}
+EquipCrown:
+  Skills:
+  - equip{item=KingsCrown:4}
+</code></pre></div>
+<blockquote>
+<p>slot : HEAD CHEST LEGS FEET HAND OFFHAND</p>
+</blockquote>
+<h3 id="globalcooldowncdr">GlobalCooldown(全局CDR)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ticks</td>
+<td>t</td>
+<td>tick</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  IceBolt:
+    Conditions:
+    - offgcd
+    - targetinlineofsight
+    Skills:
+    - gcd{ticks=40}
+</code></pre></div>
+<blockquote>
+<p>This skill would trigger a Global Cooldown of 40 ticks, during which the skill and all other skills using the “offgcd” condition would not be usable.</p>
+</blockquote>
+<h3 id="jump">Jump(跳)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>跳跃速度</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>SuperJump:
+  Skills:
+  - jump{velocity=20}
+</code></pre></div>
+<h3 id="modifyglobalscore">ModifyGlobalScore（ 更改全局分数 ）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>obj, o</td>
+<td>目标对象</td>
+<td></td>
+</tr>
+<tr>
+<td>执行</td>
+<td>a</td>
+<td>要执行的操作</td>
+<td>ADD</td>
+</tr>
+<tr>
+<td>数值</td>
+<td>v</td>
+<td>操作的数值</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>SET ADD SUBTRACT MULTIPLY DIVIDE</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>- modifyglobalscore
+    {
+    objective=someobjective;
+    action=multiply;
+    v=2
+    } ~onAttack
+</code></pre></div>
+<h3 id="modifymobscore">ModifyMobScore（修改生物的分数）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>obj, o</td>
+<td>目标对象</td>
+<td></td>
+</tr>
+<tr>
+<td>action</td>
+<td>a</td>
+<td>执行操作</td>
+<td>ADD</td>
+</tr>
+<tr>
+<td>value</td>
+<td>v</td>
+<td>The value to perform the operation with</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - modifymobscore{objective=playerkills;action=add;value=1} ~onKillPlayer
+</code></pre></div>
+<h3 id="mount">Mount（坐骑）</h3>
+<blockquote>
+<p>生成实体并 乘骑</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>召唤类型的实体</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  CallSkeletalHorse:
+    Skills:
+    - mount{type=UndeadMount}
+</code></pre></div>
+<h3 id="remount">Remount(重新乘骑)</h3>
+<blockquote>
+<p>如果坐骑 死亡，消失 则无效</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>Rider:
+  Mobtype: skeleton
+  Display: &#39;Rider&#39;
+  Health: 12
+  Riding: TestHorse
+  Skills:
+  - dismount ~onDamaged
+  - remount ~onInteract
+TestHorse:
+  Mobtype: horse
+  Display: &#39;Test Horse&#39;
+  Health: 20
+</code></pre></div>
+<h3 id="setglobalscore">SetGlobalScore(设置全局分数)</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Aliases</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>obj, o</td>
+<td>Specifies the scoreboard objectiv to be changed. If the objective doesn't exist it will automatically be created by the mechanic</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>v</td>
+<td>The value to perform the operation with</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>- setglobalscore
+    {
+    objective=someobjective;
+    v=2
+    } ~onAttack
+</code></pre></div>
+<h3 id="setmobscore">SetMobScore（ 设置生物分数 ）</h3>
+<h3 id="setlevel">SetLevel(设置生物等级)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>操作</td>
+<td>a</td>
+<td>要执行的操作类型</td>
+<td>SET</td>
+</tr>
+<tr>
+<td>等级</td>
+<td>l</td>
+<td>数值</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>SET，ADD，SUBTRACT，MULTIPLY和DIVIDE</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>- setlevel{a=set;l=3} ~onSpawn
+- setlevel{a=add;l=1} ~onKillPlayer
+</code></pre></div>
+<h3 id="suicide">Suicide（自杀）</h3>
+<blockquote>
+<p>让生物自杀</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - suicide ~onDamaged 0.1
+</code></pre></div>
+<h3 id="weather">Weather(天气)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>sunny</td>
+<td>参数类型：“sunny”, “rainy”, “stormy”</td>
+<td>sunny</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td></td>
+<td></td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<p>晴天： sun,clear</p>
+<p>下雨: rain</p>
+<p>雷雨: storm,thunder</p>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - weather{type=storm;duration=6000} ~onSpawn
+</code></pre></div>
+<hr />
+<blockquote>
+<p>以上是非目标机制 . 这些机制不会需要任何目标就能使用，它们作用于生物自身。</p>
+</blockquote>
+<hr />
+<h3 id="cancelevent">CancelEvent(取消事件)</h3>
+<blockquote>
+<p>可触发该 取消事件的 因素 有 &gt; onAttack(攻击) onDamaged(伤害) onExplode(爆炸) onInteract(互动) onCombat(战斗) onTeleport(传送)</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>CancelDamageEvent:
+  Skills:
+  - CancelEvent
+NoDamageMob:
+  Type: villager
+  Skills:
+  - skill{s=CancelDamageEvent;sync=true} ~onDamaged
+</code></pre></div>
+<h3 id="delay">Delay(延迟)</h3>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - ignite{ticks=60}
+  - delay 60
+  - explode
+  Skills:
+  - ignite{ticks=60;delay=80}
+  - explode{delay=80}
+  Skills:
+  - skill{skill=exampleskill;delay=200}
+</code></pre></div>
+<h3 id="missile">Missile（ 发射一个导弹 ）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>惯性</td>
+<td>in</td>
+<td>设置导弹的旋转速率.数值越大越慢</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>onTick</td>
+<td>oT</td>
+<td>Meta-Skill在发射导弹的位置间隔 X tick 再次执行</td>
+<td></td>
+</tr>
+<tr>
+<td>onhit</td>
+<td>oh</td>
+<td>Meta-Skill 命中目标后执行技能</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onEnd</td>
+<td>oE</td>
+<td>Meta-Skill 当发射结束后执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onStart</td>
+<td>oS</td>
+<td>Meta-Skill 当开始时执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>间隔</td>
+<td>i, int</td>
+<td>间隔tick</td>
+<td>4</td>
+</tr>
+<tr>
+<td>HorizontalRadius</td>
+<td>hRadius, hR, r</td>
+<td>水平半径的精度</td>
+<td>1.25</td>
+</tr>
+<tr>
+<td>VerticalRadius</td>
+<td>vRadius, vR</td>
+<td>垂直半径的精度</td>
+<td>Horizontal Radius</td>
+</tr>
+<tr>
+<td>MaxDuration</td>
+<td>md</td>
+<td>最大持续时间</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MaxRange</td>
+<td>mr</td>
+<td>最大范围</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Velocity</td>
+<td>v</td>
+<td>发射导弹过程的速度</td>
+<td>5</td>
+</tr>
+<tr>
+<td>StartYOffset</td>
+<td>syo</td>
+<td>发射后的弹道 Y轴偏移</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>StartFOffset</td>
+<td>sfo</td>
+<td>发射胡的弹道 距离目标水平的偏移值</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>TargetYOffset</td>
+<td>tyo</td>
+<td>发射胡的弹道 距离目标垂直的偏移值</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>HitPlayers</td>
+<td>hp</td>
+<td>生命值</td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitNonPlayers</td>
+<td>hnp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>HitTarget</td>
+<td>ht</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitTargetOnly</td>
+<td></td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>StopAtEntity</td>
+<td>sE</td>
+<td>是否穿透实体目标</td>
+<td>true</td>
+</tr>
+<tr>
+<td>StopAtBlock</td>
+<td>sB</td>
+<td>是否穿透实体方块</td>
+<td>true</td>
+</tr>
+<tr>
+<td>HugSurface</td>
+<td>hs</td>
+<td>是否沿地面水平运动</td>
+<td>false</td>
+</tr>
+<tr>
+<td>PowerAffectsRange</td>
+<td>par</td>
+<td>Mob的力量等级是否影响导弹的射程</td>
+<td>true</td>
+</tr>
+<tr>
+<td>PowerAffectsVelocity</td>
+<td>pav</td>
+<td>Mob的力量等级是否影响导弹的速度</td>
+<td>true</td>
+</tr>
+<tr>
+<td>fromOrigin</td>
+<td>fo</td>
+<td>导弹是否从初始点开始</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code># Mob File
+Mob:
+  Type: ZOMBIE
+  Skills:
+  - skill{s=Homer} @target ~onTimer:100
+# Skills File
+Homer:
+  Skills:
+  - missile{ot=Homer_TICK;oh=Homer_HIT;v=4;i=1;hR=1;vR=1;in=0.75}
+
+Homer_TICK:
+  Skills:
+  - effect:particles{p=flame;a=1} @origin
+
+Homer_HIT:
+  Skills:
+  - effect:particles{p=lava;a=50;hS=1;vS=1}
+  - effect:sound{s=entity.generic.explode;v=1;p=0}
+  - damage{a=1337;i=false}
+</code></pre></div>
+<h3 id="orbital">Orbital( 创建一个围绕目标环绕的飞行物 )</h3>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onStart</td>
+<td>oS</td>
+<td>Meta-Skill 当开始时执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onTick</td>
+<td>oT</td>
+<td>Meta-Skill 在发射弹道后间隔 X tick 之后执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onHit</td>
+<td>oH</td>
+<td>Meta-Skill 命中执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onEnd</td>
+<td>oE</td>
+<td>Meta-Skill 结束发射执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Charges</td>
+<td>c</td>
+<td>发射次数</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>d</td>
+<td>持续时间</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>i</td>
+<td>间隔，距离多久其位置</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Radius</td>
+<td>r</td>
+<td>目标周围的轨道半径</td>
+<td>4</td>
+</tr>
+<tr>
+<td>HitRadius</td>
+<td>hr</td>
+<td>撞击实体围绕轨道的半径(水平)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>VerticalHitRadius</td>
+<td>vhr, vr</td>
+<td>撞击实体围绕轨道的半径(垂直)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Points</td>
+<td>p</td>
+<td>形成轨道圆的“点数”</td>
+<td>32</td>
+</tr>
+<tr>
+<td>XRotation</td>
+<td>rotx, rx</td>
+<td>沿着 X 轴旋转轨道</td>
+<td>0</td>
+</tr>
+<tr>
+<td>YRotation</td>
+<td>roty, ry</td>
+<td>沿着 Y 轴旋转轨道</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ZRotation</td>
+<td>rotz, rz</td>
+<td>沿着 Z 轴旋转轨道</td>
+<td>0</td>
+</tr>
+<tr>
+<td>XOffset</td>
+<td>ox</td>
+<td>沿着 X 轴旋转轨道,偏移值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>YOffset</td>
+<td>oy</td>
+<td>沿着 Y 轴旋转轨道,偏移值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ZOffset</td>
+<td>oz</td>
+<td>沿着 Z 轴旋转轨道,偏移值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>AngularVelocityX</td>
+<td>avx, vx</td>
+<td>修改 X 轴轨道的角度</td>
+<td>0</td>
+</tr>
+<tr>
+<td>AngularVelocityY</td>
+<td>avy, vy</td>
+<td>修改 Y 轴轨道的角度</td>
+<td>0</td>
+</tr>
+<tr>
+<td>AngularVelocityZ</td>
+<td>avz, vz</td>
+<td>修改 Z 轴轨道的角度</td>
+<td>0</td>
+</tr>
+<tr>
+<td>HitPlayers</td>
+<td>hp</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitNonPlayers</td>
+<td>hnp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>HitSelf</td>
+<td>hs</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnGiveDamage</td>
+<td>cogd</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnTakeDamage</td>
+<td>cotd</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnDeath</td>
+<td>cod</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>CancelOnTeleport</td>
+<td>cot</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnChangeWorld</td>
+<td>cocw</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnSkillUse</td>
+<td>cosu</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnQuit</td>
+<td>coq</td>
+<td></td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Mob:
+    Type: SKELETON
+    Skills:
+    - skill{s=IceShield} @self ~onDamaged 0.2
+  IceShield:
+    Skills:
+    - orbital{onTick=IceShield-Tick;onHit=IceShield-Hit;points=20;interval=1;duration=200;charges=1}
+  IceShield-Tick:
+    Skills:
+    - effect:particles{p=snowballpoof;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+  IceShield-Hit:
+    Skills:
+    - damage{a=10}
+    - potion{type=SLOW;duration=100;lvl=2}
+</code></pre></div>
+<h3 id="projectile">Projectile（自定义导弹）</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Aliases</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onTick</td>
+<td>oT</td>
+<td>Meta-Skill executed every [interval] ticks at the projectile's origin location.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onHit</td>
+<td>oH</td>
+<td>Meta-Skill executed when the projectile hits something. Targets hit are inherited by the meta-skill.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onEnd</td>
+<td>oE</td>
+<td>Meta-Skill executed when the projectile ends.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>t</td>
+<td>The “type” of projectile. Default projectiles are launched from the mob's location towards the target. METEOR type projectiles fall from the sky above the target.</td>
+<td>NORMAL</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>i</td>
+<td>How often (in ticks) the projectile updates its position</td>
+<td>4</td>
+</tr>
+<tr>
+<td>HorizontalRadius</td>
+<td>hRadius, hR</td>
+<td>The horizontal radius entities will be hit in around the projectile.</td>
+<td>1.25</td>
+</tr>
+<tr>
+<td>VerticalRadius</td>
+<td>vRadius, vR</td>
+<td>The vertical radius entities will be hit in around the projectile.</td>
+<td>Horizontal Radius</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>d</td>
+<td>The max duration (in ticks) the projectile will persist.</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MaxRange</td>
+<td>mr</td>
+<td>The maximum range (in blocks) the projectile will travel.</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Velocity</td>
+<td>v</td>
+<td>The velocity of the projectile</td>
+<td>5</td>
+</tr>
+<tr>
+<td>StartYOffset</td>
+<td>syo</td>
+<td>Start Y Offset - Lets you offset where on the casting mob the projectile shoots from.</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>StartFOffset</td>
+<td>sfo</td>
+<td>Start Forward Offset - How far in front of the mob the projectile starts</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>StartSideOffset</td>
+<td>sso</td>
+<td>Start Side Offset - How far to the side of the mob the projectile starts</td>
+<td>0</td>
+</tr>
+<tr>
+<td>TargetYOffset</td>
+<td>tyo</td>
+<td>Target Y Offset - Lets you offset where on the target the projectile shoots at.</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>HorizontalOffset</td>
+<td>hO</td>
+<td>Horizontal Offset will rotate the projectile's horizontal starting velocity around a 360-degree axis.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>VerticalOffset</td>
+<td>vO</td>
+<td>Vertical Offset will rotate the projectile's vertical starting velocity around a 360-degree axis.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>HitPlayers</td>
+<td>hp</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitNonPlayers</td>
+<td>hnp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>StopAtEntity</td>
+<td>sE</td>
+<td>Whether the projectile will stop upon hitting a targetable entity.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>StopAtBlock</td>
+<td>sB</td>
+<td>Whether the projectile will stop upon hitting an opaque block.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>HugSurface</td>
+<td>hs</td>
+<td>Whether or not the projectile should move along the ground.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>HeightFromSurface</td>
+<td>hfs</td>
+<td>For NORMAL projectiles, how high above the surface the projectile should glide if HugSurface is set to TRUE. For METEOR projectiles, how high above the surface the projectile starts above the target.</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>PowerAffectsRange</td>
+<td>par</td>
+<td>Whether a mob's <a href="https://www.mythicmobs.net/manual/doku.php/skills/mechanics/power_level">power level</a> affects the projectile's range.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>PowerAffectsVelocity</td>
+<td>pav</td>
+<td>Whether a mob's <a href="https://www.mythicmobs.net/manual/doku.php/skills/mechanics/power_level">power level</a> affects the projectile's velocity.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>gravity</td>
+<td>g</td>
+<td>Determines the gravity of the projectile; use fractions (0.1-0.2) for low gravity</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Mob:
+    Type: SKELETON
+    Skills:
+    - skill{s=IceBolt} @target ~onTimer:100
+  IceBolt:
+    Skills:
+    - projectile{onTick=IceBolt-Tick;onHit=IceBolt-Hit;v=8;i=1;hR=1;vR=1}
+  IceBolt-Tick:
+    Skills:
+    - effect:particles{p=snowballpoof;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+  IceBolt-Hit:
+    Skills:
+    - damage{a=10}
+    - potion{type=SLOW;duration=100;lvl=2}
+</code></pre></div>
+<h3 id="shoot">Shoot(发射)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>t</td>
+<td>类型： 箭头(arrow),雪球 (snowball), 鸡蛋(egg), “enderpearl”, 或 药水(potion)</td>
+<td>arrow</td>
+</tr>
+<tr>
+<td>damage</td>
+<td>d</td>
+<td>造成伤害</td>
+<td>5</td>
+</tr>
+<tr>
+<td>velocity</td>
+<td>v</td>
+<td>速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>maxDistance</td>
+<td>md</td>
+<td>最大射程</td>
+<td>64</td>
+</tr>
+<tr>
+<td>vspread</td>
+<td>vs</td>
+<td>垂直击中半径</td>
+<td>0</td>
+</tr>
+<tr>
+<td>hspread</td>
+<td>hs</td>
+<td>水平击中半径</td>
+<td>0</td>
+</tr>
+<tr>
+<td>poweraffectsvelocity</td>
+<td>pav</td>
+<td>Mob的力量是否影响发射速度</td>
+<td>true</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>int, i</td>
+<td>间隔</td>
+<td>4</td>
+</tr>
+<tr>
+<td>ontickskill</td>
+<td>ontick, ot</td>
+<td>间隔期间 执行 XX 技能</td>
+<td></td>
+</tr>
+<tr>
+<td>onhitskill</td>
+<td>onhit, oh</td>
+<td>击中后执行 XX 技能</td>
+<td></td>
+</tr>
+<tr>
+<td>onendskill</td>
+<td>onend, oe</td>
+<td>发射结束后执行</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ArrowBarrage:
+  Skills:
+  - shoot{type=ARROW;velocity=5;damage=10}
+  - delay 10
+  - shoot{type=ARROW;velocity=5;damage=10}
+  - delay 10
+  - shoot{type=ARROW;velocity=5;damage=10}
+  - delay 10
+  - shoot{type=ARROW;velocity=5;damage=10}
+  - delay 10
+  - shoot{type=ARROW;velocity=5;damage=10}
+</code></pre></div>
+<h3 id="skill">Skill(技能)</h3>
+<div class="highlight"><pre><span></span><code>Skills:
+- skill{skill=AnotherSkill}
+- skill{s=AnotherSkill}
+</code></pre></div>
+<blockquote>
+<p>执行/Skills 文件夹中的有的技能</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>forcesync</td>
+<td>sync</td>
+<td>强制同步运行</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>internal_skillname:
+  Cooldown: &lt;seconds&gt;
+  Conditions:
+  - condition
+  - ...
+  Skills:
+  - mechanic{}
+  - ...
+</code></pre></div>
+<blockquote>
+<p>如果Skills文件夹中 已写有冷却，Mob文件夹中的 无法再次配置 冷却.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>Skills:
+- skill{s=AnotherSkill;sync=true}
+- skill{s=ice_bolt;sync=true}
+- skill{sync=true;s=flamethrower}
+- skill
+    {
+    skill=leafs;
+    sync=true
+    }
+</code></pre></div>
+<h3 id="sudoskill">SudoSkill(目标执行技能)</h3>
+<div class="highlight"><pre><span></span><code>#skill 
+sudo:
+  Skills:
+  - arrowvolley{a=20;s=25;v=10;f=50;rd=200} @EIR{r=30}
+  - message{msg=&quot;Triggername: &lt;trigger.name&gt;&quot;} @world
+#mob
+SudoMonkey:
+  Type: villager
+  Display: &#39;a Villager&#39;
+  Skills:
+  - sudoskill{s=sudo;cat=true} @trigger ~onDamaged
+</code></pre></div>
+<h3 id="randomskilll">RandomSkilll（随机技能）</h3>
+<div class="highlight"><pre><span></span><code>Skills:
+- randomskill{skills=skill1,skill2,skill3}
+Skills:
+- randomskill{
+    skills=
+    superskill,
+    green_skill,
+    skill3,
+    grandSkill,
+    7331
+    }
+</code></pre></div>
+<h3 id="totem">Totem( 在一个坐标创建固定的图腾 )</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Charges</td>
+<td>ch, c</td>
+<td>消失前击中次数</td>
+<td>0</td>
+</tr>
+<tr>
+<td>onTick</td>
+<td>oT</td>
+<td>间隔多少tick 执行一次</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onHit</td>
+<td>oH</td>
+<td>击中后执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onEnd</td>
+<td>oE</td>
+<td>结束后执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onStart</td>
+<td>oS</td>
+<td>开始执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>i, int</td>
+<td>间隔</td>
+<td>4</td>
+</tr>
+<tr>
+<td>HorizontalRadius</td>
+<td>hRadius, hR</td>
+<td>攻击的水平半径</td>
+<td>1.25</td>
+</tr>
+<tr>
+<td>VerticalRadius</td>
+<td>vRadius, vR</td>
+<td>攻击的垂直半径</td>
+<td>Horizontal Radius</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>md</td>
+<td>持续时间</td>
+<td>200</td>
+</tr>
+<tr>
+<td>YOffset</td>
+<td>yo</td>
+<td>生成Y的偏移值</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>HitPlayers</td>
+<td>hp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>HitNonPlayers</td>
+<td>hnp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>HitTarget</td>
+<td>ht</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitTargetOnly</td>
+<td></td>
+<td></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>以上是 特殊机制</p>
+</blockquote>
+<hr />
+<h3 id="activate-spawnermm">Activate Spawner（激活MM刷怪点）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spawners</td>
+<td>spawner, s</td>
+<td>生成点名称</td>
+<td>NONE</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Skills:
+- activatespawner{spawner=BossAdd}
+Skills:
+- activatespawner{spawner=g:Castle}
+Skills:
+- activatespawner{spawner=DungeonBoss1Spawner*}
+</code></pre></div>
+<h3 id="push-button">Push Button（按下按钮）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td></td>
+<td>按钮的 X 坐标</td>
+<td></td>
+</tr>
+<tr>
+<td>y</td>
+<td></td>
+<td>按钮的 Y 坐标</td>
+<td></td>
+</tr>
+<tr>
+<td>z</td>
+<td></td>
+<td>按钮的 Z 坐标</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>HitSecretButton:
+  Skills:
+  - pushbutton{x=15;y=67;z=-213}
+</code></pre></div>
+<h3 id="toggle-lever">Toggle Lever （拉杆）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duration</td>
+<td>d</td>
+<td>持续时间</td>
+<td>20</td>
+</tr>
+<tr>
+<td>x</td>
+<td></td>
+<td>拉杆 X 的坐标</td>
+<td>0</td>
+</tr>
+<tr>
+<td>y</td>
+<td></td>
+<td>拉杆 Y 的坐标</td>
+<td>0</td>
+</tr>
+<tr>
+<td>z</td>
+<td></td>
+<td>拉杆 Z 的坐标</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>OpenSecretDoor:
+  Skills:
+  - togglelever{duration=600;x=15;y=67;z=-213}
+</code></pre></div>
+<hr />
+<blockquote>
+<p>以上仅坐标的 机制</p>
+</blockquote>
+<hr />
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">缩写</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">cooldown</td>
+<td align="left">cd</td>
+<td align="left">冷却时间，秒</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">delay</td>
+<td align="left"></td>
+<td align="left">延迟技能的使用</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">repeat</td>
+<td align="left"></td>
+<td align="left">重复几次使用</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">repeatInterval</td>
+<td align="left"></td>
+<td align="left">重复使用的间隔时间</td>
+<td align="left">0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="blockmask">BlockMask（临时头颅）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>material</td>
+<td>mat, m</td>
+<td>原版当中的方块</td>
+<td>gravel</td>
+</tr>
+<tr>
+<td>data</td>
+<td>dv</td>
+<td>元数据</td>
+<td>0</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>r</td>
+<td>半径</td>
+<td>0</td>
+</tr>
+<tr>
+<td>noair</td>
+<td>na</td>
+<td>是否取消替换空气</td>
+<td>true</td>
+</tr>
+<tr>
+<td>noise</td>
+<td>n</td>
+<td>Defines the randomness of the effect.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>d</td>
+<td>持续时间</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shape</td>
+<td>s</td>
+<td>效果的形状</td>
+<td>sphere</td>
+</tr>
+<tr>
+<td>noair</td>
+<td>na</td>
+<td>Mask no air blocks only</td>
+<td>true</td>
+</tr>
+<tr>
+<td>onlyair</td>
+<td>oa</td>
+<td>Mask air blocks only.</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>- effect:blockmask{m=netherrack;r=5} @self ~onTimer:1200
+- effect:blockmask{m=ice;r=2;d=20} @PIR{r=50} ~onTimer:5
+- effect:blockunmask{r=30}
+</code></pre></div>
+<p><strong>特效</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">特效机制</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fblockmask">Block Mask</a></td>
+<td align="left">临时戴上一块方块</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fender">Ender</a></td>
+<td align="left">Ender 特效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fenderbeam">Ender Beam</a></td>
+<td align="left">末影水晶激光连接到目标</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fexplosion">Explosion</a></td>
+<td align="left">爆炸特效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Ffirework">Firework</a></td>
+<td align="left">烟花特效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fflames">Flames</a></td>
+<td align="left">刷怪箱火焰特效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fgeyser">Geyser</a></td>
+<td align="left">创造喷泉一样的水或岩浆</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fitemspray">Item Spray</a></td>
+<td align="left">在目标周围喷出临时物品</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Flightning">Lightning</a></td>
+<td align="left">落下一道假雷</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticles">Particles</a></td>
+<td align="left">在目标周围创建粒子</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticlebox">Particle Box</a></td>
+<td align="left">在目标周围生成粒子盒</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticleline">Particle Line</a></td>
+<td align="left">在目标周围生成粒子线</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticlering">Particle Ring</a></td>
+<td align="left">在目标周围生成粒子环</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticlesphere">Particle Sphere</a></td>
+<td align="left">在目标周围生成粒子球</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticletornado">Particle Tornado</a></td>
+<td align="left">在目标周围创建持续的“龙卷风”型特效粒子</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fsmoke">Smoke</a></td>
+<td align="left">创造一阵烟雾</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fsmokeswirl">Smoke Swirl</a></td>
+<td align="left">创造持续的“旋涡”型烟雾</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fsound">Sound</a></td>
+<td align="left">播放材质包中的一个音效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fspin">Spin</a></td>
+<td align="left">让生物旋转</td>
+</tr>
+</tbody>
+</table>
+<h3 id="addtag_1">AddTag(标记)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">tag</td>
+<td align="left">t</td>
+<td align="left">标签的字符串</td>
+<td align="left">默认</td>
+</tr>
+</tbody>
+</table>
+<p>例子:</p>
+<div class="highlight"><pre><span></span><code>Skill:
+  -addtag {t=test} @self
+</code></pre></div>
+<blockquote>
+<p>该技能 会将 标签给予 施法者身上运行</p>
+</blockquote>
+<p>例子:</p>
+<div class="highlight"><pre><span></span><code>TagTest:
+  Conditions:
+  - hastag{t=Test}
+ Skills:
+  - suicide @self
+</code></pre></div>
+<blockquote>
+<p>拥有 标签 执行 自杀</p>
+</blockquote>
+<h3 id="arrow-volley_1">Arrow volley (箭雨)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数量</td>
+<td>a</td>
+<td>发射箭的数量</td>
+<td>20</td>
+</tr>
+<tr>
+<td>布局</td>
+<td>s</td>
+<td>箭与箭之间的距离</td>
+<td>45</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>箭在运动过程中的速度</td>
+<td>20</td>
+</tr>
+<tr>
+<td>火焰附加</td>
+<td>f</td>
+<td>当实体被击中时,火焰持续的时间</td>
+<td>0/tick</td>
+</tr>
+<tr>
+<td>箭的消失时间</td>
+<td>rd</td>
+<td>当被发射出的箭，击中地面或实体存在多久</td>
+<td>200/tick</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - arrowvolley{a=20;s=25;v=10;f=50;rd=200} @Target
+</code></pre></div>
+<blockquote>
+<p>发射了 20支 箭 , 箭与箭之间的间隔 25 , 箭在运动过程的速度为 10 , 击中实体后产生的火焰附加伤害持续 2.5s ,最后将在 10s 后移除 箭.</p>
+</blockquote>
+<h3 id="basedamage_1">BaseDamage(基础伤害)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>倍数</td>
+<td>m</td>
+<td>造成伤害的百分比</td>
+<td>1</td>
+</tr>
+<tr>
+<td>真实伤害</td>
+<td>ia</td>
+<td>无视护甲值</td>
+<td>true/flase</td>
+</tr>
+<tr>
+<td>击退</td>
+<td>pkb,pk</td>
+<td>是否开启击退</td>
+<td>true/flase</td>
+</tr>
+<tr>
+<td>伤害免疫</td>
+<td>pi</td>
+<td>是否无视该伤害</td>
+<td>true/false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  AMob:
+    Type: HUSK
+    Damage: 10
+  Skills:
+  - basedamage{m=1.5} @target ~onDamaged
+</code></pre></div>
+<blockquote>
+<p>当受到攻击时,对其目标造成 其原始伤害的 150% (也就是15点伤害)</p>
+</blockquote>
+<h3 id="command_1">Command(命令)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命令</td>
+<td>C</td>
+<td>要执行的命令</td>
+<td></td>
+</tr>
+<tr>
+<td>作为施法者</td>
+<td>ac</td>
+<td>如果为true，则从施法者作为执行命令者</td>
+<td>false</td>
+</tr>
+<tr>
+<td>作为OP</td>
+<td>op</td>
+<td>将已OP权限进行执行命令</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Skills:
+- command{c=&quot;give &lt;target.name&gt; gold_bar 20&quot;} @trigger ~onInteract
+- command{c=&quot;minecraft:tp &lt;target.name&gt; &lt;mob.uuid&gt;&quot;} @self ~onDamaged
+- command{c=&quot;minecraft:summon Zombie ~ ~ ~ &lt;&amp;lc&gt;NoAI:true,CustomName:&lt;&amp;dq&gt;Summoned Zombie&lt;&amp;dq&gt;&lt;&amp;rc&gt;&quot;}
+- command{c=&quot;minecraft:summon Zombie ~ ~ ~ {NoAI:true,CustomName:&lt;&amp;dq&gt;Summoned Zombie&lt;&amp;dq&gt;}&quot;}
+</code></pre></div>
+<h3 id="consume_1">Consume(献祭)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>伤害</td>
+<td>d,damage</td>
+<td>造成伤害的数值</td>
+<td>none</td>
+</tr>
+<tr>
+<td>愈合</td>
+<td>h</td>
+<td>每只生物造成攻击的治疗数值</td>
+<td>none</td>
+</tr>
+<tr>
+<td>击退</td>
+<td>pkb,pk</td>
+<td>是否击退生物</td>
+<td>false</td>
+</tr>
+<tr>
+<td>免疫</td>
+<td>pi</td>
+<td>免疫该伤害</td>
+<td>false</td>
+</tr>
+<tr>
+<td>无视护甲</td>
+<td>i,ia</td>
+<td>字面意思</td>
+<td>flase</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - consume{d=1000;h=20} @MobsInRadius{type=ZOMBIE;r=20}
+</code></pre></div>
+<blockquote>
+<p>献祭附近 僵尸 , 每一只被献祭的僵尸 将回复 20 HP</p>
+</blockquote>
+<h3 id="damage_1">Damage(伤害)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值</td>
+<td>a</td>
+<td>造成伤害的数值</td>
+<td>1</td>
+</tr>
+<tr>
+<td>真实伤害</td>
+<td>ia</td>
+<td>是否无视其护甲值，造成真实伤害</td>
+<td>false</td>
+</tr>
+<tr>
+<td>击退</td>
+<td>pkb,pk</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>免疫</td>
+<td>pi</td>
+<td></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - damage{amount=20;ignoreArmor=true} @target ~onTimer:20
+</code></pre></div>
+<blockquote>
+<p>触发该技能时，每 1s 造成 固定伤害 20点伤害 给予 目标</p>
+</blockquote>
+<h3 id="doppleganger_1">Doppleganger(伪装)</h3>
+<div class="highlight"><pre><span></span><code>Ditto:
+  Type: SKELETON
+  Skills:
+  - doppleganger @NearestPlayer ~onSpawn
+</code></pre></div>
+<h3 id="explosion_1">Explosion(爆炸)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>力量</td>
+<td>y</td>
+<td>爆炸产生的伤害</td>
+<td>0.013</td>
+</tr>
+<tr>
+<td>破坏方块</td>
+<td>d</td>
+<td>(true/flase)是否破坏方块</td>
+<td>false</td>
+</tr>
+<tr>
+<td>着火</td>
+<td>f,ft</td>
+<td>是否生成火焰</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ExplosiveBlast:
+  Skills:
+  - explosion{yield=4} @target
+</code></pre></div>
+<h3 id="force-pull_1">Force Pull（传送）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传送</td>
+<td>s</td>
+<td>将玩家传送至 X 范围内</td>
+<td>0</td>
+</tr>
+<tr>
+<td>vspread</td>
+<td>vs</td>
+<td></td>
+<td>spread</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ForceGrip:
+  Skills:
+  - forcepull{spread=5} @EntitiesInRadius{r=30}
+</code></pre></div>
+<blockquote>
+<p>将 半径 30 各内 的玩家 传送至 Boss 5 格范围内的随机位置.</p>
+</blockquote>
+<h3 id="glowbuff_1">Glow（高光BUFF）</h3>
+<blockquote>
+<p>需要GLOW插件</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">颜色</td>
+<td align="left">c</td>
+<td align="left">实体发光的颜色</td>
+<td align="left">white(白色)</td>
+</tr>
+<tr>
+<td align="left">持续时间</td>
+<td align="left">d</td>
+<td align="left">效果持续时间</td>
+<td align="left">100/tick</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - effect:glow{color=RED;duration=1000}
+</code></pre></div>
+<blockquote>
+<p>给予目标 发光效果 发出 红色高光, 持续 50s</p>
+</blockquote>
+<h3 id="heal_1">Heal(治疗固定值)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">数值</td>
+<td align="left">a</td>
+<td align="left">治疗的数值</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">额外治疗数值</td>
+<td align="left">oh</td>
+<td align="left">已达到满生命数值时，是否超出的部分作为护盾来使用</td>
+<td align="left">false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - heal{amount=20} @self ~onDamaged 0.2
+</code></pre></div>
+<blockquote>
+<p>当生命值受损时,提供20HP的生命恢复.(20%的几率)</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - heal{amount=20;overheal=true} @self ~onDamaged 0.2
+</code></pre></div>
+<blockquote>
+<p>当开启 overheal 时，即使该生物或玩家生命值 满 也会给予 20HP. 这20HP将会作为 护盾来使用</p>
+<p>将设 最大生命 20/20 HP ， 超出部分展示 40/20 HP</p>
+</blockquote>
+<h3 id="healpercent_1">HealPercent(治疗百分比)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">倍数</td>
+<td align="left">m</td>
+<td align="left"></td>
+<td align="left">0.1</td>
+</tr>
+<tr>
+<td align="left">额外治疗数值</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - healpercent{m=0.2} @self ~onAttack
+</code></pre></div>
+<blockquote>
+<p>1 是 100% 而 0.2 就是 20%</p>
+</blockquote>
+<h3 id="ignite_1">Ignite(点燃)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">时间</td>
+<td align="left">t,d,duration</td>
+<td align="left">持续的时间</td>
+<td align="left">60/tick</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - ignite{ticks=100} @trigger ~onAttack
+</code></pre></div>
+<h3 id="json-meassgejson_1">Json Meassge(Json消息)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">消息</td>
+<td align="left">m</td>
+<td align="left">发送的json.必须用“”括起来</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code> Skills:
+  - jsonmessage{m=&quot;[{&#39;text&#39;:&#39;&amp;aHey, i am a JSON message!&#39;}]&quot;} @trigger ~onInteract
+  - jsonmessage{m=&quot;[{&#39;text&#39;:&#39;Hey, i am a red JSON message!&#39;,&#39;color&#39;:&#39;red&#39;}]&quot;} @trigger ~onInteract
+</code></pre></div>
+<blockquote>
+<p>悬停事件</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>Skills:
+  - jsonmessage{m=&quot;[{&#39;text&#39;:&#39;&amp;7With me, you can create hover events&#39;,&#39;hoverEvent&#39;:{&#39;action&#39;:&#39;show_text&#39;,&#39;value&#39;:{&#39;text&#39;:&#39;&amp;aI am a hover event :)&#39;}}}]&quot;} @trigger ~onInteract
+</code></pre></div>
+<blockquote>
+<p>点击事件</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - jsonmessage{m=&quot;[{&#39;text&#39;:&#39;&amp;7&amp;nAlso click events! :)&#39;,&#39;clickEvent&#39;:{&#39;action&#39;:&#39;run_command&#39;,&#39;value&#39;:&#39;/mm signal &lt;mob.uuid&gt; &lt;signal&gt;&#39;}}]&quot;} @trigger ~onInteract
+</code></pre></div>
+<h3 id="leap_1">Leap（飞跃）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>跳跃运动过程中的速度</td>
+<td>100</td>
+</tr>
+<tr>
+<td>noise</td>
+<td></td>
+<td>Added variance to where the mob will land</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>CrushingLeap:
+  Cooldown: 10
+  Skills:
+  - leap{velocity=200} @target
+  - delay 20
+  - jump{velocity=-100}
+  - effect:explosion @self
+  - damage{amount=20} @EntitiesInRadius{r=5}
+</code></pre></div>
+<blockquote>
+<p>该技能 会使 怪物 以 200 速度 跳向目标，撞击目标产生爆炸</p>
+</blockquote>
+<h3 id="lightning_1">Lightning(落雷)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">别名</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">伤害</td>
+<td align="left">d</td>
+<td align="left">造成的伤害数值</td>
+<td align="left">0.01337</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>StaticSheep:
+  Type: SHEEP
+  Skills:
+  - lightning @EntitiesInRadius{r=10} ~onTimer:100
+</code></pre></div>
+<blockquote>
+<p>召唤落雷 到指定目标</p>
+</blockquote>
+<h3 id="message_1">Message(消息)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息</td>
+<td>msg,m</td>
+<td>要发送的消息 “”是必须的</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code> Skills:
+  - message{m=&quot;&lt;mob.name&gt;&amp;f&lt;&amp;co&gt; Hahaha! You will all die!&quot;} @PlayersInRadius{r=30}
+</code></pre></div>
+<h3 id="modifyscore_1">ModifyScore(修改玩家记分板分数)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标</td>
+<td>ob</td>
+<td>指定修改目标的记分板，如果该目标不存在。则自动创建</td>
+<td></td>
+</tr>
+<tr>
+<td>操作</td>
+<td>a</td>
+<td>要执行的操作</td>
+<td>add</td>
+</tr>
+<tr>
+<td>数值</td>
+<td>v</td>
+<td>用于执行操作的数值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>名称，条目</td>
+<td>n，e</td>
+<td>玩家的名称</td>
+<td>dummy</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - modifyscore{o=TestScore;e=Bob;a=add;v=1} ~onInteract 
+</code></pre></div>
+<blockquote>
+<p>将目标 当中的 Bob 的玩家分数 +1 。即使该玩家不存在于服务器当中,也会自动创建.</p>
+</blockquote>
+<h3 id="modifytargetscore_1">ModifyTargetScore(修改目标记分板分数)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标</td>
+<td>ob</td>
+<td>指定修改目标的记分板,如果该目标不存在.则自动创建</td>
+<td></td>
+</tr>
+<tr>
+<td>操作</td>
+<td>a</td>
+<td>要执行的操作</td>
+<td>ADD</td>
+</tr>
+<tr>
+<td>数值</td>
+<td>v</td>
+<td>用于执行操作的数值</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - modifytargetscore{objective=damagescore;action=add;value=1} @trigger ~onDamaged
+</code></pre></div>
+<h3 id="mounttarget_1">MountTarget(乘骑)</h3>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - mounttarget @trigger ~onDamaged
+</code></pre></div>
+<blockquote>
+<p>骑目标 ，让目标在你的胯下</p>
+</blockquote>
+<h3 id="percent-damage_1">Percent Damage（伤害的百分比）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percent</td>
+<td>p</td>
+<td>百分比</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>current</td>
+<td>c,ch</td>
+<td>根据当前生命值或最大生命进行计算</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - percentDamage{percent=0.5}
+</code></pre></div>
+<blockquote>
+<p>使目标受到最大生命值的一半（50％）伤害。</p>
+</blockquote>
+<h3 id="potion_1">Potion(药水)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>应用的药水类型</td>
+<td></td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>d</td>
+<td>以tick计算时间</td>
+<td>100</td>
+</tr>
+<tr>
+<td>等级</td>
+<td>l</td>
+<td>药水的等级, 0级 是最低等级</td>
+<td>1</td>
+</tr>
+<tr>
+<td>force</td>
+<td></td>
+<td>是否覆盖当前药水效果 (4.0+)</td>
+<td>false</td>
+</tr>
+<tr>
+<td>粒子效果</td>
+<td>particles or p</td>
+<td>是否不显示粒子效果状态 (4.6+)</td>
+<td>true</td>
+</tr>
+<tr>
+<td>图标</td>
+<td>icon or i</td>
+<td>是否不显示药水图标. (4.6+)</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Cripple:
+  Skills:
+  - potion{type=SLOW;duration=200;level=4}
+  - damage{amount=10}
+</code></pre></div>
+<blockquote>
+<p>降低目标的移动速度 10s 并造成 10 点伤害</p>
+</blockquote>
+<h3 id="prison_1">Prison（禁锢）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>材料</td>
+<td>m</td>
+<td>生成方块的材料</td>
+<td>ICE</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>d</td>
+<td>目标周围生成的方块 持续时间</td>
+<td>100/tick</td>
+</tr>
+<tr>
+<td>是否可以破坏</td>
+<td>b</td>
+<td>(true/false) 生成的方块是否可以被破坏</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>IronPrison:
+  Skills:
+  - prison{material=IRON_BLOCK;duration=200;breakable=true} @target
+</code></pre></div>
+<blockquote>
+<p>在目标周围生成方块 以此困住目标. 持续时间 10s 生成方块类型 铁块</p>
+</blockquote>
+<h3 id="pull_1">Pull（吸怪）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>将目标拉向施法者时的运动速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>toOrigin</td>
+<td>to</td>
+<td>无论目标是否被拉至施法者，都生效</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>DeathGrip:
+  Skills:
+  - pull{velocity=10} @target
+  - pull{v=6;to=true} @PIR{r=10}
+</code></pre></div>
+<h3 id="rally_1">Rally（嘲讽）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>type, t</td>
+<td>目标的类型,可以是MM当中的怪物也可以是原版未设置的怪物</td>
+<td>NONE</td>
+</tr>
+<tr>
+<td>半径</td>
+<td>r</td>
+<td>影响的半径（以方块为单位）</td>
+<td>10</td>
+</tr>
+<tr>
+<td>半径</td>
+<td>vr</td>
+<td>垂直半径</td>
+<td>radius</td>
+</tr>
+<tr>
+<td>半径</td>
+<td>hr</td>
+<td>水平半径</td>
+<td>radius</td>
+</tr>
+<tr>
+<td>覆盖目标</td>
+<td>ot</td>
+<td>(true/false)是否影响已有的目标生物</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>CallForHelp:
+  Skills:
+  - message{m=&quot;&lt;mob.name&gt;&lt;&amp;co&gt; Guards! Help me!&quot;} @PlayersInRadius{r=30}
+  - rally{types=Guard,Knight;radius=30;ot=false} @Trigger
+</code></pre></div>
+<blockquote>
+<p>将 附近 30格 内的 实体 "Knight"或者"Guard"类型的生物.发送消息</p>
+</blockquote>
+<h3 id="random-message_1">Random Message（随机消息）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息</td>
+<td>m</td>
+<td>要发送的多条消息内容.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - randommessage{
+      m=
+      &quot;消息内容 1&quot;,
+      &quot;消息内容 2&quot;,
+      &quot;消息内容 3&quot;;
+      } @PIR{r=20} ~onInteract
+Skills:
+- randommessage{m=&quot;one test&quot;,&quot;not a test&quot;,&quot;test&quot;;} @PIR{r=20} ~onInteract
+</code></pre></div>
+<h3 id="remove_1">Remove（移除）</h3>
+<blockquote>
+<p>从已有的实体中移除目标实体 （当然对玩家不起作用）</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - remove{delay=200} @self ~onSpawn
+  Skills:
+  - remove @self ~onInteract
+</code></pre></div>
+<blockquote>
+<p>右键点击 直接生成</p>
+</blockquote>
+<h3 id="removetag_1">RemoveTag（移除标记）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tag</td>
+<td>t</td>
+<td>标记的字符串</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actionmessagetitle_1">ActionMessage（Title消息）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>消息</td>
+<td>m</td>
+<td>要发送的消息</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Skills:
+- actionmessage{m=&quot;&lt;mob.name&gt;&amp;f is casting a spell!&quot;} @PlayersInRadius{r=30}
+- actionmessage{m=&quot;&amp;lHello! &amp;cI&#39;m &amp;athe &amp;9&amp;lactionmessage-bar&amp;r! &amp;e:)&quot;} @trigger ~onInteract
+</code></pre></div>
+<h3 id="setscore_1">SetScore(设置玩家分数)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标</td>
+<td>obj,o</td>
+<td>指定目标记分板,如果不存在.自动创建</td>
+<td></td>
+</tr>
+<tr>
+<td>数值</td>
+<td>v</td>
+<td>The value to perform the operation with</td>
+<td></td>
+</tr>
+<tr>
+<td>name, entry</td>
+<td>n, e</td>
+<td>The name of the fake player</td>
+<td>dummy</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - setscore{o=TestScore;e=Bob;v=1} ~onInteract 
+</code></pre></div>
+<h3 id="settargetscore_1">SetTargetScore（ 设置目标分数 ）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>obj, o</td>
+<td>指定目标记分板,如果不存在.自动创建</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>v</td>
+<td>The value to perform the operation with</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - settargetscore
+      {
+      objective=damagescore;
+      value=1
+      } @trigger ~onDamaged
+</code></pre></div>
+<h3 id="setstance_1">SetStance</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stance</td>
+<td>s</td>
+<td>stance的字符串名称</td>
+<td>默认</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>StanceChangeSkill
+  Skills:
+  - setstance{stance=bowphase} @self
+</code></pre></div>
+<blockquote>
+<p>This skill would change the caster's phase to “bowphase”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>AnotherSkill:
+  Conditions:
+  - stance bowphase
+ Skills:
+  - ...some bow skills
+</code></pre></div>
+<blockquote>
+<p>This skill would only be usable when the caster had the stance “bowphase”</p>
+</blockquote>
+<h3 id="shoot-fireball_1">Shoot Fireball（发射火球）</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Aliases</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>力量</td>
+<td>y</td>
+<td>火球爆炸后的力量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>运动过程的速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>燃烧</td>
+<td>i</td>
+<td>(true/false)爆炸后是否产生 火焰</td>
+<td>false</td>
+</tr>
+<tr>
+<td>fireTicks</td>
+<td>ft</td>
+<td>产生的火焰持续的时间/tick</td>
+<td>0</td>
+</tr>
+<tr>
+<td>火球型号</td>
+<td>small,sml</td>
+<td>大号火球还是小号火球</td>
+<td>false</td>
+</tr>
+<tr>
+<td>声音</td>
+<td>ps</td>
+<td>Whether or not to play the fireball launching sound when it is created</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>FireballBarrage:
+  Skills:
+  - shootfireball{y=1;v=4} @target
+  - delay 10
+  - shootfireball{y=1;v=4} @target
+  - delay 10
+  - shootfireball{y=1;v=4} @target
+</code></pre></div>
+<blockquote>
+<p>快速发射三个 火球</p>
+</blockquote>
+<h3 id="shoot-potion_1">Shoot Potion（投掷火球）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>药水类型</td>
+<td>None</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>d</td>
+<td>效果的持续时间</td>
+<td>100/tick</td>
+</tr>
+<tr>
+<td>等级</td>
+<td>l</td>
+<td>药水等级,0为最低级</td>
+<td>1</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>投掷药水过程的运动速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>粒子效果</td>
+<td>particles or p</td>
+<td>是否不显示粒子效果(true/false)</td>
+<td>true</td>
+</tr>
+<tr>
+<td>图标</td>
+<td>icon or i</td>
+<td>是否不显示图标(true/false)</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ThrownCripplingPotion:
+  Skills:
+  - shootpotion{type=SLOW;duration=200;level=4;velocity=5} @target
+</code></pre></div>
+<h3 id="shoot-skull_1">Shoot Skull(投掷头颅)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yield</td>
+<td>y</td>
+<td>产生爆炸的力量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>声音</td>
+<td>ps</td>
+<td>发射的时候是否有音效</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>SkullBarrage:
+  Skills:
+  - shootskull{y=1;v=4} @target
+  - delay 10
+  - shootskull{y=1;v=4} @target
+  - delay 10
+  - shootskull{y=1;v=4} @target
+</code></pre></div>
+<blockquote>
+<p>发射三个头颅</p>
+</blockquote>
+<h3 id="signal_1">Signal（信号）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信号</td>
+<td>s</td>
+<td>发送的信号</td>
+<td>ping</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Master:
+  Type: zombie
+  Skills:
+  - summon{m=Minion} @self ~onSpawn
+  - signal{s=ATTACK} @MobsInRadius{r=10;t=Minion} ~onDamaged
+Minion:
+  Type: baby_zombie
+  Skills:
+  - skill{s=ShootAttacker} @NearestPlayer ~onSignal:ATTACK
+ShootAttacker:
+  Skills:
+  - shoot{t=arrow}
+</code></pre></div>
+<blockquote>
+<p>Boss 受到伤害时,发送周围半径的 随从Mob 信号.让随从Mob 使用技能</p>
+</blockquote>
+<h3 id="spring_1">Spring（制造水流）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>显示</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>类型水“water” 或 岩浆 “lava”</td>
+<td>water</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>d</td>
+<td>tick计算</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Flood:
+  Skills:
+  - spring{d=100} @target
+</code></pre></div>
+<h3 id="summon_1">Summon (生成实体)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>要生成的 实体类型支持MM自身的Mob</td>
+<td>SKELETON</td>
+</tr>
+<tr>
+<td>数量</td>
+<td>a</td>
+<td>生成数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>半径</td>
+<td>r</td>
+<td>生成目标的半径</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Y半径</td>
+<td>yr</td>
+<td>Overrides the Y component of radius.</td>
+<td>radius</td>
+</tr>
+<tr>
+<td>yRadiusUpOnly</td>
+<td>yu</td>
+<td>(true/false)生成实体是否以Y轴扩散</td>
+<td>false</td>
+</tr>
+<tr>
+<td>onSurface</td>
+<td>os</td>
+<td>(true/false)是否在实体方块上生成</td>
+<td>true</td>
+</tr>
+<tr>
+<td>copyThreatTable</td>
+<td>ctt</td>
+<td>被生成的实体是否继承仇恨列表</td>
+<td>false</td>
+</tr>
+<tr>
+<td>inheritThreatTable</td>
+<td>itt</td>
+<td>被生成的实体是否共享仇恨列表</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>RaiseSkeletons:
+  Skills:
+  - summon{type=WITHER_SKELETON;amount=5;radius=4} @PIR{r=20}
+</code></pre></div>
+<blockquote>
+<p>在目标玩家周围生成 5 个 "WITHER_SKELETON" 实体</p>
+</blockquote>
+<h3 id="teleport_1">Teleport(传送目标)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spreadh</td>
+<td>sh</td>
+<td>XZ水平的范围</td>
+<td>0</td>
+</tr>
+<tr>
+<td>spreadv</td>
+<td>sv</td>
+<td>垂直范围</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Warp:
+  Skills:
+  - teleport{spreadh=5;spreadv=0} @target
+</code></pre></div>
+<h3 id="teleportto_1">TeleportTo（传送至坐标）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>位置,坐标</td>
+<td>loc, l, c</td>
+<td>传送目标的坐标</td>
+<td></td>
+</tr>
+<tr>
+<td>世界</td>
+<td>w</td>
+<td>目标的世界,如果指定了 位置.则这项是可选项</td>
+<td></td>
+</tr>
+<tr>
+<td>yaw</td>
+<td>y</td>
+<td>朝向</td>
+<td>0</td>
+</tr>
+<tr>
+<td>pitch</td>
+<td>p</td>
+<td>The pitch that the affected entities should assume</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Skills:
+- teleportto{location=190,64,200} @PIR{r=50}
+</code></pre></div>
+<blockquote>
+<p>选择半径为 50 的目标 到指定坐标</p>
+</blockquote>
+<h3 id="threat_1">Threat(设置仇恨列表度)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值</td>
+<td>a</td>
+<td>给予目标仇恨数值</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Fixate:
+  Skills:
+  - threat{amount=10000} @NearestPlayer ~onSpawn
+</code></pre></div>
+<h3 id="throw_1">Throw(将目标抛掷出去)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>velocity</td>
+<td>v</td>
+<td>抛掷实体的水平速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>velocityY</td>
+<td>vy</td>
+<td>抛掷实体的垂直速度</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  GroundSlam:
+    Skills:
+    - effect:explosion @Self
+    - damage{amount=10} @PlayersInRadius{r=5}
+    - throw{velocity=15;velocityY=5} @PlayersInRadius{r=5}
+</code></pre></div>
+<blockquote>
+<p>Mob释放了爆炸效果 并对 范围 5 格内的玩家造成 10 点伤害 . 以及将 玩家抛掷回来</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SuperShockslam:
+  Skills:
+  - throw{velocity=5;velocityY=5} @PIR{r=10}
+  - damage{a=50;i=false} @PIR{r=10}
+  - effect:particles{p=hugeexplode;a=5;vs=0.5;hs=0.5;s=0;y=1} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=0.5} @Self
+  - effect:sound{s=entity.generic.explode;v=2;p=1;repeat=7;repeatInterval=2} @Self
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=1} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=3} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=5} @Self
+  - delay 2 
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=7} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=9} @Self
+  - delay 2
+  - effect:particlering{p=largeexplode;a=40;vs=0.5;hs=0.5;s=0;y=0.3;points=20;radius=11} @Self
+</code></pre></div>
+<h3 id="velocity_1">Velocity（ 更改目标的速度）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模式</td>
+<td>m</td>
+<td>要执行的操作.可以设置 + - * /</td>
+<td>SET</td>
+</tr>
+<tr>
+<td>速度X</td>
+<td>vx, x</td>
+<td>X轴的速度,可以是负数</td>
+<td>1</td>
+</tr>
+<tr>
+<td>速度Y</td>
+<td>vy, y</td>
+<td>Y轴的速度,可以是负数</td>
+<td>1</td>
+</tr>
+<tr>
+<td>速度Z</td>
+<td>vz, z</td>
+<td>Z轴的速度,可以是负数</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>internal_mobname:
+  Type: Zombie
+  Skills:
+  - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+</code></pre></div>
+<hr />
+<blockquote>
+<p>以上 目标机制</p>
+</blockquote>
+<hr />
+<h3 id="disguise_1">Disguise（伪装）</h3>
+<blockquote>
+<p>需要伪装插件支持</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>伪装</td>
+<td>d, type</td>
+<td>要伪装的类型</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - disguise{d=SHEEP}
+  Skills:
+  - disguise{type=player;player=&amp;7Jeb;skin=Notch}
+</code></pre></div>
+<h3 id="dismount_1">Dismount（下马）</h3>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - dismount ~onDamaged
+</code></pre></div>
+<blockquote>
+<p>如果生物在骑乘，停止骑乘</p>
+</blockquote>
+<h3 id="ejectpassenger_1">EjectPassenger</h3>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - ejectpassenger ~onDamaged
+</code></pre></div>
+<blockquote>
+<p>将骑在身上的生物弹出</p>
+</blockquote>
+<h3 id="equip_1">Equip(装备)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>item</td>
+<td>i</td>
+<td>需要装备的物品</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>EquipDiamondSword:
+  Skills:
+  - equip{item=diamond_sword:0}
+EquipCrown:
+  Skills:
+  - equip{item=KingsCrown:4}
+</code></pre></div>
+<blockquote>
+<p>slot : HEAD CHEST LEGS FEET HAND OFFHAND</p>
+</blockquote>
+<h3 id="globalcooldowncdr_1">GlobalCooldown(全局CDR)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ticks</td>
+<td>t</td>
+<td>tick</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  IceBolt:
+    Conditions:
+    - offgcd
+    - targetinlineofsight
+    Skills:
+    - gcd{ticks=40}
+</code></pre></div>
+<blockquote>
+<p>This skill would trigger a Global Cooldown of 40 ticks, during which the skill and all other skills using the “offgcd” condition would not be usable.</p>
+</blockquote>
+<h3 id="jump_1">Jump(跳)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度</td>
+<td>v</td>
+<td>跳跃速度</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>SuperJump:
+  Skills:
+  - jump{velocity=20}
+</code></pre></div>
+<h3 id="modifyglobalscore_1">ModifyGlobalScore（ 更改全局分数 ）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>obj, o</td>
+<td>目标对象</td>
+<td></td>
+</tr>
+<tr>
+<td>执行</td>
+<td>a</td>
+<td>要执行的操作</td>
+<td>ADD</td>
+</tr>
+<tr>
+<td>数值</td>
+<td>v</td>
+<td>操作的数值</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>SET ADD SUBTRACT MULTIPLY DIVIDE</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>- modifyglobalscore
+    {
+    objective=someobjective;
+    action=multiply;
+    v=2
+    } ~onAttack
+</code></pre></div>
+<h3 id="modifymobscore_1">ModifyMobScore（修改生物的分数）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>obj, o</td>
+<td>目标对象</td>
+<td></td>
+</tr>
+<tr>
+<td>action</td>
+<td>a</td>
+<td>执行操作</td>
+<td>ADD</td>
+</tr>
+<tr>
+<td>value</td>
+<td>v</td>
+<td>The value to perform the operation with</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - modifymobscore{objective=playerkills;action=add;value=1} ~onKillPlayer
+</code></pre></div>
+<h3 id="mount_1">Mount（坐骑）</h3>
+<blockquote>
+<p>生成实体并 乘骑</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>t</td>
+<td>召唤类型的实体</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  CallSkeletalHorse:
+    Skills:
+    - mount{type=UndeadMount}
+</code></pre></div>
+<h3 id="remount_1">Remount(重新乘骑)</h3>
+<blockquote>
+<p>如果坐骑 死亡，消失 则无效</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>Rider:
+  Mobtype: skeleton
+  Display: &#39;Rider&#39;
+  Health: 12
+  Riding: TestHorse
+  Skills:
+  - dismount ~onDamaged
+  - remount ~onInteract
+TestHorse:
+  Mobtype: horse
+  Display: &#39;Test Horse&#39;
+  Health: 20
+</code></pre></div>
+<h3 id="setglobalscore_1">SetGlobalScore(设置全局分数)</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Aliases</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective</td>
+<td>obj, o</td>
+<td>Specifies the scoreboard objectiv to be changed. If the objective doesn't exist it will automatically be created by the mechanic</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>v</td>
+<td>The value to perform the operation with</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>- setglobalscore
+    {
+    objective=someobjective;
+    v=2
+    } ~onAttack
+</code></pre></div>
+<h3 id="setmobscore_1">SetMobScore（ 设置生物分数 ）</h3>
+<h3 id="setlevel_1">SetLevel(设置生物等级)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>操作</td>
+<td>a</td>
+<td>要执行的操作类型</td>
+<td>SET</td>
+</tr>
+<tr>
+<td>等级</td>
+<td>l</td>
+<td>数值</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>SET，ADD，SUBTRACT，MULTIPLY和DIVIDE</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>- setlevel{a=set;l=3} ~onSpawn
+- setlevel{a=add;l=1} ~onKillPlayer
+</code></pre></div>
+<h3 id="suicide_1">Suicide（自杀）</h3>
+<blockquote>
+<p>让生物自杀</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - suicide ~onDamaged 0.1
+</code></pre></div>
+<h3 id="weather_1">Weather(天气)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>sunny</td>
+<td>参数类型：“sunny”, “rainy”, “stormy”</td>
+<td>sunny</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td></td>
+<td></td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<p>晴天： sun,clear</p>
+<p>下雨: rain</p>
+<p>雷雨: storm,thunder</p>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - weather{type=storm;duration=6000} ~onSpawn
+</code></pre></div>
+<hr />
+<blockquote>
+<p>以上是非目标机制 . 这些机制不会需要任何目标就能使用，它们作用于生物自身。</p>
+</blockquote>
+<hr />
+<h3 id="cancelevent_1">CancelEvent(取消事件)</h3>
+<blockquote>
+<p>可触发该 取消事件的 因素 有 &gt; onAttack(攻击) onDamaged(伤害) onExplode(爆炸) onInteract(互动) onCombat(战斗) onTeleport(传送)</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>CancelDamageEvent:
+  Skills:
+  - CancelEvent
+NoDamageMob:
+  Type: villager
+  Skills:
+  - skill{s=CancelDamageEvent;sync=true} ~onDamaged
+</code></pre></div>
+<h3 id="delay_1">Delay(延迟)</h3>
+<div class="highlight"><pre><span></span><code>  Skills:
+  - ignite{ticks=60}
+  - delay 60
+  - explode
+  Skills:
+  - ignite{ticks=60;delay=80}
+  - explode{delay=80}
+  Skills:
+  - skill{skill=exampleskill;delay=200}
+</code></pre></div>
+<h3 id="missile_1">Missile（ 发射一个导弹 ）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>惯性</td>
+<td>in</td>
+<td>设置导弹的旋转速率.数值越大越慢</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>onTick</td>
+<td>oT</td>
+<td>Meta-Skill在发射导弹的位置间隔 X tick 再次执行</td>
+<td></td>
+</tr>
+<tr>
+<td>onhit</td>
+<td>oh</td>
+<td>Meta-Skill 命中目标后执行技能</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onEnd</td>
+<td>oE</td>
+<td>Meta-Skill 当发射结束后执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onStart</td>
+<td>oS</td>
+<td>Meta-Skill 当开始时执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>间隔</td>
+<td>i, int</td>
+<td>间隔tick</td>
+<td>4</td>
+</tr>
+<tr>
+<td>HorizontalRadius</td>
+<td>hRadius, hR, r</td>
+<td>水平半径的精度</td>
+<td>1.25</td>
+</tr>
+<tr>
+<td>VerticalRadius</td>
+<td>vRadius, vR</td>
+<td>垂直半径的精度</td>
+<td>Horizontal Radius</td>
+</tr>
+<tr>
+<td>MaxDuration</td>
+<td>md</td>
+<td>最大持续时间</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MaxRange</td>
+<td>mr</td>
+<td>最大范围</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Velocity</td>
+<td>v</td>
+<td>发射导弹过程的速度</td>
+<td>5</td>
+</tr>
+<tr>
+<td>StartYOffset</td>
+<td>syo</td>
+<td>发射后的弹道 Y轴偏移</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>StartFOffset</td>
+<td>sfo</td>
+<td>发射胡的弹道 距离目标水平的偏移值</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>TargetYOffset</td>
+<td>tyo</td>
+<td>发射胡的弹道 距离目标垂直的偏移值</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>HitPlayers</td>
+<td>hp</td>
+<td>生命值</td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitNonPlayers</td>
+<td>hnp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>HitTarget</td>
+<td>ht</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitTargetOnly</td>
+<td></td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>StopAtEntity</td>
+<td>sE</td>
+<td>是否穿透实体目标</td>
+<td>true</td>
+</tr>
+<tr>
+<td>StopAtBlock</td>
+<td>sB</td>
+<td>是否穿透实体方块</td>
+<td>true</td>
+</tr>
+<tr>
+<td>HugSurface</td>
+<td>hs</td>
+<td>是否沿地面水平运动</td>
+<td>false</td>
+</tr>
+<tr>
+<td>PowerAffectsRange</td>
+<td>par</td>
+<td>Mob的力量等级是否影响导弹的射程</td>
+<td>true</td>
+</tr>
+<tr>
+<td>PowerAffectsVelocity</td>
+<td>pav</td>
+<td>Mob的力量等级是否影响导弹的速度</td>
+<td>true</td>
+</tr>
+<tr>
+<td>fromOrigin</td>
+<td>fo</td>
+<td>导弹是否从初始点开始</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code># Mob File
+Mob:
+  Type: ZOMBIE
+  Skills:
+  - skill{s=Homer} @target ~onTimer:100
+# Skills File
+Homer:
+  Skills:
+  - missile{ot=Homer_TICK;oh=Homer_HIT;v=4;i=1;hR=1;vR=1;in=0.75}
+
+Homer_TICK:
+  Skills:
+  - effect:particles{p=flame;a=1} @origin
+
+Homer_HIT:
+  Skills:
+  - effect:particles{p=lava;a=50;hS=1;vS=1}
+  - effect:sound{s=entity.generic.explode;v=1;p=0}
+  - damage{a=1337;i=false}
+</code></pre></div>
+<h3 id="orbital_1">Orbital( 创建一个围绕目标环绕的飞行物 )</h3>
+<h2 id="attributes_1">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onStart</td>
+<td>oS</td>
+<td>Meta-Skill 当开始时执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onTick</td>
+<td>oT</td>
+<td>Meta-Skill 在发射弹道后间隔 X tick 之后执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onHit</td>
+<td>oH</td>
+<td>Meta-Skill 命中执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onEnd</td>
+<td>oE</td>
+<td>Meta-Skill 结束发射执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Charges</td>
+<td>c</td>
+<td>发射次数</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>d</td>
+<td>持续时间</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>i</td>
+<td>间隔，距离多久其位置</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Radius</td>
+<td>r</td>
+<td>目标周围的轨道半径</td>
+<td>4</td>
+</tr>
+<tr>
+<td>HitRadius</td>
+<td>hr</td>
+<td>撞击实体围绕轨道的半径(水平)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>VerticalHitRadius</td>
+<td>vhr, vr</td>
+<td>撞击实体围绕轨道的半径(垂直)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Points</td>
+<td>p</td>
+<td>形成轨道圆的“点数”</td>
+<td>32</td>
+</tr>
+<tr>
+<td>XRotation</td>
+<td>rotx, rx</td>
+<td>沿着 X 轴旋转轨道</td>
+<td>0</td>
+</tr>
+<tr>
+<td>YRotation</td>
+<td>roty, ry</td>
+<td>沿着 Y 轴旋转轨道</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ZRotation</td>
+<td>rotz, rz</td>
+<td>沿着 Z 轴旋转轨道</td>
+<td>0</td>
+</tr>
+<tr>
+<td>XOffset</td>
+<td>ox</td>
+<td>沿着 X 轴旋转轨道,偏移值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>YOffset</td>
+<td>oy</td>
+<td>沿着 Y 轴旋转轨道,偏移值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ZOffset</td>
+<td>oz</td>
+<td>沿着 Z 轴旋转轨道,偏移值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>AngularVelocityX</td>
+<td>avx, vx</td>
+<td>修改 X 轴轨道的角度</td>
+<td>0</td>
+</tr>
+<tr>
+<td>AngularVelocityY</td>
+<td>avy, vy</td>
+<td>修改 Y 轴轨道的角度</td>
+<td>0</td>
+</tr>
+<tr>
+<td>AngularVelocityZ</td>
+<td>avz, vz</td>
+<td>修改 Z 轴轨道的角度</td>
+<td>0</td>
+</tr>
+<tr>
+<td>HitPlayers</td>
+<td>hp</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitNonPlayers</td>
+<td>hnp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>HitSelf</td>
+<td>hs</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnGiveDamage</td>
+<td>cogd</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnTakeDamage</td>
+<td>cotd</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnDeath</td>
+<td>cod</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>CancelOnTeleport</td>
+<td>cot</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnChangeWorld</td>
+<td>cocw</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnSkillUse</td>
+<td>cosu</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>CancelOnQuit</td>
+<td>coq</td>
+<td></td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Mob:
+    Type: SKELETON
+    Skills:
+    - skill{s=IceShield} @self ~onDamaged 0.2
+  IceShield:
+    Skills:
+    - orbital{onTick=IceShield-Tick;onHit=IceShield-Hit;points=20;interval=1;duration=200;charges=1}
+  IceShield-Tick:
+    Skills:
+    - effect:particles{p=snowballpoof;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+  IceShield-Hit:
+    Skills:
+    - damage{a=10}
+    - potion{type=SLOW;duration=100;lvl=2}
+</code></pre></div>
+<h3 id="projectile_1">Projectile（自定义导弹）</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Aliases</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onTick</td>
+<td>oT</td>
+<td>Meta-Skill executed every [interval] ticks at the projectile's origin location.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onHit</td>
+<td>oH</td>
+<td>Meta-Skill executed when the projectile hits something. Targets hit are inherited by the meta-skill.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onEnd</td>
+<td>oE</td>
+<td>Meta-Skill executed when the projectile ends.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>t</td>
+<td>The “type” of projectile. Default projectiles are launched from the mob's location towards the target. METEOR type projectiles fall from the sky above the target.</td>
+<td>NORMAL</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>i</td>
+<td>How often (in ticks) the projectile updates its position</td>
+<td>4</td>
+</tr>
+<tr>
+<td>HorizontalRadius</td>
+<td>hRadius, hR</td>
+<td>The horizontal radius entities will be hit in around the projectile.</td>
+<td>1.25</td>
+</tr>
+<tr>
+<td>VerticalRadius</td>
+<td>vRadius, vR</td>
+<td>The vertical radius entities will be hit in around the projectile.</td>
+<td>Horizontal Radius</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>d</td>
+<td>The max duration (in ticks) the projectile will persist.</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MaxRange</td>
+<td>mr</td>
+<td>The maximum range (in blocks) the projectile will travel.</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Velocity</td>
+<td>v</td>
+<td>The velocity of the projectile</td>
+<td>5</td>
+</tr>
+<tr>
+<td>StartYOffset</td>
+<td>syo</td>
+<td>Start Y Offset - Lets you offset where on the casting mob the projectile shoots from.</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>StartFOffset</td>
+<td>sfo</td>
+<td>Start Forward Offset - How far in front of the mob the projectile starts</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>StartSideOffset</td>
+<td>sso</td>
+<td>Start Side Offset - How far to the side of the mob the projectile starts</td>
+<td>0</td>
+</tr>
+<tr>
+<td>TargetYOffset</td>
+<td>tyo</td>
+<td>Target Y Offset - Lets you offset where on the target the projectile shoots at.</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>HorizontalOffset</td>
+<td>hO</td>
+<td>Horizontal Offset will rotate the projectile's horizontal starting velocity around a 360-degree axis.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>VerticalOffset</td>
+<td>vO</td>
+<td>Vertical Offset will rotate the projectile's vertical starting velocity around a 360-degree axis.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>HitPlayers</td>
+<td>hp</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitNonPlayers</td>
+<td>hnp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>StopAtEntity</td>
+<td>sE</td>
+<td>Whether the projectile will stop upon hitting a targetable entity.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>StopAtBlock</td>
+<td>sB</td>
+<td>Whether the projectile will stop upon hitting an opaque block.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>HugSurface</td>
+<td>hs</td>
+<td>Whether or not the projectile should move along the ground.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>HeightFromSurface</td>
+<td>hfs</td>
+<td>For NORMAL projectiles, how high above the surface the projectile should glide if HugSurface is set to TRUE. For METEOR projectiles, how high above the surface the projectile starts above the target.</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>PowerAffectsRange</td>
+<td>par</td>
+<td>Whether a mob's <a href="https://www.mythicmobs.net/manual/doku.php/skills/mechanics/power_level">power level</a> affects the projectile's range.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>PowerAffectsVelocity</td>
+<td>pav</td>
+<td>Whether a mob's <a href="https://www.mythicmobs.net/manual/doku.php/skills/mechanics/power_level">power level</a> affects the projectile's velocity.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>gravity</td>
+<td>g</td>
+<td>Determines the gravity of the projectile; use fractions (0.1-0.2) for low gravity</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>  Mob:
+    Type: SKELETON
+    Skills:
+    - skill{s=IceBolt} @target ~onTimer:100
+  IceBolt:
+    Skills:
+    - projectile{onTick=IceBolt-Tick;onHit=IceBolt-Hit;v=8;i=1;hR=1;vR=1}
+  IceBolt-Tick:
+    Skills:
+    - effect:particles{p=snowballpoof;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+  IceBolt-Hit:
+    Skills:
+    - damage{a=10}
+    - potion{type=SLOW;duration=100;lvl=2}
+</code></pre></div>
+<h3 id="shoot_1">Shoot(发射)</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>t</td>
+<td>类型： 箭头(arrow),雪球 (snowball), 鸡蛋(egg), “enderpearl”, 或 药水(potion)</td>
+<td>arrow</td>
+</tr>
+<tr>
+<td>damage</td>
+<td>d</td>
+<td>造成伤害</td>
+<td>5</td>
+</tr>
+<tr>
+<td>velocity</td>
+<td>v</td>
+<td>速度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>maxDistance</td>
+<td>md</td>
+<td>最大射程</td>
+<td>64</td>
+</tr>
+<tr>
+<td>vspread</td>
+<td>vs</td>
+<td>垂直击中半径</td>
+<td>0</td>
+</tr>
+<tr>
+<td>hspread</td>
+<td>hs</td>
+<td>水平击中半径</td>
+<td>0</td>
+</tr>
+<tr>
+<td>poweraffectsvelocity</td>
+<td>pav</td>
+<td>Mob的力量是否影响发射速度</td>
+<td>true</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>int, i</td>
+<td>间隔</td>
+<td>4</td>
+</tr>
+<tr>
+<td>ontickskill</td>
+<td>ontick, ot</td>
+<td>间隔期间 执行 XX 技能</td>
+<td></td>
+</tr>
+<tr>
+<td>onhitskill</td>
+<td>onhit, oh</td>
+<td>击中后执行 XX 技能</td>
+<td></td>
+</tr>
+<tr>
+<td>onendskill</td>
+<td>onend, oe</td>
+<td>发射结束后执行</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ArrowBarrage:
+  Skills:
+  - shoot{type=ARROW;velocity=5;damage=10}
+  - delay 10
+  - shoot{type=ARROW;velocity=5;damage=10}
+  - delay 10
+  - shoot{type=ARROW;velocity=5;damage=10}
+  - delay 10
+  - shoot{type=ARROW;velocity=5;damage=10}
+  - delay 10
+  - shoot{type=ARROW;velocity=5;damage=10}
+</code></pre></div>
+<h3 id="skill_1">Skill(技能)</h3>
+<div class="highlight"><pre><span></span><code>Skills:
+- skill{skill=AnotherSkill}
+- skill{s=AnotherSkill}
+</code></pre></div>
+<blockquote>
+<p>执行/Skills 文件夹中的有的技能</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>forcesync</td>
+<td>sync</td>
+<td>强制同步运行</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>internal_skillname:
+  Cooldown: &lt;seconds&gt;
+  Conditions:
+  - condition
+  - ...
+  Skills:
+  - mechanic{}
+  - ...
+</code></pre></div>
+<blockquote>
+<p>如果Skills文件夹中 已写有冷却，Mob文件夹中的 无法再次配置 冷却.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>Skills:
+- skill{s=AnotherSkill;sync=true}
+- skill{s=ice_bolt;sync=true}
+- skill{sync=true;s=flamethrower}
+- skill
+    {
+    skill=leafs;
+    sync=true
+    }
+</code></pre></div>
+<h3 id="sudoskill_1">SudoSkill(目标执行技能)</h3>
+<div class="highlight"><pre><span></span><code>#skill 
+sudo:
+  Skills:
+  - arrowvolley{a=20;s=25;v=10;f=50;rd=200} @EIR{r=30}
+  - message{msg=&quot;Triggername: &lt;trigger.name&gt;&quot;} @world
+#mob
+SudoMonkey:
+  Type: villager
+  Display: &#39;a Villager&#39;
+  Skills:
+  - sudoskill{s=sudo;cat=true} @trigger ~onDamaged
+</code></pre></div>
+<h3 id="randomskilll_1">RandomSkilll（随机技能）</h3>
+<div class="highlight"><pre><span></span><code>Skills:
+- randomskill{skills=skill1,skill2,skill3}
+Skills:
+- randomskill{
+    skills=
+    superskill,
+    green_skill,
+    skill3,
+    grandSkill,
+    7331
+    }
+</code></pre></div>
+<h3 id="totem_1">Totem( 在一个坐标创建固定的图腾 )</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Charges</td>
+<td>ch, c</td>
+<td>消失前击中次数</td>
+<td>0</td>
+</tr>
+<tr>
+<td>onTick</td>
+<td>oT</td>
+<td>间隔多少tick 执行一次</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onHit</td>
+<td>oH</td>
+<td>击中后执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onEnd</td>
+<td>oE</td>
+<td>结束后执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>onStart</td>
+<td>oS</td>
+<td>开始执行</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>i, int</td>
+<td>间隔</td>
+<td>4</td>
+</tr>
+<tr>
+<td>HorizontalRadius</td>
+<td>hRadius, hR</td>
+<td>攻击的水平半径</td>
+<td>1.25</td>
+</tr>
+<tr>
+<td>VerticalRadius</td>
+<td>vRadius, vR</td>
+<td>攻击的垂直半径</td>
+<td>Horizontal Radius</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>md</td>
+<td>持续时间</td>
+<td>200</td>
+</tr>
+<tr>
+<td>YOffset</td>
+<td>yo</td>
+<td>生成Y的偏移值</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>HitPlayers</td>
+<td>hp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>HitNonPlayers</td>
+<td>hnp</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>HitTarget</td>
+<td>ht</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>HitTargetOnly</td>
+<td></td>
+<td></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>以上是 特殊机制</p>
+</blockquote>
+<hr />
+<h3 id="activate-spawnermm_1">Activate Spawner（激活MM刷怪点）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spawners</td>
+<td>spawner, s</td>
+<td>生成点名称</td>
+<td>NONE</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Skills:
+- activatespawner{spawner=BossAdd}
+Skills:
+- activatespawner{spawner=g:Castle}
+Skills:
+- activatespawner{spawner=DungeonBoss1Spawner*}
+</code></pre></div>
+<h3 id="push-button_1">Push Button（按下按钮）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td></td>
+<td>按钮的 X 坐标</td>
+<td></td>
+</tr>
+<tr>
+<td>y</td>
+<td></td>
+<td>按钮的 Y 坐标</td>
+<td></td>
+</tr>
+<tr>
+<td>z</td>
+<td></td>
+<td>按钮的 Z 坐标</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>HitSecretButton:
+  Skills:
+  - pushbutton{x=15;y=67;z=-213}
+</code></pre></div>
+<h3 id="toggle-lever_1">Toggle Lever （拉杆）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duration</td>
+<td>d</td>
+<td>持续时间</td>
+<td>20</td>
+</tr>
+<tr>
+<td>x</td>
+<td></td>
+<td>拉杆 X 的坐标</td>
+<td>0</td>
+</tr>
+<tr>
+<td>y</td>
+<td></td>
+<td>拉杆 Y 的坐标</td>
+<td>0</td>
+</tr>
+<tr>
+<td>z</td>
+<td></td>
+<td>拉杆 Z 的坐标</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>OpenSecretDoor:
+  Skills:
+  - togglelever{duration=600;x=15;y=67;z=-213}
+</code></pre></div>
+<hr />
+<blockquote>
+<p>以上仅坐标的 机制</p>
+</blockquote>
+<hr />
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">缩写</th>
+<th align="left">描述</th>
+<th align="left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">cooldown</td>
+<td align="left">cd</td>
+<td align="left">冷却时间，秒</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">delay</td>
+<td align="left"></td>
+<td align="left">延迟技能的使用</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">repeat</td>
+<td align="left"></td>
+<td align="left">重复几次使用</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">repeatInterval</td>
+<td align="left"></td>
+<td align="left">重复使用的间隔时间</td>
+<td align="left">0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="blockmask_1">BlockMask（临时头颅）</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>别名</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>material</td>
+<td>mat, m</td>
+<td>原版当中的方块</td>
+<td>gravel</td>
+</tr>
+<tr>
+<td>data</td>
+<td>dv</td>
+<td>元数据</td>
+<td>0</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>r</td>
+<td>半径</td>
+<td>0</td>
+</tr>
+<tr>
+<td>noair</td>
+<td>na</td>
+<td>是否取消替换空气</td>
+<td>true</td>
+</tr>
+<tr>
+<td>noise</td>
+<td>n</td>
+<td>Defines the randomness of the effect.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>d</td>
+<td>持续时间</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shape</td>
+<td>s</td>
+<td>效果的形状</td>
+<td>sphere</td>
+</tr>
+<tr>
+<td>noair</td>
+<td>na</td>
+<td>Mask no air blocks only</td>
+<td>true</td>
+</tr>
+<tr>
+<td>onlyair</td>
+<td>oa</td>
+<td>Mask air blocks only.</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>- effect:blockmask{m=netherrack;r=5} @self ~onTimer:1200
+- effect:blockmask{m=ice;r=2;d=20} @PIR{r=50} ~onTimer:5
+- effect:blockunmask{r=30}
+</code></pre></div>
+<p><strong>特效</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">特效机制</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fblockmask">Block Mask</a></td>
+<td align="left">临时戴上一块方块</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fender">Ender</a></td>
+<td align="left">Ender 特效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fenderbeam">Ender Beam</a></td>
+<td align="left">末影水晶激光连接到目标</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fexplosion">Explosion</a></td>
+<td align="left">爆炸特效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Ffirework">Firework</a></td>
+<td align="left">烟花特效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fflames">Flames</a></td>
+<td align="left">刷怪箱火焰特效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fgeyser">Geyser</a></td>
+<td align="left">创造喷泉一样的水或岩浆</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fitemspray">Item Spray</a></td>
+<td align="left">在目标周围喷出临时物品</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Flightning">Lightning</a></td>
+<td align="left">落下一道假雷</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticles">Particles</a></td>
+<td align="left">在目标周围创建粒子</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticlebox">Particle Box</a></td>
+<td align="left">在目标周围生成粒子盒</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticleline">Particle Line</a></td>
+<td align="left">在目标周围生成粒子线</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticlering">Particle Ring</a></td>
+<td align="left">在目标周围生成粒子环</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticlesphere">Particle Sphere</a></td>
+<td align="left">在目标周围生成粒子球</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fparticletornado">Particle Tornado</a></td>
+<td align="left">在目标周围创建持续的“龙卷风”型特效粒子</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fsmoke">Smoke</a></td>
+<td align="left">创造一阵烟雾</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fsmokeswirl">Smoke Swirl</a></td>
+<td align="left">创造持续的“旋涡”型烟雾</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fsound">Sound</a></td>
+<td align="left">播放材质包中的一个音效</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.mcbbs.net/plugin.php?id=link_redirect&amp;target=http%3A%2F%2Fwww.mythicmobs.net%2Fmanual%2Fdoku.php%2Fskills%2Feffects%2Fspin">Spin</a></td>
+<td align="left">让生物旋转</td>
+</tr>
+</tbody>
+</table>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../skill/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 目录" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              目录
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../targeter/" class="md-footer__link md-footer__link--next" aria-label="下一页: 目标选择器" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              目标选择器
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+    
+  </body>
+</html>
